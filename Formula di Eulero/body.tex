@@ -1,0 +1,77 @@
+\begin{center}
+	\huge \textbf{La formula di Eulero}
+	
+	\rule{7cm}{0.4pt} 
+	
+	\LARGE Una semplice dimostrazione
+	
+	\vspace{20pt}
+	
+	\LARGE \textbf{Luca Morelli}
+	
+	\vspace{5pt}
+	
+	\LARGE 10 Ottobre 2022
+	
+\end{center}
+
+\vspace{20pt}
+
+\begin{center}
+	\textbf{Abstract:}
+\end{center}
+
+Dalla matematica alla fisica una delle formule più importanti e affascinanti è indubbiamente la \textbf{formula di Eulero} che consente di rappresentare i numeri complessi in forma polare. Dalla trigonometria, all'ottica, alla meccanica quantistica fino all'analisi complessa, tutte queste fanno largo uso della formula di Eulero.  
+
+\begin{multicols}{2}
+	
+	\section{Intoduzione}
+	\subsection{La formula}
+	Sia $\theta\in \mathbb{R}$ e $i\ :\ i^2=-1$ allora vale che:
+	\begin{equation}
+		e^{i\theta}=cos\theta+isin\theta
+		\label{eulero}
+	\end{equation}
+
+    \subsection{Le applicazioni}
+    Indubbiamente il motivo più importante per l'uso di questa formula è la possibilità di rappresentare i numeri complessi in forma polare, infatti dato il numero complesso $z=x+iy$ possiamo definire il suo \textbf{modulo} $|z|=x^2+y^2$ e con un po' di algebra si mostra che:
+    \begin{equation*}
+    	z=(\frac{x}{x^2+y^2}+i\frac{y}{x^2+y^2})|z|
+    \end{equation*}
+     dove i due termini $\frac{x}{x^2+y^2}$ e $\frac{y}{x^2+y^2}$ sono proprio il seno e il coseno in un triangolo rettangolo dove $x$ e $y$ sono i cateti. Diventa quindi naturale utilizzare la (\ref{eulero}) ottenendo la rappresentazione polare di un numero complesso.
+     \begin{equation}
+     	z=|z|e^{i\theta}\quad con \quad \theta=atan(y/x) \quad |z|=x^2+y^2
+     	\label{polare}
+     \end{equation}
+     Dalla \textbf{forma polare} (\ref{polare}) è inoltre possibile procedere in senso opposto e rappresentare in forma complessa delle funzioni trigonometriche e sfruttare le regole delle potenze per semplificare molti conti.\\
+     Questo avviene per esempio con la \textbf{formula di de Moivre} che consente di calcolare molto facilmente per esempio $sin(nx)$ come combinazione di potenze di seni e coseni:
+     \begin{equation*}
+     	(cosx+isinx)^n=e^{in\theta}=cos(nx)+isin(nx)
+     \end{equation*}
+    Analogamente possiamo ottenere la formula di addizione del coseno:
+    \begin{multline*}
+    	cos(x+y)=\mathfrak{Re}(cos(x+y)+isin(x+y))
+    	=\mathfrak{Re}(e^{i(x+y)})\\=\mathfrak{Re}(e^{ix}e^{iy})=\mathfrak{Re}\{(cosx+isinx)(cosy+isiny)\}\\
+    	=\mathfrak{Re}(cosx\ cosy-sinx\ siny+icosx\ siny+isinx\ cosy)\\
+    	=cosx\ cosy-sinx\ siny
+    \end{multline*}
+    Dove $\mathfrak{Re}(z)=x$ con $z=x+iy$, ossia è la \textbf{parte reale} di $z$.
+    \section{La dimostrazione}
+    
+    Consideriamo $f:\mathbb{R}\longrightarrow\mathbb{C}$ definita in questo modo:
+    
+    \begin{equation}
+    	f(\theta)=\frac{cos\theta+isin\theta}{e^{i\theta}}
+    \end{equation}	
+	 Risulta immediato che $f$ è costante in quanto:
+	 
+	 \begin{equation*}
+	 	f'(\theta)=\frac{(icos\theta-sin\theta)e^{i\theta}-i(cos\theta+isin\theta)e^{i\theta}}{e^{2i\theta}}=0
+	 \end{equation*}
+     Calcoliamo quindi $f(0)$ che essendo costante è uguale a $f(\theta)$:
+     
+     \begin{equation*}
+     	f(\theta)=f(0)=\frac{cos0+isin0}{e^{i0}}=1
+     \end{equation*}
+     da cui segue immediatamente la (\ref{eulero}).
+\end{multicols}
