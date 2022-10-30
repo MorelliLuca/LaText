@@ -1,0 +1,30 @@
+\contentsline {section}{\numberline {1}Introduzione}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Cos'è la complessità}{2}{}%
+\contentsline {section}{\numberline {2}L'Equazione Logistica}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Il modello}{3}{}%
+\contentsline {subsection}{\numberline {2.2}Studio del modello}{4}{}%
+\contentsline {subsection}{\numberline {2.3}Leggi di scala}{4}{}%
+\contentsline {subsection}{\numberline {2.4}La soluzione analitica}{5}{}%
+\contentsline {paragraph}{Funzione Logistica}{5}{}%
+\contentsline {section}{\numberline {3}Interconnessione di sistemi}{6}{}%
+\contentsline {paragraph}{Fattore di scala}{6}{}%
+\contentsline {subsection}{\numberline {3.1}Modello lineare}{6}{}%
+\contentsline {subsection}{\numberline {3.2}Modello ad albero}{7}{}%
+\contentsline {subsection}{\numberline {3.3}Modello a raggiera}{7}{}%
+\contentsline {paragraph}{Legge di Kleiber}{7}{}%
+\contentsline {section}{\numberline {4}Il neurone: un sistema del second'ordine}{8}{}%
+\contentsline {subsection}{\numberline {4.1}Comportamenti con soglia}{8}{}%
+\contentsline {subsection}{\numberline {4.2}Riduzione al prim'ordine}{8}{}%
+\contentsline {subsection}{\numberline {4.3}Il modello del neurone}{10}{}%
+\contentsline {section}{\numberline {5}Il modello epidemiologico SIR}{12}{}%
+\contentsline {subsection}{\numberline {5.1}Studio del modello}{13}{}%
+\contentsline {section}{\numberline {6}Sistemi lineari ed interazioni tra sistemi}{15}{}%
+\contentsline {paragraph}{Esponente di Lyapunov}{15}{}%
+\contentsline {subsection}{\numberline {6.1}Perturbazioni del sistema}{15}{}%
+\contentsline {subsection}{\numberline {6.2}Sistemi interagenti}{16}{}%
+\contentsline {paragraph}{Equazione differenziale con ritardo}{17}{}%
+\contentsline {subsection}{\numberline {6.3}Un esempio: Il traffico}{17}{}%
+\contentsline {paragraph}{Car following model}{17}{}%
+\contentsline {paragraph}{Optimal velocity model}{18}{}%
+\contentsline {subsection}{\numberline {6.4}Flusso di traffico}{19}{}%
+\contentsline {subsection}{\numberline {6.5}Onde di traffico}{20}{}%

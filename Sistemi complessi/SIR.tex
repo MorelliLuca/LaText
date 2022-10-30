@@ -1,0 +1,80 @@
+\section{Il modello epidemiologico SIR}
+
+Vogliamo studiare ora la diffusione di una pandemia, per farlo analizzeremo il modello più semplice possibile ossia il modello \textbf{SIR}. Consideriamo una popolazione di \textbf{N} individui fissi, assunzione che possiamo fare se pensiamo di studiare la popolazione per un tempo sufficientemente corto per cui le persone decedute sono approssimativamente compensate da quelle nate. \\
+La popolazione è quindi suddivisa in tre sottosistemi \textbf{S}, i suscettibili, \textbf{I}, gli infetti, e \textbf{R}, i recovered ossia i guariti. In questo caso l'assunzione che N sia costante ci consente di introdurre un sorta di \textbf{legge di conservazione}:
+\begin{equation}
+	S+I+R=N
+	\label{continuità}
+\end{equation} 
+Inoltre dobbiamo definire delle leggi che consentano modellizzare i link tra i tre sottosistemi, queste ovviamente devono rispettare la (\ref{continuità}) e quindi nella loro forma più semplice appaiono come:
+\begin{equation}
+	\begin{cases}
+		\dot{S}=-\Phi_{S\rightarrow I}(t)\\
+		\dot{I}=\Phi_{S\rightarrow I}(t)-\Phi_{I\rightarrow R}(t)\\
+		\dot{R}=\Phi_{I\rightarrow R}(t)\\
+	\end{cases}
+\label{flussi}
+\end{equation}
+Così facendo il problema si sposta sulla necessità di trovare le 3 funzioni dei flussi tra i sottosistemi:
+\begin{itemize}
+	\item $\Phi_{S\rightarrow I}(t)$ è facilmente definito infatti è chiaro che se ogni individuo può infettarsi allora il flusso sarà dato dal numero di suscettibili per la probabilità che incontrino un infetto, stimata con $\frac{I}{N}$, e per un fattore $m(t)$ che misura la socialità, per cui abbiamo :
+	\begin{equation}
+		\Phi_{S\rightarrow I}(t)=\beta S\frac{I}{N}m(t)
+	\end{equation}
+    \item $\Phi_{I\rightarrow R}(t)$ è più complesso da ricavare, infatti deve tenere conto del ritardo dovuto al tempo di guarigione, per farlo consideriamo la seguente espressione:
+    \begin{equation}
+    	\Phi_{I\rightarrow R}(t)=\int_{0}^{\infty}\Gamma_I(s) \Phi_{S\rightarrow I}(t-s)ds
+    \end{equation}
+     Questa ci consente di stimare quante persone che si sono infettate al tempo $t-s< t$ guariscono al tempo $t$, moltiplicandole per la probabilità $\Gamma_I(s)$ di guarire dopo un tempo $s$ che sono infette. 
+\end{itemize}
+\vspace{5pt}
+
+Solitamente la probabilità di guarire è data da una particolare funzione $\Gamma_I(s)=cs^ae^{-bt}$, che chiaramente tende a zero sia per $s$ piccolo che grande, fornendo quindi un punto in qui la probabilità di guarire è massima.\\ Risulta però molto complicato utilizzare questo integrale come definizione del flusso per cui introdurremo una serie di approssimazioni e semplificazioni: in primo luogo considereremo un valore medio della probabilità ($\gamma$) e lo assumeremo costante durante l'integrazione, in secondo luogo supponiamo che $\Phi_{S\rightarrow I}(t)>>\Phi_{I\rightarrow R}(t)$, cosa effettivamente vera durante le prime fasi dell'epidemia, in questo modo possiamo approssimare $\Phi_{S\rightarrow I}(t)\backsimeq\dot{I}$ che se integrato restituisce $I(t)$, poichè per tempi molto precedenti la pandemia non è ancora incominciata e quindi risulta nullo il numero di infetti. Otteniamo quindi dalla (\ref{flussi}) un modello più semplice ma ancora utile:
+\begin{equation}
+	\begin{cases}
+		\dot{S}=-m(t)\beta S\frac{I}{N}\\
+		\dot{I}=m(t)\beta S\frac{I}{N}-\gamma I\\
+		\dot{R}=\gamma I\\
+	\end{cases}
+	\label{SIR}
+\end{equation}
+
+Prima di iniziare a studiare il modello procediamo a riscalare le variabili in maniera tale da normalizzare la popolazione, imponiamo infatti che $N=1$ e studieremo le variazioni percentuali da qui in poi.
+\subsection{Studio del modello}
+
+Per prima cosa osserviamo che se $I=0$ chiaramente il sistema è in equilibrio, per cui studieremo quali condizioni consentono ad una epidemia di svilupparsi e come questo sviluppo avviene.\\
+
+Perchè l'epidemia si diffonda dobbiamo introdurre almeno un infetto, in questo caso però piccole perturbazioni di $I$ lasciano pressochè invariato $S=1$, per cui abbiamo come condizione per lo svilupparsi dell'epidemia:
+\begin{equation}
+	\dot{I}=(-m_0\beta-\gamma )I \Rightarrow m_0\beta>\gamma
+\end{equation} 
+ossia che i parametri che influenzano la diffusione devono "\textit{surclassare}" quelli relativi alla guarigione.\\
+
+Posso a questo punto proseguire nello studio osservando che con una semplice sostituzione di variabili è possibile ridurre il modello ad un sistema \textbf{Hamiltoniano} di cui ben conosciamo le caratteristiche:
+\begin{equation*}
+	\begin{gathered}
+		\frac{\dot{S}}{S}=\frac{d}{dt} \log S =-m(t)\beta I\qquad\log S=u\qquad \dot{u}=-m(t)\beta e^{v}=-\frac{\partial\mathcal{H}}{\partial v}\\
+			\qquad\qquad\Rightarrow\qquad\\
+			\frac{\dot{I}}{I}=\frac{d}{dt}  \log S =m(t)\beta S-\gamma\qquad\log =v\qquad\dot{v}=m(t)\beta e^{u}-\gamma=\frac{\partial\mathcal{H}}{\partial u}\\
+	\end{gathered}
+\end{equation*}
+Così facendo troviamo un integrale primo del moto che ci consentirà di fare alcune osservazioni utili, da qui in poi però dobbiamo assumere che $m(t)$ sia costante:
+\begin{equation}
+	\mathcal{H}(I,S)=m\beta(I+S)-\gamma\log S=m\beta \label{hamilton}
+\end{equation}
+Così facendo, conoscendo le condizioni iniziali del sistema e quindi il valore dell'integrale primo, possiamo determinare in quanti punti vale $I=0$ : infatti un primo punto che non ha infetti è il punto iniziale e se vi fosse un secondo punto in tal caso avremo la fine della pandemia. Studiando la  (\ref{hamilton}) si scopre facilmente che la condizione perchè l'epidemia possa avere luogo sono anche sufficienti per la sua fine; in questo caso bisogna risolvere un'equazione non algebrica per cui è necessario uno studio di funzione molto banale che però omettiamo (perchè non ho voglia ed è una cazzata).\\
+
+Vogliamo a questo punto prevedere quando si manifesterà il picco di infetti e comprenderne l'entità. Ricordando, dal cambio variabili di prima, che $\frac{\dot{S}}{S}=\frac{d}{dt} \log S =-m\beta I$, possiamo ridurre la (\ref{hamilton}) alla seguente forma:
+\begin{equation*}
+	-\frac{\dot{S}}{S} + m\beta S-\gamma\log S=m\beta
+\end{equation*}
+a questo punto approssimiamo in serie di Taylor $\log S\simeq1-S$ ottenendo così un'equazione differenziale che abbiamo già incontrato, ossia l'equazione logistica, che però è valida solo per $S\sim 1$, ovvero solo se l'epidemia è agli inizi o ad essere infetti non è una percentuale troppo grossa della popolazione (se $S=0,6$ l'errore $\simeq 15\%$).
+\begin{equation}
+	\dot{S}=(\beta m-\gamma)(1-S)S
+\end{equation} 
+
+Infine osserviamo che se $\frac{\dot{S}}{S}=-m\beta I$ e $S\simeq 1$ allora possiamo stimare a grandi linee il punto di massimo di $I$ come il punto di flesso di $S$, infatti:
+\begin{equation}
+	\dot{I}=\frac{\ddot{S}S-\dot{S}^2}{S^2}=\frac{\ddot{S}}{S}-I^2
+\end{equation}
+e questa espressione tende a $0$ se $I<<S$ e $\ddot{S}=0$. Questa stima in realtà è del tutto generale e infatti $\frac{\dot{S}}{S}=-m\beta I$ è immediatamente ricavabile dalla (\ref{SIR}).
