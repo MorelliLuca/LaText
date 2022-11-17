@@ -23,8 +23,10 @@
 \contentsline {subsection}{\numberline {6.1}Perturbazioni del sistema}{15}{}%
 \contentsline {subsection}{\numberline {6.2}Sistemi interagenti}{16}{}%
 \contentsline {paragraph}{Equazione differenziale con ritardo}{17}{}%
-\contentsline {subsection}{\numberline {6.3}Un esempio: Il traffico}{17}{}%
-\contentsline {paragraph}{Car following model}{17}{}%
-\contentsline {paragraph}{Optimal velocity model}{18}{}%
-\contentsline {subsection}{\numberline {6.4}Flusso di traffico}{19}{}%
-\contentsline {subsection}{\numberline {6.5}Onde di traffico}{20}{}%
+\contentsline {paragraph}{Matrice laplaciana}{18}{}%
+\contentsline {subsection}{\numberline {6.3}Sincronizzazione di sistemi intergaenti}{18}{}%
+\contentsline {section}{\numberline {7}I modelli del traffico}{20}{}%
+\contentsline {paragraph}{Car following model}{20}{}%
+\contentsline {paragraph}{Optimal velocity model}{20}{}%
+\contentsline {subsection}{\numberline {7.1}Flusso di traffico}{21}{}%
+\contentsline {subsection}{\numberline {7.2}Onde di traffico}{23}{}%
