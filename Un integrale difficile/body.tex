@@ -1,0 +1,92 @@
+\begin{center}
+	\huge \textbf{Un integrale complesso}
+	
+	\rule{7cm}{0.4pt} 
+	
+	\LARGE 
+	
+	\vspace{10pt}
+	
+	\LARGE \textbf{Luca Morelli}
+	
+	\vspace{5pt}
+	
+	\LARGE 20 Dicembre 2022
+	
+\end{center}
+
+\vspace{20pt}
+
+
+
+
+	\section{Introduzione}
+	Si vuole calcolare il valore del seguente integrale
+	\begin{equation}
+		\int_{-\infty}^{\infty} \frac{x^2}{(1+e^x)(1+e^{-x})}dx
+		\label{int}
+	\end{equation}
+    \section{Il calcolo}
+	Osserviamo che l'integrando in (\ref{int}) è pari per cui è possibile 
+	modificare il dominio di integrazione nel intervallo $[0,\infty)$. Inoltre 
+	possiamo effettuare la seguente sotituzione: $x=\log z$.
+	\begin{equation*}
+		\int_{-\infty}^{\infty} \frac{x^2}{(1+e^x)(1+e^{-x})}dx=2\int_{0}^{\infty} \frac{x^2}{(1+e^x)(1+e^{-x})}dx=
+		2\int_{1}^{\infty} \frac{\log^2(z)}{(1+z)^2}dz
+	\end{equation*}
+	
+	Considerando ora un cammino di integrazione nel piano complesso composto da 
+	una circonferenza $\Gamma$ congiunta con due segmenti posizionati uno appena 
+	al disotto e uno appena sopra l'asse reale che corrono nell'intervallo $[1,\infty)$, e facendo tendere il raggio di $\Gamma$ ad infinito  
+    è possibile sfruttare il Teorema di Residui:
+	\begin{flalign}\label{log2}
+		\int_{1}^{\infty} \frac{\log^2(z)}{(1+z)^2}dz&=2\pi i\sum_{poli} Res\frac{\log^2(z)}{(1+z)^2}+\int_{1}^{\infty} \frac{(\log(z)+2\pi i)^2}{(1+z)^2}dz\\ \nonumber
+        &=2\pi i\sum_{poli} Res\frac{\log^2(z)}{(1+z)^2}+\int_{1}^{\infty} \frac{\log^2(z)}{(1+z)^2}dz+4\pi i\int_{1}^{\infty}\frac{\log(z)}{(1+z)^2}dz-4\pi^2\int_{1}^{\infty}\frac{1}{(1+z)^2}dz
+	\end{flalign}
+    Questa relazione però non consente di calcolare l'integrale desiderato infatti se 
+	proseguiamo a sviluppare il quadrato presente nel secondo integrale osserviamo che 
+	l'integrale desiderato si elide. Calcoliamo quindi il seguente integrale:
+	\begin{flalign}\label{log3}
+		\int_{1}^{\infty} \frac{\log^3(z)}{(1+z)^2}dz&=2\pi i\sum_{poli} Res\frac{\log^3(z)}{(1+z)^2}+\int_{1}^{\infty} \frac{(\log(z)+2\pi i)^3}{(1+z)^2}dz\\ \nonumber
+		&=2\pi i\sum_{poli} Res\frac{\log^3(z)}{(1+z)^2}+\int_{1}^{\infty} \frac{\log(z)^3}{(1+z)^2}dz + 6\pi i \int_{1}^{\infty}\frac{\log(z)^2}{(1+z)^2}dz +\\ \nonumber
+		&\qquad\qquad\qquad\qquad- 12\pi^2\int_{1}^{\infty}\frac{\log(z)}{(1+z)^2}dz -8\pi^3i \int_{1}^{\infty}\frac{1}{(1+z)^2}dz 
+	\end{flalign}\\
+
+	Per prima cosa valutiamo l'ultimo integrale che abbiamo trovato nelle (\ref{log2}) (\ref{log3}), procediamo con un semplice cambio di variabili:
+	\begin{equation}
+		\int_{1}^{\infty}\frac{1}{(1+x)^2}dx=\int_{2}^{\infty}\frac{1}{u^2}du =-\frac{2}{u}\bigg|_2^\infty= 1
+		\label{easyint}
+	\end{equation} \\
+
+	Dobbiamo quindi calcolare i residui integrali delle relazioni (\ref{log2}) (\ref{log3}), entrambe le funzioni di cui si devono calcolare i residui 
+	presentano un polo in $z=-1$. Osserviamo però che dalla definizione di residuo 
+	e dall'espressione della derivata n-esima di una funzione olomorfa si ha:
+	\begin{equation}
+		\label{trickfigo}
+		2\pi i\ Res\frac{f(z)}{(1+z)^2}\bigg|_{z_0}=\oint_\gamma\frac{f(z)}{(1+z)^2}dz=2\pi i\ \frac{df}{dz}(z)\bigg|_{z=-1}
+	\end{equation}
+	dove $\gamma$ è una curva chiusa regolare che racchiude sia il punto $z_0$ che il punto $z=-1$.\\
+    Se $f(z)=\frac{\log^2(z)}{(1+z)^2}$ allora, considerando la presenza di due poli, si ha:
+		\begin{equation}\label{res1}
+			\sum_{poli} Res\frac{\log^2(z)}{(1+z)^2}=\frac{d}{dz} \log^2(z) \bigg|_{z=-1}=
+            2\frac{\log(z)}{z}\bigg|_{z=-1}=-2\pi i
+		\end{equation}
+	Con analoghe considerazioni si ha per $f(z)=\frac{\log^3(z)}{(1+z)^2}$:
+	\begin{equation}\label{res2}
+		\sum_{poli} Res\frac{\log^3(z)}{(1+z)^2}= \frac{d}{dz} \log^3(z) \bigg|_{z=-1}=
+		3\frac{\log^2(z)}{z}\bigg|_{z=-1}=3\pi^2
+	\end{equation}
+	Sostituendo nella (\ref{log2}) i risultati appena ottenuti (\ref{easyint}) (\ref{res1}) ed elidendo i termini ripetuti abbiamo:
+	\begin{equation}
+        \int_{1}^{\infty}\frac{\log(z)}{(1+z)^2}dz=\pi i-\pi i=0
+		\label{log}
+	\end{equation}
+    Possiamo quindi sostituire nella (\ref{log3}) i risultati della (\ref{easyint}), (\ref{log3}) e (\ref{log}) ottenendo:
+	\begin{equation}
+		\int_{1}^{\infty}\frac{\log(z)^2}{(1+z)^2}dz=\frac{4}{3}\pi^2-\pi^2=\frac{\pi^2}{3}
+	\end{equation} 
+
+
+
+
+    
