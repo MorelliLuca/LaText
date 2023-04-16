@@ -1,0 +1,150 @@
+\section{Teoremi}\index{Teoremi}
+
+In questa sezione si mostrano esempi di teoremi.
+
+\subsection{Più equazioni}\index{Teoremi!Più equazioni}
+Questo teorema consiste di più equazioni.
+
+\begin{theorem}[Nome del teorema]
+In $E=\mathbb{R}^n$ tutte le norme sono equivalenti. In oltre valgono le proprietà:
+\begin{align}
+& \big| ||\mathbf{x}|| - ||\mathbf{y}|| \big|\leq || \mathbf{x}- \mathbf{y}||\\
+&  ||\sum_{i=1}^n\mathbf{x}_i||\leq \sum_{i=1}^n||\mathbf{x}_i||\quad\text{$n$ intero finito}
+\end{align}
+\end{theorem}
+
+\subsection{Teorema a singola riga}\index{Teoremi!Teorema a singola riga}
+Questo è un teorema che sta su un sola riga.
+
+\begin{theorem}
+Un insieme $\mathcal{D}(G)$ è denso in $L^2(G)$, $|\cdot|_0$. 
+\end{theorem}
+
+\subsection{Dimostrazione}
+
+Questo è un esempio di dimostrazione.
+\begin{proof}
+    Siano $a,b\in\mathbb{R}$, allora per definizione $|a|\geq a$ e $|b|\geq b$, da questo segue che la somma $a+b\leq|a|+|b|$.\\
+    Si consideri ora $-a$ e $-b$, chiaramente i loro valori assoluti sono pari rispettivamente a quelli di $a$ e $b$, segue quindi che $-(a+b)\leq|a|+|b|$. Queste due considerazioni implicano che $|a+b|\leq|a|+|b|$.
+\end{proof}
+
+%------------------------------------------------
+
+\section{Definizioni}\index{Definizioni}
+
+Questo è un esempio di definizione. Una definizione può essere matematica o concettutale.
+
+\begin{definition}[Nome definizione]
+Dato uno spazio vettoriale $E$, una norma in $E$ è un'applicazione, indicata con $||\cdot||$, $E$ in $\mathbb{R}^+=[0,+\infty[$ tale che:
+\begin{align}
+& ||\mathbf{x}||=0\ \Rightarrow\ \mathbf{x}=\mathbf{0}\\
+& ||\lambda \mathbf{x}||=|\lambda|\cdot ||\mathbf{x}||\\
+& ||\mathbf{x}+\mathbf{y}||\leq ||\mathbf{x}||+||\mathbf{y}||
+\end{align}
+\end{definition}
+
+%------------------------------------------------
+
+\section{Notazioni}\index{Notazioni}
+
+\begin{notation}
+Dato un sottoinsieme aperto $G$ di $\mathbb{R}^n$, l'insieme di funzioni $\varphi$ sono:
+\begin{enumerate}
+\item Limitate su $G$;
+\item di classe $C^\infty$;
+\end{enumerate}
+uno spazio vettoriale è indicato con $\mathcal{D}(G)$. 
+\end{notation}
+
+%------------------------------------------------
+
+\section{Osservazioni}\index{Osservazioni}
+
+Questo è un esempio di osservazione.
+
+\begin{remark}
+Quanto illustrato precedentemente rappresenta uno fondamenti della matematica. Gli spazi vettoriali sono costruiti su campi $\mathbb{K}=\mathbb{R}$, però, è facile estendere tutte le proprietà a $\mathbb{K}=\mathbb{C}$.
+\end{remark}
+
+%------------------------------------------------
+
+\section{Corollari}\index{Corollari}
+
+Questo è un esempio di corollario.
+
+\begin{corollary}[Nome corollario]
+Quanto illustrato precedentemente rappresenta uno fondamenti della matematica. Gli spazi vettoriali sono costruiti su campi $\mathbb{K}=\mathbb{R}$, però, è facile estendere tutte le proprietà a $\mathbb{K}=\mathbb{C}$.
+\end{corollary}
+
+%------------------------------------------------
+
+\section{Proposizioni}\index{Proposizioni}
+
+Questo è un esempio di proposizione.
+
+\subsection{Più equazioni}\index{Proposizioni!Più equazioni}
+
+\begin{proposition}[Nome proposizione]
+Si hanno le seguenti propietà:
+\begin{align}
+& \big| ||\mathbf{x}|| - ||\mathbf{y}|| \big|\leq || \mathbf{x}- \mathbf{y}||\\
+&  ||\sum_{i=1}^n\mathbf{x}_i||\leq \sum_{i=1}^n||\mathbf{x}_i||\quad\text{where $n$ is a finite integer}
+\end{align}
+\end{proposition}
+
+\subsection{Teorema a singola riga}\index{Proposizioni!Teorema a singola riga}
+
+\begin{proposition} 
+Sia $f,g\in L^2(G)$; Se $\forall \varphi\in\mathcal{D}(G)$, $(f,\varphi)_0=(g,\varphi)_0$ allora $f = g$. 
+\end{proposition}
+
+%------------------------------------------------
+
+\section{Esempi}\index{Esempi}
+
+Questo è un esempio di esempio.
+
+\subsection{Equazioni e Testo}\index{Esempi!Equazioni e Testo}
+
+\begin{example}
+Sia $G=\{x\in\mathbb{R}^2:|x|<3\}$ e indicato con: $x^0=(1,1)$; considerando la funzione:
+\begin{equation}
+f(x)=\left\{\begin{aligned} & \mathrm{e}^{|x|} & & \text{si $|x-x^0|\leq 1/2$}\\
+& 0 & & \text{si $|x-x^0|> 1/2$}\end{aligned}\right.
+\end{equation}
+La funzione $f$ ha supporto compatto, si può prendere $A=\{x\in\mathbb{R}^2:|x-x^0|\leq 1/2+\epsilon\}$ for all $\epsilon\in\intoo{0}{5/2-\sqrt{2}}$.
+\end{example}
+
+\subsection{Paragrafo di Testo}\index{Esempi!Paragrafo di Testo}
+
+\begin{example}[Nome esempio]
+\lipsum[2]
+\end{example}
+
+%------------------------------------------------
+
+\section{Esercizi}\index{Esercizi}
+
+Questo è un esempio di esercizio.
+
+\begin{exercise}
+Gli esercizi sono utili per gli studenti.
+\end{exercise}
+
+%------------------------------------------------
+
+\section{Problemi}\index{Problemi}
+
+\begin{problem}
+Se una mela cade da un albero di $10m$ con velocità finale $22m/s$ qual è la massa della Via Lattea?
+\end{problem}
+
+%------------------------------------------------
+
+\section{Vocabolario}\index{Vocabolario}
+
+Qui è possibile dare ulteriori informazioni per parole specifiche utilizzate.
+
+\begin{vocabulary}[Parola]
+Definizione di Parola.
+\end{vocabulary}

@@ -1,0 +1,66 @@
+\begin{theindex}
+\nopagebreak
+\tikz\node at (0pt,0pt) [draw=none,fill=mColor!50,line width=1pt,inner sep=5pt]{\parbox{\linewidth-2\fboxsep-2\fboxrule-2pt}{\centering\large\sffamily\bfseries\textcolor{white}{C}}};\vspace*{0.2cm}\nopagebreak
+
+  \item Citazioni\dotfill \hyperpage{8}
+  \item Corollari\dotfill \hyperpage{10}
+
+  \indexspace
+\nopagebreak
+\tikz\node at (0pt,0pt) [draw=none,fill=mColor!50,line width=1pt,inner sep=5pt]{\parbox{\linewidth-2\fboxsep-2\fboxrule-2pt}{\centering\large\sffamily\bfseries\textcolor{white}{D}}};\vspace*{0.2cm}\nopagebreak
+
+  \item Definizioni\dotfill \hyperpage{10}
+
+  \indexspace
+\nopagebreak
+\tikz\node at (0pt,0pt) [draw=none,fill=mColor!50,line width=1pt,inner sep=5pt]{\parbox{\linewidth-2\fboxsep-2\fboxrule-2pt}{\centering\large\sffamily\bfseries\textcolor{white}{E}}};\vspace*{0.2cm}\nopagebreak
+
+  \item Esempi\dotfill \hyperpage{11}
+    \subitem Equazioni e Testo\dotfill \hyperpage{11}
+    \subitem Paragrafo di Testo\dotfill \hyperpage{11}
+  \item Esercizi\dotfill \hyperpage{11}
+
+  \indexspace
+\nopagebreak
+\tikz\node at (0pt,0pt) [draw=none,fill=mColor!50,line width=1pt,inner sep=5pt]{\parbox{\linewidth-2\fboxsep-2\fboxrule-2pt}{\centering\large\sffamily\bfseries\textcolor{white}{F}}};\vspace*{0.2cm}\nopagebreak
+
+  \item Figure\dotfill \hyperpage{15}
+
+  \indexspace
+\nopagebreak
+\tikz\node at (0pt,0pt) [draw=none,fill=mColor!50,line width=1pt,inner sep=5pt]{\parbox{\linewidth-2\fboxsep-2\fboxrule-2pt}{\centering\large\sffamily\bfseries\textcolor{white}{N}}};\vspace*{0.2cm}\nopagebreak
+
+  \item Notazioni\dotfill \hyperpage{10}
+
+  \indexspace
+\nopagebreak
+\tikz\node at (0pt,0pt) [draw=none,fill=mColor!50,line width=1pt,inner sep=5pt]{\parbox{\linewidth-2\fboxsep-2\fboxrule-2pt}{\centering\large\sffamily\bfseries\textcolor{white}{O}}};\vspace*{0.2cm}\nopagebreak
+
+  \item Osservazioni\dotfill \hyperpage{10}
+
+  \indexspace
+\nopagebreak
+\tikz\node at (0pt,0pt) [draw=none,fill=mColor!50,line width=1pt,inner sep=5pt]{\parbox{\linewidth-2\fboxsep-2\fboxrule-2pt}{\centering\large\sffamily\bfseries\textcolor{white}{P}}};\vspace*{0.2cm}\nopagebreak
+
+  \item Paragrafo sul Testo\dotfill \hyperpage{7}
+  \item Problemi\dotfill \hyperpage{11}
+  \item Proposizioni\dotfill \hyperpage{10}
+    \subitem Più equazioni\dotfill \hyperpage{10}
+    \subitem Teorema a singola riga\dotfill \hyperpage{10}
+
+  \indexspace
+\nopagebreak
+\tikz\node at (0pt,0pt) [draw=none,fill=mColor!50,line width=1pt,inner sep=5pt]{\parbox{\linewidth-2\fboxsep-2\fboxrule-2pt}{\centering\large\sffamily\bfseries\textcolor{white}{T}}};\vspace*{0.2cm}\nopagebreak
+
+  \item Tabelle\dotfill \hyperpage{15}
+  \item Teoremi\dotfill \hyperpage{9}
+    \subitem Più equazioni\dotfill \hyperpage{9}
+    \subitem Teorema a singola riga\dotfill \hyperpage{9}
+
+  \indexspace
+\nopagebreak
+\tikz\node at (0pt,0pt) [draw=none,fill=mColor!50,line width=1pt,inner sep=5pt]{\parbox{\linewidth-2\fboxsep-2\fboxrule-2pt}{\centering\large\sffamily\bfseries\textcolor{white}{V}}};\vspace*{0.2cm}\nopagebreak
+
+  \item Vocabolario\dotfill \hyperpage{11}
+
+\end{theindex}
