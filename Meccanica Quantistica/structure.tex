@@ -28,7 +28,9 @@
 
 \usepackage{tikz} % Required for drawing custom shapes
 
-\usepackage[italian]{babel} % English language/hyphenation
+\usepackage[italian]{babel} % Italian language/hyphenation
+
+\usepackage{float} % Required for [H] positioniong
 
 \usepackage{enumitem} % Customize lists
 \setlist{nolistsep} % Reduce spacing between bullet points and numbered lists
@@ -49,6 +51,7 @@
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
 \usepackage[utf8]{inputenc} % Required for including letters with accents
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{braket} % Allow the use of braket notation for Q.M.
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY AND INDEX
@@ -201,7 +204,7 @@
 {\small\bf\sffamily}% Theorem head font
 {\;}% Punctuation after theorem head
 {0.25em}% Space after theorem head
-{\small\sffamily{\tiny\ensuremath{\blacksquare}}\nobreakspace\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+{\small\sffamily{\tiny\color{mColor}\ensuremath{\blacksquare}}\nobreakspace\color{mColor}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
 \thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries---\nobreakspace#3.}}% Optional theorem note
 
 \newtheoremstyle{blacknumbox} % Theorem style name
@@ -234,6 +237,8 @@
 \numberwithin{dummy}{section}
 \theoremstyle{mColornumbox}
 \newtheorem{theoremeT}[dummy]{Teorema}
+\newtheorem{lawT}[dummy]{Legge}
+\newtheorem{principleT}[dummy]{Principio}
 \newtheorem{problemT}{Problema}[chapter]
 \newtheorem{exerciseT}{Esercizio}[chapter]
 \theoremstyle{blacknumex}
@@ -267,6 +272,23 @@ leftmargin=0cm,
 rightmargin=0cm,
 innerbottommargin=5pt,
 linewidth=4pt]{tBox}
+
+% Law/Principle box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+backgroundcolor=black!15,
+linecolor=mColor!100,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+innerbottommargin=5pt,
+linewidth=4pt]{lBox}
 
 % Exercise box	  
 \newmdenv[skipabove=7pt,
@@ -317,6 +339,8 @@ innerbottommargin=5pt]{cBox}
 
 % Creates an environment for each type of theorem and assigns it a theorem text style from the "Theorem Styles" section above and a colored box from above
 \newenvironment{theorem}{\begin{tBox}\begin{theoremeT}}{\end{theoremeT}\end{tBox}}
+\newenvironment{law}{\begin{lBox}\begin{lawT}}{\end{lawT}\end{lBox}}
+\newenvironment{principle}{\begin{lBox}\begin{principleT}}{\end{principleT}\end{lBox}}
 \newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{mColor}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}	
 \newenvironment{problem}{\begin{eBox}\begin{problemT}}{\hfill{\color{mColor}\tiny\ensuremath{\blacksquare}}\end{problemT}\end{eBox}}			  
 \newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}	
