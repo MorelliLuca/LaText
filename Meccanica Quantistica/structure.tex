@@ -247,6 +247,7 @@
 \newtheorem{vocabulary}{Vocabolario}[chapter]
 \newtheorem{definitionT}{Definizione}[section]
 \newtheorem{corollaryT}[dummy]{Corollario}
+\newtheorem{lemmaT}[dummy]{Lemma}
 \theoremstyle{mColornum}
 \newtheorem{propositionT}[dummy]{Proposizione}
 
@@ -293,7 +294,7 @@ linewidth=4pt]{lBox}
 % Exercise box	  
 \newmdenv[skipabove=7pt,
 skipbelow=7pt,
-backgroundcolor=mColor!5,
+backgroundcolor=black!5,
 linecolor=mColor,
 innerleftmargin=5pt,
 innerrightmargin=5pt,
@@ -301,7 +302,19 @@ innertopmargin=5pt,
 innerbottommargin=5pt,
 leftmargin=0cm,
 rightmargin=0cm,
-linewidth=1pt]{eBox}	
+linewidth=0pt]{eBox}
+
+% Example box	  
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+backgroundcolor=mColor!5,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=0pt,
+innerbottommargin=0pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=0pt]{exampBox}
 
 % Definition box
 \newmdenv[skipabove=7pt,
@@ -331,7 +344,7 @@ linecolor=mColor,
 backgroundcolor=blue!5,
 innerleftmargin=5pt,
 innerrightmargin=5pt,
-innertopmargin=5pt,
+innertopmargin=0pt,
 leftmargin=0cm,
 rightmargin=0cm,
 linewidth=3pt,
@@ -344,8 +357,9 @@ innerbottommargin=5pt]{cBox}
 \newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{mColor}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}	
 \newenvironment{problem}{\begin{eBox}\begin{problemT}}{\hfill{\color{mColor}\tiny\ensuremath{\blacksquare}}\end{problemT}\end{eBox}}			  
 \newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}	
-\newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}		
-\newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}	
+\newenvironment{example}{\begin{exampBox}\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}\end{exampBox}}		
+\newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}
+\newenvironment{lemma}{\begin{cBox}\begin{lemmaT}}{\end{lemmaT}\end{cBox}}	
 \newenvironment{proposition}{\begin{cBox}\begin{propositionT}}{\end{propositionT}\end{cBox}}
 
 %----------------------------------------------------------------------------------------

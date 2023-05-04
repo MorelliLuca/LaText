@@ -1,0 +1,224 @@
+\section{Operatori dei momenti angolari e le loro prorietà}
+Come si è visto ad ogni osservabile classico la meccanica quantistica fa corrispondere un operatore che ubbidisce al principio di quantizazione. Tra questi operatori quelli dei momenti angolari costituiscono una famiglia la cui importanza è notevole. Da questi nasce un'intera teoria per la loro trattazione.
+\subsection{Gli operatori momento angolare e spin}
+Si definiscono gli \emph{operatori momento angolare} $\{\hat l_i\}$ in analogia con la meccanica classica.
+\begin{definition}
+    Si definisce operatore momento angolare (orbitale):
+    \begin{equation*}
+        \hat l_k=\hat q_i \hat p_j \epsilon_{ijk},
+    \end{equation*}
+    dove $\epsilon_{ijk}$ è il simbolo di Levi-Civita.
+\end{definition}
+Essendo $\hat l_i$ un osservabile va da se che deve essere anche autoaggiunto.\\
+Il principio di quantizzazione impone quindi delle precise regole di commutazione, impartite dalle parentesi di Poisson:
+\begin{equation*}
+    [\hat l_i,\hat l_j]=i\hslash \sum_{k=1}^3\hat l_k\epsilon_{ijk}.
+\end{equation*}
+In meccanica quantistica è però necessario (a suggerirlo è l'esperimento di Sternal Geralch) introdurre anche un momento angolare intrinseco di ogni sistema detto \emph{spin} $\{\hat s_i\}$. Si osserva sperimentalmente che questo si comporta come un momento angolare. Per cui, anche in questo caso, questo operatore deve essere autoaggiunto e secondo il principio di quantizzazione:
+\begin{equation*}
+    [\hat s_i,\hat s_j]=i\hslash \sum_{k=1}^3\hat s_k\epsilon_{ijk}.
+\end{equation*}
+Infine va detto che sperimentalmente si osserva che questi due osservabili sono indipendenti tra di loro. Si traduce matematicamente questa proprietà richiedendo:
+\begin{equation*}
+    [\hat l_i,\hat s_j]=0.
+\end{equation*} 
+
+\subsection{L'operatore momento angolare totale}
+In analogia con la meccanica classica si vuole costruire il momento angolare totale del sistema.
+\begin{definition}
+    Si definisce l'operatore \emph{momento angolare totale}:
+    \begin{equation*}
+        \hat j_i=\hat j_i+\hat s_j.
+    \end{equation*}
+\end{definition}
+Questo operatore eredita (per la sua definizione) tutte le proprietà di commutazione del momento angolare e dello spin.
+\begin{equation*}
+    [\hat j_i,\hat j_j]=i\hslash \sum_{k=1}^3\hat j_k\epsilon_{ijk}.
+\end{equation*}
+Queste relazioni di non commutatività rendono opportuno introdurre un ulteriore operatore $\hat j^2$ definito come l'analogo classico del modulo quadro del vettore $\underline{j}$.
+\begin{definition}
+    Si definisce  l'operatore $\hat j^2=\hat j_1^2+\hat j_2^2+\hat j_3^2$.
+\end{definition}
+Si osservi che $\hat j^2$ commuta con tutte le sue componenti:
+\begin{flalign*}
+    [\hat j^2,\hat j_i]&=\hat j^2\hat j_i-\hat j_i\hat j^2=(\hat j_1^2+\hat j_2^2+\hat j_3^2)\hat j_i-\hat j_i(\hat j_1^2+\hat j_2^2+\hat j_3^2)\\
+    &=\sum_{k=1}^{3}\hat j^2_k\hat j_i-\hat j_i\hat j^2_k=\sum_{k=1}^{3}[\hat j^2_k,\hat j_i]=\sum_{k=1}^{3}j_k[\hat j_k,\hat j_i]+[\hat j_k,\hat j_i]j_k\\
+    &=\sum_{k=1}^{3}\hat j_ki\hslash \sum_{j=1}^3\hat j_j\epsilon_{kij}+\sum_{k=1}^{3}i\hslash \sum_{j=1}^3\hat j_j\epsilon_{kij}\hat j_k\\
+    &=i\hslash\sum_{k=1}^{3}\sum_{j=1}^3\epsilon_{kij}[\hat j_k\hat j_j+\hat j_j\hat j_k]=i\hslash\sum_{k=1}^{3}\sum_{j=1}^3\epsilon_{kij}[\hat j_k\hat j_j-\hat j_k\hat j_j]=0.
+\end{flalign*}
+Inoltre è anche un operatore autoaggiunto infatti essendo autoaggiunto $\hat j_i$:
+\begin{flalign*}
+    (\hat j_i\hat j_i)^*=\hat j_i\hat j_i\quad\Rightarrow\quad(\hat J^2)^*=(\hat j_1^2+\hat j_2^2+\hat j_3^2)^*=\hat j_1^2+\hat j_2^2+\hat j_3^2=\hat J^2.
+\end{flalign*}
+Definendo le coordinate sferiche orientate si può semplificare l'utilizzo di questi operatori.
+\begin{definition}[Base sferica orientata]
+    Si dice \emph{base sferica orientata} l'insieme dei vettori $\{\underline{e}_-1,\underline{e}_0,\underline{e}_1\}$ tali che $\bar{\underline{e}}_\alpha=\underline{e}_{-\alpha}$ e che siano soddisfatte:
+    \begin{flalign*}
+        &\underline{e}_\alpha\cdot\underline{e}_\beta=2^{|\alpha|}\delta_{-\alpha\beta}\\
+        &\underline{e}_\alpha\times\underline{e}_\beta=-i\delta_{\alpha0}\beta\underline{e}_\beta+i\delta_{\beta0}\alpha\underline{e}_\alpha-i\delta_{-\alpha\beta}(\alpha-\beta)\underline{e}_0.
+    \end{flalign*}
+\end{definition}
+Queste due basi sono strettamente collegate, nella fattispecie esiste una corrispondenza uno ad uno data dalle seguenti relazioni (per i vettori delle basi e le componenti di un vettore $\underline{a}$):
+\begin{flalign*}
+    &\underline{e}_0=\underline{e}_3,\quad\underline{e}_{\pm1}=\underline{e}_1\pm i\underline{e}_2,\quad \underline{e}_1=\frac{\underline{e}_{+1}+\underline{e}_{-1}}{2},\quad \underline{e}_{2}=\frac{\underline{e}_{+1}-\underline{e}_{-1}}{2i},\\
+    &a_0=a_3,\quad a_{\pm1}=a_1\pm ia_2,\quad a_1=\frac{a_{+1}+a_{-1}}{2},\quad a_{2}=\frac{a_{+1}-a_{-1}}{2i}.
+\end{flalign*}
+Le medesime relazioni si applicano agli operatori momento angolare:
+\begin{equation*}
+    \hat j_0=\hat j_3,\quad \hat j_{\pm1}=\hat j_1\pm i\hat j_2,\quad \hat j_1=\frac{\hat j_{+1}+\hat j_{-1}}{2},\quad \hat j_{2}=\frac{\hat j_{+1}-\hat j_{-1}}{2i}.
+\end{equation*}
+Così facendo le relazioni di commutazione si semplificano divenendo:
+\begin{equation*}
+    [\hat j_0,\hat j_{\pm1}]=\pm\hslash\hat j_{\pm1},\qquad[\hat j_{\pm1},\hat j_{\mp1}]=\pm2\hslash\hat j_{0}.
+\end{equation*}
+L'operatore $\hat j^2$ in componenti sferiche diviene:
+\begin{equation*}
+    \hat j^2=\hat j_{\pm1}\hat j_{\mp1}+\hat j^2_{0}\mp\hslash\hat j_{0}.
+\end{equation*}
+
+
+\subsection{Sistemi di più particelle}
+Quando si ha a che fare con più momenti angolari e più momenti di spin è naturale definirne la somma.
+\begin{definition}
+    Dati più $\hat l_{\alpha,i},\ \hat s_{\alpha,i}$, con $\hat j_{\alpha,i}=\hat l_{\alpha,i}+\hat s_{\alpha,i}$, si definiscono:
+    \begin{equation*}
+        \hat L_i=\sum_{\alpha} \hat l_{\alpha,i},\qquad
+        \hat S_i=\sum_{\alpha} \hat s_{\alpha,i},\qquad
+        \hat J_i=\hat L_i+\hat S_i.
+    \end{equation*}
+\end{definition}
+\section{Spettro degli operatori momento angolare}
+Si vuole studiare il problema agli autovalori per l'operatore $\hat j_i$ momento angolare totale. Siccome questi operatori non commutano tra loro non formano un insieme completo di operatori commutanti e quindi non è possibile identificare un base di autoket comune a tutti questi operatori. \\È quindi necessario costruire questo insieme a partire da $\hat j_i$. Si è già visto che ogni $\hat j_i$ commuta con l'operatore $\hat j^2$. Per questo motivo si utilizzano questi due operatori per determinare una base di autoket.
+\begin{theorem}
+    Gli autoket simultanei di $\hat j^2$ e $\hat j_0$ sono:
+    \begin{flalign*}
+        &\hat j^2\ket{j,m}=\ket{j,m}\hslash^2 j(j+1),\\
+        &\hat j_0\ket{j,m}=\ket{j,m}\hslash m,\\
+        &\hat j_{\pm1}\ket{j,m}=\ket{j,m\pm1}\hslash \sqrt{j(j+1)-m(m\pm1)}.
+    \end{flalign*}    
+        L'autovalore  $j$ forma uno spettro semiintero non negativo $j=\{0,\frac{1}{2},1,\dots\}$. Per ogni valore di $j$ lo spettro presenta una degenerazione in $2j+1$ autoket indicati da $m=-j,-j+1,\dots,j-1,j+1$. 
+\end{theorem}
+Da questo si ottengono le seguenti relazioni di ortogonalità:
+\begin{flalign*}
+    &\bra{j,m'}\hat j^2\ket{j,m}=\delta_{m,m'}\hslash^2 j(j+1),\\
+    &\bra{j,m'}\hat j_0\ket{j,m}=\delta_{m,m'}\hslash m,\\
+    &\bra{j,m'}\hat j_{\pm1}\ket{j,m}=\delta_{m\pm1,m'}\hslash \sqrt{j(j+1)-m(m\pm1)}.
+\end{flalign*} 
+Ritornando alla base ortogonale cartesiana si ottiene:
+\begin{flalign*}
+    &\hat j_{1}\ket{j,m}=\frac{\ket{j,m+1}}{2}\hslash \sqrt{j(j+1)-m(m+1)}+\frac{\ket{j,m-1}}{2}\hslash \sqrt{j(j+1)-m(m-1)}\\
+    &\hat j_{2}\ket{j,m}=\frac{\ket{j,m+1}}{2i}\hslash \sqrt{j(j+1)-m(m+1)}-\frac{\ket{j,m-1}}{2i}\hslash \sqrt{j(j+1)-m(m-1)}\\
+    &\hat j_3\ket{j,m}=\ket{j,m}\hslash m.
+\end{flalign*}
+Analogamente si ottengono le relazioni di ortogonalità:
+\begin{flalign*}
+    &\bra{j,m'}\hat j_{1}\ket{j,m}=\frac{\delta_{m+1,m'}}{2}\hslash \sqrt{j(j+1)-m(m+1)}+\frac{\delta_{m-1,m'}}{2}\hslash \sqrt{j(j+1)-m(m-1)}\\
+    &\bra{j,m'}\hat j_{2}\ket{j,m}=\frac{\delta_{m+1,m'}}{2i}\hslash \sqrt{j(j+1)-m(m+1)}-\frac{\delta_{m-1,m'}}{2i}\hslash \sqrt{j(j+1)-m(m-1)}\\
+    &\bra{j,m'}\hat j_3\ket{j,m}=\delta_{m,m'}\hslash m.
+\end{flalign*}
+\begin{example}
+    Gli operatori momento angolare per $j=0$ e quindi $m=0$ danno:
+    \begin{flalign*}
+        &\hat j^2\ket{0,0}=0,\\
+        &\hat j_0\ket{0,0}=0,\\
+        &\hat j_{\pm1}\ket{0,0}=0.
+    \end{flalign*}
+    Per $j=\frac{1}{2}$ si ha un doppietto poiché in tal caso $m=-\frac{1}{2},\ \frac{1}{2}$. Agendo gli operatori danno:
+    \begin{flalign*}
+        &\hat j^2\ket{\frac{1}{2},\pm\frac{1}{2}}=\hslash^2\frac{3}{4},\\
+        &\hat j_0\ket{\frac{1}{2},\pm\frac{1}{2}}=\pm\frac{1}{2}\hslash,\\
+        &\hat j_{\pm1}\ket{\frac{1}{2},\pm\frac{1}{2}}=0,\\
+        &\hat j_{\pm1}\ket{\frac{1}{2},\mp\frac{1}{2}}=\ket{\frac{1}{2},\pm\frac{1}{2}}\hslash.
+    \end{flalign*}
+    Questo particolare caso è un sistema a due livelli. Si vedrà che questo caso può essere trattato con il formalismo di Pauli.
+\end{example}
+
+\section{Operatori scalari}
+Non sempre $\hat j_0,\ \hat j^2$ formano un insieme completo di operatori. Per questo è utile introdurre degli operatori che possano essere utilizzati per completare tale insieme.
+\begin{definition}
+    Si dice $\hat A$ \emph{scalare} se:
+    \begin{equation*}
+        [\hat j_i,\hat A]=0\qquad i=1,2,3.
+    \end{equation*}
+    
+\end{definition}
+\begin{example}
+        L'operatore $\hat j^2$ è uno scalare.
+    \end{example}
+Si osservi che, commutando con tutte le componenti dell'operatore momento angolare totale, un operatore scalare commuta anche con $\hat j^2$.\\ Inoltre, in generale, vale un risultato di ortogonalità per autoket simultanei di $\{\hat j_0,\ \hat j^2,\ \hat A\}$. 
+\begin{proposition}
+    Sia $\hat A$ scalare, allora
+    \begin{equation*}
+        \braket{a',j',m'|\hat A|a,j,m}=\frac{\braket{a',j',m'||A||a,j,m}}{\sqrt{2j+1}}\delta_{j',j}\delta_{m',m}.
+    \end{equation*}
+\end{proposition}
+\begin{remark}
+    Si possono utilizzare $\{\hat j_0,\ \hat j^2,\ \hat A_1,\ \hat A_2,\ \dots\}$ (con $\hat A_1,\ \hat A_2,\ \dots$ operatori scalari) per costruire un insieme completo di operatori commutanti. Questo garantisce di poter trovare un'unica base ortonormale di autoket simultanei di tutti questi operatori $\ket{a,j,m}$. Varranno allora:
+    \begin{flalign*}
+        &\hat A_i\ket{a,j,m}=\ket{a,j,m}x(a,j),\\
+        &\hat j^2\ket{a,j,m}=\ket{a,j,m}j\hslash^2(j+1),\\
+        &\hat j_{\pm1}\ket{a,j,m}=\ket{a,j,m\pm1}j\hslash\sqrt{(j+1)-m(m\pm1)},\\
+        &\hat j_i\ket{a,j,m}=\ket{a,j,m}\hslash m.
+    \end{flalign*}
+\end{remark}
+\begin{example}[Atomo di idrogeno]
+    Nell'atomo di idrogeno $\hat l^2$ e $\hat l_0$ non sono sufficienti per trovare una base ortonormale completa di autoket simultanei. In questo caso l'operatore scalare che si può aggiungere è l'hamiltoniano dell'atomo di idrogeno:
+    \begin{equation*}
+        \hat H=\frac{\hat P^2}{2m}-\frac{Ze^2}{4\pi\epsilon_0|\underline{\hat q}|},\qquad [\hat H,\hat l_i]=0.
+    \end{equation*}
+    Gli autoket simultanei in questo caso sono dati da $\ket{n,k,m_l}$, dove $n$ è il numero quantico dell'hamiltoniano che determina l'autovalore energetico $E_n$.
+\end{example}
+
+
+\section{Il momento angolare orbitale nella rappresentazione di Schrödinger}
+Si vuole ora determinare la forma dell'operatore momento angolare orbitale nella rappresentazione di Schrödinge. Per farlo è necessario applicare tali operatori al bra $\bra{\underline x}$:
+\begin{equation*}
+    \bra{\underline x}\underline{\hat l}=\bra{\underline x}\underline{\hat q}\times\underline{\hat p}=i\hslash\underline{x}\times\underline{\nabla}\bra{\underline x}.
+\end{equation*}
+Introducendo la base ortogonale in coordinate sferiche polari $\{\underline e_r,\ \underline e_\varphi,\ \underline e_\vartheta\}$ l'operatrore $\underline x,\ \underline{\nabla}$ assumono la forma:
+\begin{flalign*}
+    &\underline x=r\underline e_r,\qquad \underline{\nabla}=\underline e_r\frac{\partial}{\partial r}+\underline e_\theta\frac{1}{r}\frac{\partial}{\partial \theta}+\underline e_\varphi\frac{1}{r\sin\theta}\frac{\partial}{\partial \varphi},\\
+    &\underline{x}\times\underline{\nabla}=r\underline e_r\times\bigg(\underline e_r\frac{\partial}{\partial r}+\underline e_\theta\frac{1}{r}\frac{\partial}{\partial \theta}+\underline e_\varphi\frac{1}{r\sin\theta}\frac{\partial}{\partial \varphi}\bigg)=\underline e_\varphi\frac{\partial}{\partial \theta}-\underline e_\theta\frac{1}{\sin\theta}\frac{\partial}{\partial \varphi},\\
+    &\Rightarrow\boxed{\bra{\underline x}\underline{\hat l}=-i\hslash\bigg(\underline e_\varphi\frac{\partial}{\partial \theta}-\underline e_\theta\frac{1}{\sin\theta}\frac{\partial}{\partial \varphi}\bigg)\bra{\underline x}}.
+\end{flalign*}
+Le componenti e il modulo quadro sono quindi dati da:
+\begin{flalign*}
+    &\bra{\underline x}\hat l_i=-i\hslash\bigg(\underline e_\varphi\frac{\partial}{\partial \theta}-\underline e_\theta\frac{1}{\sin\theta}\frac{\partial}{\partial \varphi}\bigg)\cdot \underline e_i\bra{\underline x},\\
+    &\bra{\underline x}\hat l^2=-\hslash^2\bigg[\frac{1}{\sin\theta}\frac{\partial}{\partial \theta}\bigg(\sin\theta\frac{\partial}{\partial \theta}\bigg)+\frac{1}{\sin^2\theta}\frac{\partial^2}{\partial \varphi^2}\bigg]\bra{\underline x}.
+\end{flalign*}
+In queste coordinate (sferiche polari) $\bra{\underline x}=\bra{r,\theta,\varphi}=\bra{r}\bra{\theta,\varphi}$. Inoltre per l'operatore $\hat l_i$ valgono le stesse relazioni agli autovalori del'operatore $\hat j_i$:
+\begin{flalign*}
+    &\hat l_0\ket{l,m_l}=\hslash m_l,\\
+    &\hat l^2\ket{l,m_l}=\hslash^2l(l+1).
+\end{flalign*}
+
+\section{Momento angolare di spin}
+Quando è stato precedentemente introdotto lo spin non è stato esplicitamente definito come il momento angolare orbitale. 
+\begin{definition}
+    Si definisce l'operatore momento angolare di spin tramite gli operatori di Pauli:
+\begin{equation*}
+    \underline{\hat s} =\frac{\hslash}{2}\underline{\hat\sigma}.
+\end{equation*}
+\end{definition}
+Questa definizione è consistente con le proprietà dei momenti angolari, infatti dalle definizioni degli operatori di Pauli:
+\begin{equation*}
+    [\hat s_i,\hat s_j]=\bigg(\frac{\hslash}{2}\bigg)^2
+\end{equation*}
+L'operatore $\hat s^2$ è facilmente calcolabile ricordando che $\hat \sigma_k^2=\hat I$:
+\begin{equation*}
+    \hat s^2=\bigg(\frac{\hslash}{2}\bigg)^2\sum_{k=1}{3}\sigma_k^2=3\bigg(\frac{\hslash}{2}\bigg)^2\hat I.
+\end{equation*}
+
+\subsubsection{Spettro dell'operatore momento angolare di spin}
+La teoria di Pauli porta automaticamente lo spin ad essere un operatore con spettro a due stati. Infatti la forma esplicita di $\hat j^2$ suggerisce che l'autovalore di questo debba essere $s=\frac{1}{2}$. \\Questo richiede che gli autoket siano $\ket{\frac{1}{2},\pm\frac{1}{2}}$, tali che:
+\begin{flalign*}
+    &\boxed{\hat s^2 \ket{\frac{1}{2},\pm\frac{1}{2}}=\ket{\frac{1}{2},\pm\frac{1}{2}}\frac{3\hslash^2}{4}}\ ,\\
+    &\boxed{\hat s_0 \ket{\frac{1}{2},\pm\frac{1}{2}}=\ket{\frac{1}{2},\pm\frac{1}{2}}(\pm\frac{\hslash}{2})}\ .
+\end{flalign*}
+
+\section{Fattorizzazione spin orbita}
+
+
+
+
+

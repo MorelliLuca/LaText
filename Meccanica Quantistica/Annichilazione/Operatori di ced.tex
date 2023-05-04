@@ -1,0 +1,144 @@
+\section{Fondamenti matematici degli operatori di creazione e distruzione}
+Un approccio estremamente versatile per la trattazione di sistemi quantomeccanici è quello degli operatori di creazione e distruzione (o annichilazione).
+\subsection{Definizioni degli operatori}
+\begin{definition}[Operatori di creazione/distruzione]
+    Sia $\hat{a}$ un operatore autoaggiunto, si dice che questo è un operatore di distruzione ($\hat{a}^*$ è detto operatore di creazione) se:
+    \begin{equation*}
+        [\hat{a},\hat{a}^*]=\hat{a}\hat{a}^*-\hat{a}^*\hat{a}=\hat{I}.
+    \end{equation*}
+\end{definition}
+Oltre a questi due operatori è necessario definirne un terzo che opera assieme ai primi due.
+\begin{definition}[Operatore numero]
+    Sia $\hat{a}$ un operatore di distruzione, allora si definisce operatore numero $\hat{N}$ il prodotto:
+    \begin{equation*}
+        \hat{N}=\hat{a}^*\hat{a}.
+    \end{equation*}
+\end{definition}
+Questo operatore, così definito, presenta alcune proprietà utili.
+\begin{proposition}
+    L'operatore numero $\hat N$ ha le seguenti proprietà:
+    \begin{itemize}
+        \item è autoaggiunto,
+        \item $[\hat N,\hat a]=-\hat a$,
+        \item $[\hat N,\hat a^*]=-\hat a^*$.
+    \end{itemize}
+\end{proposition}
+\begin{proof}
+    Dalle definizioni si ha:
+    \begin{flalign*}
+    &\hat{N}^*=(\hat{a}^*\hat{a})^*=\hat{a}^*\hat{a}=\hat N,\\&[\hat N,\hat a]=[\hat{a}^*\hat{a},\hat a]=[\hat a^*,\hat a]\hat a+\hat a^*[\hat a,\hat a]=-\hat{I}\hat{a},\\
+    &[\hat N,\hat a^*]=[\hat{a}^*\hat{a},\hat a^*]=[\hat a^*,\hat a^*]\hat a+\hat a^*[\hat a,\hat a^*]=\hat{I}\hat{a}^*.
+\end{flalign*}
+\end{proof}
+\subsection{Spettro dell'operatore numero}
+La proprietà più importante dell'operatore numero è legata al suo spettro e a come esso è strutturato.
+\begin{theorem}
+    Sia $\hat{N}$ un operatore numero, allora il suo spettro è formato dai soli autovalori interi non negativi $\{0,1,2,3,\dots\}$.
+\end{theorem}
+    La dimostrazione di questo teorema è alquanto articolata e per questo è opportuno dividerla in differenti lemmi.
+    \begin{lemma}
+        Sia $\hat{N}$ un operatore numero, $\ket{n}$ un suo autoket di autovalore $n$. Allora  $n\geq0$.
+    \end{lemma}
+    \begin{proof}
+        Per ipotesi, preso un autovalore qualsiasi $n$ con autoket $\ket{n}\neq0$, vale
+        \begin{equation*}
+            \hat N\ket{n}=\ket{n}n,
+        \end{equation*}
+        allora, poiché $\hat N=\hat a^*\hat a$, si ha:
+        \begin{equation*}
+            \braket{n|n}n=\bra{n}|\hat N|\ket{n}=\bra{n}|\hat a^*\hat a|\ket{n}=|hat a|\ket{n}|^2\geq0.
+        \end{equation*}
+        Siccome $\ket{n}\neq0$ e $\braket{n|n}>0$ deve valere anche $n\geq0$.
+    \end{proof}
+    \begin{lemma}
+        Sia $\hat{N}$ un operatore numero, allora il suo più piccolo autovalore è pari a $0$.
+    \end{lemma}
+    \begin{proof}
+        Sia $n_0$ il più piccolo autovalore di $\hat N$ (autoket $\ket{n_0}$), vale
+        \begin{flalign*}
+            \hat N\hat a\ket{n_0}&=(\hat N\hat a+\hat a\hat N-\hat a\hat N)\ket{n_0}=([\hat N,\hat a]+\hat a\hat N)\ket{n_0}\\
+            &=(-\hat a+\hat a\hat N)\ket{n_0}=\hat{a}(\hat N-\hat I)\ket{n_0}=\hat{a}\ket{n_0}(n_0-1).
+        \end{flalign*}
+       Se $\hat a\ket{n_0}\neq0$ allora questo è un autoket dell'operatore numero con autovalore $n_0-1<n_0$. Per ipotesi però $n_0$ è minore di ogni altro autovalore, per cui necessariamente $\hat a\ket{n_0}=0$. Siccome
+       \begin{equation*}
+        \hat N\ket{n_0}=\hat a^*\hat a\ket{n_0}=\hat a^* 0=\ket{n_0}n_0
+       \end{equation*}
+       e per ipotesi $\ket{n_0}\neq0$ (poiché è un autovalore) allora deve essere $n_0=0$.
+    \end{proof}
+    \begin{lemma}
+        Tutti gli interi positivi sono autovalori.\\
+        Inoltre, sia $\ket{n}$ un autoket di autovalore $n$ di $\hat N$ e $\ket{0}$ un autoket di autovalore $0$, allora:
+        \begin{equation*}
+            \ket{n}=(\hat{a}^*)^n\frac{\ket{0}}{\sqrt{n!}}.
+        \end{equation*}
+        \label{lemma:annhNKet}
+    \end{lemma}
+    \begin{proof}
+        Sia $n$ un intero positivo fissato, allora:
+        \begin{flalign*}
+            \hat N (\hat a^*)^n\ket{0}&=\hat N \hat (\hat a^*)^n\ket{0}-\ket{0}0=(\hat N (\hat a^*)^n-(\hat a^*)^n\hat N)\ket{0}=[\hat N,(\hat a^*)^n]\ket{0}.
+        \end{flalign*}
+        Ricordando che, dati tre operatori $\hat O,\hat P,\hat Q$, vale $[\hat O,\hat P\hat Q]=[\hat O,\hat P]\hat Q+\hat P[\hat O,\hat Q]$ si ha:
+         \begin{flalign*}
+            [\hat N,(\hat a^*)^n]=&\hat a^*[\hat N,(\hat a^*)^{n-1}]+[\hat N,\hat a^*](\hat a^*)^{n-1}\\&=(\hat a^*)^2[\hat N,(\hat a^*)^{n-2}]+\hat a^*[\hat N,\hat a^*](\hat a^*)^{n-2}+[\hat N,\hat a^*](\hat a^*)^{n-1}=\dots\\&=\sum_{k=0}^{n-1}(\hat a^*)^k [\hat N,\hat a^*](\hat a^*)^{n-k-1}=\sum_{k=0}^{n-1}(\hat a^*)^k \hat a^*(\hat a^*)^{n-k-1}\\&=\sum_{k=0}^{n-1}(\hat a^*)^n=n(\hat a^*)^n.
+         \end{flalign*}
+         L'equazione iniziale diventa quindi:
+         \begin{equation*}
+            \hat N (\hat a^*)^n\ket{0}=(\hat a^*)^n\ket{0}n
+         \end{equation*}
+         da questa segue che $(\hat a^*)^n\ket{0}$ è una autoket di autovalore $n$. Per cui tutti gli interi positivi sono autovalori dell'operatore numero. Volendo normalizzare questo autoket (supponendo che $\ket{0}$ lo sia) si ha:
+         \begin{flalign*}
+            \braket{0|\hat a^n(\hat{a^*})^n|0}&=\braket{0|\hat a^{n-1}(\hat a \hat a^*)(\hat{a^*})^{n-1}|0}=\braket{0|\hat a^{n-1}[\hat a \hat a^*+\hat a^*\hat a-\hat a^*\hat a ](\hat{a^*})^{n-1}|0}\\
+            &=\braket{0|\hat a^{n-1}[[\hat a, \hat a^*]+\hat N](\hat{a^*})^{n-1}|0}=\braket{0|\hat a^{n-1}[\hat I+\hat N](\hat{a^*})^{n-1}|0}\\
+            &=\braket{0|\hat a^{n-1}(\hat{a^*})^{n-1}|0}+\braket{0|\hat a^{n-1}\hat N(\hat{a^*})^{n-1}|0}\\&=\braket{0|\hat a^{n-1}(\hat{a^*})^{n-1}|0}+\braket{0|\hat a^{n-1}(\hat{a^*})^{n-1}|0}(n-1)\\&=\braket{0|\hat a^{n-1}(\hat{a^*})^{n-1}|0}n=\dots=\braket{0|0}n!,\\
+            \Longrightarrow\ket{n}&=\frac{ (\hat a^*)^n\ket{0}}{\sqrt{n!}}.
+         \end{flalign*}
+    \end{proof}
+    \begin{lemma}
+        L'operatore numero $\hat N$ non ha autovalori non interi.
+    \end{lemma}
+    \begin{proof}
+        Si supponga che $x\neq 0,1,2,\dots$ sia un autovalore di $\hat N$, con autoket $\ket{x}$. Preso $n$ intero non negativo, ricordando il risultato già noto si ha:
+        \begin{flalign*}
+            \hat N \hat a^n\ket{x}&=(\hat N \hat a^n+\hat a^n\hat N-\hat a^n\hat N )\ket{x}=([\hat N, \hat a^n]+\hat a^n\hat N )\ket{x}\\&=[\hat N, \hat a^n]\ket{x}+\hat a^n\ket{x} x.
+        \end{flalign*} 
+        Come si è già fatto nella dimostrazione del precedente lemma, vale:
+        \begin{flalign*}
+            [\hat N,(\hat a )^n]=&\hat a [\hat N,(\hat a )^{n-1}]+[\hat N,\hat a ](\hat a )^{n-1}\\&=(\hat a )^2[\hat N,(\hat a )^{n-2}]+\hat a [\hat N,\hat a ](\hat a )^{n-2}+[\hat N,\hat a ](\hat a )^{n-1}=\dots\\&=\sum_{k=0}^{n-1}(\hat a )^k [\hat N,\hat a ](\hat a )^{n-k-1}=\sum_{k=0}^{n-1}(\hat a )^k (-\hat a) (\hat a )^{n-k-1}\\&=-\sum_{k=0}^{n-1}(\hat a )^n=-n(\hat a )^n.
+         \end{flalign*}
+         L'equazione precedente diventa:
+         \begin{equation*}
+            \hat N \hat a^n\ket{x}=(x-n)\ket{x},
+         \end{equation*}
+         ne segue che $\hat a^n\ket{x}$ è un autoket di autovalore minore di $x$. Se ora si prende $n>x$, si ha che $\hat a^n\ket{x}$ ha ora autovalore negativo. Questo è un assurdo (per i lemmi precedenti) e quindi deve essere $\hat a^n\ket{x}=0$. Si osservi, da questo risultato e ricordando $\hat N \hat a^n\ket{x}=(x-n)\ket{x}$, che:
+         \begin{flalign*}
+            0&=\braket{x|(\hat a^*)^n\hat a^n|x}=\braket{x|(\hat a^*)^{n-1}(\hat a^*\hat a)\hat a^{n-1}|x}=\braket{x|(\hat a^*)^{n-1}\hat N\hat a^{n-1}|x}\\&=\braket{x|(\hat a^*)^{n-1}\hat a^{n-1}|x}(x-n+1)=\dots\\&=\braket{x|x}x(x-1)\dots(x-n+1),
+         \end{flalign*}
+         poiché $x(x-1)\dots(x-n+1)\neq0$ allora deve essere $\braket{x|x}$. Per questo si ha l'assurdo $\ket{x}=0$ (poiché inizialmente si è supposto che $\ket{x}$ sia un autoket di $\hat N$). Ne segue che non vi possono essere autovalori non interi. 
+    \end{proof}
+    \subsection{Creazione e distruzione di un autoket}
+    Si osservi che dal lemma \ref{lemma:annhNKet} si ha che l'autoket di autovalore $n$ è legato all'autoket di autovalore $n+1$ nel seguente modo:
+    \begin{flalign*}
+        &\ket{n}=(\hat{a}^*)^n\frac{\ket{0}}{\sqrt{n!}},\qquad \ket{n+1}=(\hat{a}^*)^{n+1}\frac{\ket{0}}{\sqrt{(n+1)!}},\\
+        &\Longrightarrow\hat a^*\ket{n}=(\hat{a}^*)^{n+1}\frac{\ket{0}}{\sqrt{(n)!}}=(\hat{a}^*)^{n+1}\frac{\ket{0}}{\sqrt{(n+1)!}}\sqrt{n+1},\\
+        &\Longrightarrow\boxed{\hat a^*\ket{n}=\ket{n+1}\sqrt{n+1}}\ .
+    \end{flalign*} 
+    Analogamente l'autoket di autovalore $n$ è legato all'autoket di autovalore $n-1$ nel seguente modo:
+    \begin{flalign*}
+        &\ket{n}=(\hat{a}^*)^n\frac{\ket{0}}{\sqrt{(n!)}},\qquad \ket{n-1}=(\hat{a}^*)^{n-1}\frac{\ket{0}}{\sqrt{(n-1)!}},\\
+        &\Longrightarrow \hat a\ket{n}=\hat a\hat a^*(\hat{a}^*)^{n-1}\frac{\ket{0}}{\sqrt{(n!)}}=(\hat a\hat a^*+\hat a^*\hat a-\hat a^*\hat a) \frac{\ket{n-1}}{\sqrt{n}}=(\hat I +\hat N)\frac{\ket{n-1}}{\sqrt{n}},\\
+        &\qquad\quad\ \ \ =\frac{\ket{n-1}}{\sqrt{n}}+(n-1)\frac{\ket{n-1}}{\sqrt{n}}=n\frac{\ket{n-1}}{\sqrt{n}}\\
+        &\Longrightarrow\boxed{\hat a\ket{n}=\ket{n-1}\sqrt{n}}\ .
+    \end{flalign*}
+    Inoltre si ha che $\hat a\ket{0}=0$ poiché:
+    \begin{equation*}
+        \braket{0|\hat N|0}=\braket{0|\hat a^*\hat a|0}=|\hat a\ket{0}|^2=0.
+    \end{equation*}
+    Infine si ha che questi autoket sono una base ortonormale (siccome sono normalizzati e autoket di un operatore autoaggiunto).
+\subsection{Sistemi di più operatori di creazione e distruzione}
+    In alcuni casi può essere utile considerare più operatori di creazione e distruzione $\hat{a}_i$.\\
+    Se valgono le seguenti regole di commutazione
+    \begin{equation*}
+        [\hat a_i,\hat a^*_j]=\hat I \delta_{ij}
+    \end{equation*}
+    gli operatori numero $\hat N_i=\hat a^*_i\hat a_i$ commutano tra loro. In questo modo questi formano una un insieme di operatori commutanti con spettro discreto intero e positivo. Tutta la trattazione per un solo operatore numero può quindi essere generalizzata a questo caso.

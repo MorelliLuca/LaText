@@ -1,4 +1,4 @@
-\section{Fondamenti fisici e matematici dei sistemi a due stati}
+\section{Fondamenti matematici dei sistemi a due stati}
 Il modello del sistema a due stati è un approccio allo studio di un sistema estremamente utile: da un lato è di facile analisi e dall'altro è molto versatile.\\ 
 Un sistema di questo tipo (come particelle con spin $\frac{1}{2}$ o un quibit) è caratterizzato dalla proprietà di poter assumere due soli stati differenti. Questa proprietà si traduce matematicamente nella richiesta di avere uno spazio degli stati a due dimensioni. Sulla base di questa sola richiesta si può costruire un formalismo operatoriale noto come \emph{formalismo di Pauli}.
 
@@ -287,9 +287,9 @@ Il formalismo di Pauli fornisce il seguente risultato per tale rotazione:
 Si può quindi procedere esplicitando la relazione:
 \begin{flalign*}
     \ket{\underline{n},+1}&=\exp\bigg(i\frac{\vartheta}{2}\underline{n}\cdot\hat{\underline{\sigma}}\bigg)\ket{e_0,+1}\\&=\cos\bigg(\frac{\vartheta}{2}\bigg)\hat{I}-\frac{1}{2}\sin\bigg(\frac{\vartheta}{2}\bigg)[\exp(-i\varphi)\hat{\sigma}_{+1}-\exp(i\varphi)\hat{\sigma}_{-1}]\ket{e_0,+1}\\
-    \Rightarrow\quad&\boxed{\ket{\underline{n},+1}=\ket{e_0,+1}\cos\bigg(\frac{\vartheta}{2}\bigg)+\ket{e_0,+1}\sin\bigg(\frac{\vartheta}{2}\bigg)\exp(i\varphi)}\ ,\\
+    \Rightarrow\quad&\boxed{\ket{\underline{n},+1}=\ket{e_0,+1}\cos\bigg(\frac{\vartheta}{2}\bigg)+\ket{e_0,-1}\sin\bigg(\frac{\vartheta}{2}\bigg)\exp(i\varphi)}\ ,\\
     \ket{\underline{n},-1}&=\exp\bigg(i\frac{\vartheta}{2}\underline{n}\cdot\hat{\underline{\sigma}}\bigg)\ket{e_0,-1}\\&=\cos\bigg(\frac{\vartheta}{2}\bigg)\hat{I}-\frac{1}{2}\sin\bigg(\frac{\vartheta}{2}\bigg)[\exp(-i\varphi)\hat{\sigma}_{+1}-\exp(i\varphi)\hat{\sigma}_{-1}]\ket{e_0,-1}\\
-    \Rightarrow\quad&\boxed{\ket{\underline{n},-1}=\ket{e_0,-1}\cos\bigg(\frac{\vartheta}{2}\bigg)-\ket{e_0,-1}\sin\bigg(\frac{\vartheta}{2}\bigg)\exp(-i\varphi)}\ .
+    \Rightarrow\quad&\boxed{\ket{\underline{n},-1}=\ket{e_0,+1}\cos\bigg(\frac{\vartheta}{2}\bigg)-\ket{e_0,-1}\sin\bigg(\frac{\vartheta}{2}\bigg)\exp(-i\varphi)}\ .
 \end{flalign*}
 Dove si ricorda $\cos\vartheta=n_0=n_3$ e $\exp{(\pm i\varphi)}=\sqrt{\frac{n_{\pm1}}{n_{\mp1}}}=\sqrt{\frac{n_1\pm in_2}{n_1\mp in_2}}$.\label{example:nSigma0}
 \end{example}
@@ -368,11 +368,60 @@ In questo caso valgono le seguenti approssimazioni\footnote{Si ricorda l'appross
     \bigg|\frac{\Delta h_{0}}{2}\underline{e}_0+\underline{w}\bigg|&=\sqrt{\bigg(\frac{\Delta h_{0}}{2}\bigg)^2+\Delta h_{0}w_0+|\underline{w}|^2}=\frac{\Delta h_0}{2}\sqrt{1+\bigg[\frac{4w_0}{\Delta h_0}+\bigg(\frac{2|\underline{w}|}{\Delta h_{0}}\bigg)^2\bigg]}\\&=\frac{\Delta h_0}{2}\bigg[1+\frac{1}{2}\bigg[\frac{4w_0}{\Delta h_0}+\bigg(\frac{2|\underline{w}|}{\Delta h_{0}}\bigg)^2\bigg]-\frac{1}{8}\bigg[\frac{4w_0}{\Delta h_0}+\bigg(\frac{2|\underline{w}|}{\Delta h_{0}}\bigg)^2\bigg]^2+O\bigg(\frac{|\underline{w}|}{\Delta h_{0}}\bigg)^3\bigg]\\&=\frac{\Delta h_0}{2}\bigg[1+\frac{2w_0}{\Delta h_0}+2\bigg(\frac{|\underline{w}|}{\Delta h_{0}}\bigg)^2-2\bigg(\frac{w_0}{\Delta h_{0}}\bigg)^2+O\bigg(\frac{|\underline{w}|}{\Delta h_{0}}\bigg)^3\bigg]\\&=\frac{\Delta h_0}{2}+w_0+\frac{|\underline{w}|^2-w_0^2}{\Delta h_{0}}+O\bigg(\frac{|\underline{w}|^3}{\Delta h_{0}^2}\bigg)\\&=\frac{\Delta h_0}{2}+w_0+\frac{w_{+1}w_{-1}}{\Delta h_{0}}+O\bigg(\frac{|\underline{w}|^3}{\Delta h_{0}^2}\bigg),\\
     \Longrightarrow\qquad &\boxed{h_{\pm1}=h_{0,m}+w_m\pm\bigg[\frac{\Delta h_0}{2}+w_0+\frac{w_{+1}w_{-1}}{\Delta h_{0}}\bigg]+O\bigg(\frac{|\underline{w}|^3}{\Delta h_{0}^2}\bigg)}\ .
 \end{flalign*}
-Con conti analoghi si ottiene: l'approssimazione degli autostati
+Con conti analoghi si ottiene: l'approssimazione degli autostati e ella differenza di energia:
 \begin{equation*}
-    \boxed{\ket{\pm1}=\ket{0,\pm1}\pm\ket{0,\pm1}\frac{w_{\pm 1}}{\Delta h_0}+O\bigg(\frac{|\underline{w}|^2}{\Delta h_{0}^2}\bigg)}\,
+    \boxed{\ket{\pm1}=\ket{0,\pm1}\pm\ket{0,\pm1}\frac{w_{\pm 1}}{\Delta h_0}+O\bigg(\frac{|\underline{w}|^2}{\Delta h_{0}^2}\bigg)}\qquad\boxed{\Delta h=\Delta h_0+2w_0+2\frac{w_{+1}w_{-1}}{\Delta h_{0}}+O\bigg(\frac{|\underline{w}|^3}{\Delta h_{0}^2}\bigg)}\ .
 \end{equation*}
-l'approssimazione della differenza di energia dei due livelli:
-\begin{equation*}
-    \boxed{\Delta h=\Delta h_0+2w_0+2\frac{w_{+1}w_{-1}}{\Delta h_{0}}+O\bigg(\frac{|\underline{w}|^3}{\Delta h_{0}^2}\bigg)}\ .
-\end{equation*}
+\begin{example}[Molecola di $H_2^+$]
+    Si vuole studiare un sistema formato da due nuclei di idrogeno legati ad un unico elettrone a formare la molecola $H_2^+$.
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \draw[fill=yellow!20] (-1.5,0) ellipse (30pt and 15pt);
+            \draw[fill=red] (-1,0)node[scale=.7,color=white]{$p$} circle (.2);
+            \draw[fill=red] (-2,0)node[scale=.7,color=white]{$p$} circle (.2);
+            \draw[fill=blue] (-2.45,.2)node[scale=.7,anchor=south east]{$e$} circle (.1);
+            \node[scale=.7] at (-1.5,-.8){Stato fondamentale};
+            \draw[fill=yellow!20] (-2+3,0) circle (.5);
+            \draw[dotted,thick,black!20] (-1.5+3,0) ellipse (30pt and 15pt);
+            \draw[fill=red] (-1+3,0)node[scale=.7,color=white]{$p$} circle (.2);
+            \draw[fill=red] (-2+3,0)node[scale=.7,color=white]{$p$} circle (.2);
+            \draw[fill=blue] (-2.45+3,.2)node[scale=.7,anchor=south east]{$e$} circle (.1);
+            \node[scale=.7] at (-1.5+3,-.8){Stato $a$};
+            \draw[fill=yellow!20] (-1+6,0) circle (.5);
+            \draw[dotted,thick,black!20] (-1.5+6,0) ellipse (30pt and 15pt);
+            \draw[fill=red] (-1+6,0)node[scale=.7,color=white]{$p$} circle (.2);
+            \draw[fill=red] (-2+6,0)node[scale=.7,color=white]{$p$} circle (.2);
+            \draw[fill=blue] (-.55+6,.2)node[scale=.7,anchor=south west]{$e$} circle (.1);
+            \node[scale=.7] at (-1.5+6,-.8){Stato $b$};
+        \end{tikzpicture}
+    \end{figure}
+    Il sistema in questione non rappresenta un problema di facile risoluzione: infatti nello stato fondamentale l'elettrone interagisce con entrambi i nuclei. Per semplificare lo studio di questo sistema è possibile considerare due particolari stati del sistema nei quali l'elettrone è legato ad uno solo dei due protoni (Stati $a$ e $b$). Questi due stati sono ortogonali (siccome uno esclude l'altro) e formano una base di stati (non autostati energetici però). In questo modo si può utilizzare la teoria di Pauli per descrivere gli autostati energetici in funzione di questi altri due stati più elementari.\\
+    In questo modo l'hamiltoniano del sistema $\hat{H}$ può essere scomposto in due parti:
+    \begin{flalign*}
+        \hat{H}&=\hat{I}\hat{H}\hat{I}=[\ket{a}\bra{a}+\ket{b}\bra{b}]\hat{H}[\ket{a}\bra{a}+\ket{b}\bra{b}]\\
+        &=\ket{a}\bra{a}\hat{H}\ket{a}\bra{a}+\ket{a}\bra{a}\hat{H}\ket{b}\bra{b}+\ket{b}\bra{b}\hat{H}\ket{a}\bra{a}+\ket{b}\bra{b}\hat{H}\ket{b}\bra{b}.
+    \end{flalign*}
+    Definendo
+    \begin{equation*}
+        \bra{a}\hat{H}\ket{a}=\bra{b}\hat{H}\ket{b}=h_{0},\qquad \bra{a}\hat{H}\ket{b}=w,\qquad \bra{b}\hat{H}\ket{a}=\overline w
+    \end{equation*}
+    dove $\bra{a}\hat{H}\ket{a}=\bra{b}\hat{H}\ket{b}$ per simmetria del sistema, si ottiene:
+    \begin{equation*}
+        \hat{H}=h_0[\ket{a}\bra{a}+\ket{b}\bra{b}]+w[\ket{a}\bra{b}]+\overline w[\ket{b}\bra{a}].
+    \end{equation*}
+    Infine, ricordando che in coordinate sferiche $\hat \sigma_{\pm1}=2\ket{\pm1}\bra{\mp1}$, si riconduce l'hamiltoniano a combinazioni di operatori di Pauli:
+    \begin{equation*}
+        \hat{H}=h_0\hat{I}+\frac{1}{2}[w\hat \sigma_{+1}+\overline{w}\hat\sigma_{-1}]=\hat{H}_0+\hat{W}.
+    \end{equation*}
+    Dai risultati dell'ultima sezione si ottiene quindi
+    \begin{flalign*}
+        &\cos\vartheta=\underline e_{0}\cdot\frac{w\underline{e}_{+1}+\overline w\underline{e}_{-1}}{2}=0\quad \Rightarrow\quad \vartheta=\frac{\pi}{2},\\&\exp{(+i\varphi)}=\sqrt{\frac{w_{+1}}{w_{-1}}}=\frac{w}{|w|},\quad\exp{(-i\varphi)}=\sqrt{\frac{w_{-1}}{w_{+1}}}=\frac{\overline w}{|w|}
+    \end{flalign*}
+    e lo stato fondamentale (quello a energia più bassa) è quindi:
+    \begin{flalign*}
+        &\ket{-1}=\ket{a}\cos\bigg(\frac{\vartheta}{2}\bigg)-\ket{b}\sin\bigg(\frac{\vartheta}{2}\bigg)\exp(-i\varphi)=\frac{\ket{a}-\ket{b}\overline{w}/|w|}{\sqrt{2}},\\
+        &h_{-1}=h_0-|w\underline e_{+1}+\overline w\underline e_{-1}|=h_0-w.
+    \end{flalign*}
+    Lo stato fondamentale rappresenta la configurazione in cui i due nuclei sono legati dall'elettrone che quindi occupa l'orbitale di legame ($\sigma$). Lo stato eccitato invece presenta un'orbitale elettronico detto di antilegame ($\sigma^*$).
+\end{example}

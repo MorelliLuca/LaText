@@ -1,0 +1,21 @@
+\section{Equazione di Schrödinger}
+Come si è visto, uno stato quantomeccanico consente di ottenere gli osservabili del sistema a cui appartiene attraverso l'uso di operatori autoaggiunti. Inoltre si è sempre fatto riferimento ad uno stato definito in un istante e di cui si vogliono misurare alcuni osservabili. Si vuole ora descrivere l'evoluzione temporale di tale stato.\\
+
+Sia $\ket{\psi_0}$ lo stato del sistema ad un istante iniziale $t=0$, si indicherà con $\ket{\psi(t)}$ il suo stato ad un istante successivo $t$. L'evidenza sperimentale mostra che gli stati $\ket{\psi(t)}$ sono soluzione della nota \emph{equazione di Schrödinger}:
+\begin{equation}
+    i\hslash\frac{d\ket{\psi(t)}}{dt}=\hat H(t)\ket{\psi(t)},\label{eqSchr}
+\end{equation}
+dove $\hat H(t)$ è l'operatore hamiltonano, ovvero l'operatore associato all'energia del sistema in un istante $t$. Imponendo $\ket{\psi(0)}=\ket{\psi_0}$ si ottiene il problema di Cauchy che ha come soluzione l'evoluzione temporale dello stato.
+\section{L'operatore di evoluzione temporale}
+Si osservi che l'equazione di Schrödinger \eqref{eqSchr} è un'equazione lineare, questo ha due dirette conseguenze:
+\begin{itemize}
+    \item se così non fosse non varrebbe il Principio di sovrapposizione,
+    \item si può esprimere ogni stato come combinazione lineare di altri stati precedenti (quindi esiste un operatore lineare che fa questa operazione).
+\end{itemize}
+Si desidera costruire un operatore che descriva l'evoluzione del sistema associando ad uno stato iniziale il suo evoluto.
+\begin{definition}
+    Si definisce $\hat U(t,0)$ \emph{operatore di evoluzione temporale} se dato uno stato $\ket{\psi(t)}$:
+    \begin{equation*}
+        \ket{\psi(t)}=\hat U(t,s)\ket{\psi(s)}.
+    \end{equation*}
+\end{definition}

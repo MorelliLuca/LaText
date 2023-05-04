@@ -1,0 +1,53 @@
+\section{L'oscillatore armonico con operatori di distruzione e creazione}
+Come è noto un oscillatore armonico quantistico è descritto da un'hamiltoniano
+\begin{equation}
+    \hat H=\frac{\hat p^2}{2m}+\frac{m\omega^2}{2}\hat q^2
+\end{equation}
+e ha uno spettro energetico discreto
+\begin{equation*}
+    E_n=\hslash \omega\bigg(n+\frac{1}{2}\bigg),\qquad n\in\mathbb{N}_{0}.
+\end{equation*}
+Questa sua natura lo rende facilmente descrivibile dal formalismo che si è appena introdotto.\\
+
+Per prima cosa, utilizzando gli operatori posizione $\hat q$ e impulso $\hat p$, si possono costruire i seguenti operatori di distruzione/creazione:
+\begin{equation}
+    \hat a=\frac{\hat p-im\omega\hat q}{\sqrt{2m\hslash \omega}},\qquad\hat a^*=\frac{\hat p+im\omega\hat q}{\sqrt{2m\hslash \omega}}.
+\end{equation}
+Si dimostra che questi rispettano la definizione di operatori di distruzione/creazione\footnote{Si ricorda che $[\hat q,\hat p]=i\hslash$.}:
+\begin{flalign*}
+    [\hat a,\hat a^*]=[\frac{\hat p-im\omega\hat q}{\sqrt{2m\hslash \omega}},\frac{\hat p+im\omega\hat q}{\sqrt{2m\hslash \omega}}]=\frac{[\hat p,\hat p]+m\omega[\hat q,\hat q]-2im\omega[\hat q,\hat p]}{2m\hslash\omega}=-\frac{2i^2\hslash m\omega}{2m\hslash\omega}\hat{I}=\hat{I}.
+\end{flalign*}
+L'operatore numero è quindi:
+\begin{equation}
+    \hat N=\frac{\hat p-im\omega\hat q}{\sqrt{2m\hslash \omega}}\frac{\hat p+im\omega\hat q}{\sqrt{2m\hslash \omega}}=\frac{\hat p^2+m^2\omega^2\hat q^2+im\omega[\hat q,\hat p]}{2m\hslash \omega}=\frac{1}{\hslash\omega}\hat H-\frac{\hat I}{2}.
+\end{equation}
+Così facendo l'hamiltoniano più essere scritto in funzione dell'operatore numero:
+\begin{equation}
+    \hat H=\hslash\omega\bigg(\hat N+\frac{\hat I}{2}\bigg),
+\end{equation}
+da cui segue subito che gli autoket dell'operatore numero lo sono anche per l'hamiltoniano e hanno autovalore pari a quello energetico $E_n$.\\
+
+A questo punto si vogliono trovare le funzioni d'onda dell'oscillatore armonico. Per farlo si definiscono:
+\begin{equation}
+    \phi_n(x)=\braket{x|n},\quad \text{tali che }\bra{x}\hat p=-i\hslash\frac{d}{dx},\quad \bra{x}\hat q=x\quad \text{e }\ket{n}\text{ autoket di }\hat N.
+\end{equation}
+In questo modo si ha la seguente equazione differenziale per lo stato fondamentale:
+\begin{flalign*}
+    &\braket{x|\hat a|0}=\bra{x}\frac{\hat p-im\omega\hat q}{\sqrt{2m\hslash \omega}}\ket{0}=\frac{-i\hslash\frac{d}{dx}-im\omega x}{\sqrt{2m\hslash \omega}}\braket{x|0}\\
+    &\Longrightarrow \frac{d\phi_0}{dx}(x)+\frac{m\omega}{\hslash} x\phi_0(x)=0.
+\end{flalign*}
+La soluzione (normalizzata) di questa equazione differenziale a variabili separabili è data da:
+\begin{equation}
+    \braket{x|0}=\phi_0(x)=\sqrt[4]{\frac{2m\omega}{\pi\hslash}}\exp\bigg(-\frac{m\omega}{\hslash} \frac{x^2}{2}\bigg).
+\end{equation}
+Noto lo stato fondamentale gli operatori di creazione consentono di determinare gli stati successivi. Infatti, dai risultati della sezione precedente:
+\begin{flalign*}
+    &\ket{n}=\frac{(\hat a^*)^n}{\sqrt{n!}}\ket{0},
+    \\ &\Rightarrow\phi_n(x)=\braket{x|n}=\braket{x|\frac{(\hat a^*)^n}{\sqrt{n!}}|n}=\bigg(\frac{-i\hslash\frac{d}{dx}-im\omega x}{\sqrt{2m\hslash \omega}}\bigg)^n\frac{\braket{x|n}}{\sqrt{n!}}\\
+    &\qquad=\frac{1}{\sqrt{n!}}\sqrt[4]{\frac{2m\omega}{\pi\hslash}}\bigg(\frac{-i\hslash\frac{d}{dx}-im\omega x}{\sqrt{2m\hslash \omega}}\bigg)^n\exp\bigg(-\frac{m\omega}{\hslash} \frac{x^2}{2}\bigg).
+\end{flalign*}
+La formula ottenuta consente di calcolare tutte le autofunzioni energetiche dell'oscillatore armonico semplicemente con delle derivate.\\
+Si osservi infine che nella formula trovata, se calcolata esplicitamente, compaiono i polinomi di Hermite ($H_n(x)$), per cui:
+\begin{equation*}
+    \phi_n(x)=-\frac{i^n\hslash^n}{\sqrt{n!(2m\hslash \omega)^n}}\sqrt[4]{\frac{2m\omega}{\pi\hslash}}H_n\bigg(\sqrt{\frac{m\omega}{\hslash}}x\bigg)\exp\bigg(-\frac{m\omega}{\hslash} \frac{x^2}{2}\bigg).
+\end{equation*}  

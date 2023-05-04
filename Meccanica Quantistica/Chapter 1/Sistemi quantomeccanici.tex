@@ -106,8 +106,9 @@ Infine è importante definire, in analogia geometrica, cosa siano due vettore or
 \end{definition}
 Se ora si considerando due vettori normalizzati e ortogonali $\ket{\alpha}$ e $\ket{\beta}$, la cui combinazione lineare da luogo allo stato $\ket{\gamma}$, si ha che $\braket{\alpha|\gamma}$ è proprio il coefficiente di $\ket{\alpha}$ nella combinazione lineare.
 \section{Osservabili di un sistema}
+Ora che si è definito il formalismo con cui descrivere uno stato è necessario descrivere matematicamente come da tale stato sia possibile ottenere le quantità misurabili sperimentalmente, ossia gli osservabili. Inoltre si vuole poter definire questi osservabili in analogia con quelli classici e in maniera tale che si comportino similmente a questi.
 \subsection{Osservabili e operatori lineari}
-Ora che si è definito il formalismo con cui descrivere uno stato è necessario descrivere matematicamente come da tale stato sia possibile ottenere le quantità misurabili sperimentalmente, ossia gli osservabili. Inoltre si vuole poter definire questi osservabili in analogia con quelli classici e in maniera tale che si comportino similmente a questi. \\Per poter capire come ottenere gli osservabili è necessario fare un'ipotesi generale ma anche di buon senso: come si è visto tramite prodotti scalari, ossia particolari operatori lineari, è possibile ottenere le informazioni determinanti sullo stato di sovrapposizione del sistema, ossia i coefficienti delle sovrapposizioni, è quindi sensato supporre che siano sempre altri operatori lineari, o più in generale combinazioni di questi, a permettere di ottenere gli osservabili caratteristici dello stato.\\ 
+Per poter capire come ottenere gli osservabili è necessario fare un'ipotesi generale ma anche di buon senso: come si è visto tramite prodotti scalari, ossia particolari operatori lineari, è possibile ottenere le informazioni determinanti sullo stato di sovrapposizione del sistema, ossia i coefficienti delle sovrapposizioni, è quindi sensato supporre che siano sempre altri operatori lineari, o più in generale combinazioni di questi, a permettere di ottenere gli osservabili caratteristici dello stato.\\ 
 
 Si consideri l'esperimento di polarizzazione della luce, all'interazione tra filtro e fotone si associa un operatore $\hat Q$ e allo stato del fotone il vettore $\ket{\alpha}$: si consideri in primo luogo il fotone polarizzato come il filtro, si osserva quindi che questi due interagiscono e il fotone finale è ancora nel suo stato iniziale, si può dire che $\hat Q\ket{\alpha}=\ket\alpha$, viceversa se la polarizzazione del fotone è perpendicolare a quella del filtro si ha $\hat Q\ket{\alpha}=0$ per indicare che il fotone è stato assorbito. Questa considerazione suggerisce che il valore dell'osservabile è rappresentato dagli autovalori dell'operatore: in questo caso le due relazioni descritte esprimono due autovalori $0$ e $1$, corrispondenti agli osservabili di polarizzazione rispettivamente coincidente e normale al filtro.\\ A ognuno di questi autovalori è associato uno o più autovettori (o autoket) $\hat Q$.\\
 Considerando ora un fotone con polarizzazione qualsiasi si può considerare lo stato come un sovrapposizione degli stati di polarizzatone parallela e normale a quella del filtro, si indicheranno questi due fissando i valori di $\alpha$ pari agli autovalori di $\hat Q$, così che si abbia:
@@ -161,6 +162,49 @@ Direttamente dalla definizione di operatore autoaggiunto si hanno alcune proprie
     \end{equation*}
     ma poiché per ipotesi $\xi\neq\lambda$ allora necessariamente $\braket{\lambda|\xi}=0$.
 \end{proof}
+\subsection{Commutatori}
+Ora che si sono introdotti gli operatori e il loro ruolo nella meccanica quantistica è opportuno osservare che questi ubbidiscono ad una particolare algebra. Non è garantito in alcun modo, infatti, che il prodotto di due operatori sia commutativo. Per descrivere quando tale proprietà è rispettata si introduce un oggetto ad'hoc.
+\begin{definition}[Commutatori]
+    Siano $\hat A$ e $\hat B$ due operatori lineari, si definisce il loro commutatore:
+    \begin{equation*}
+        [\hat A,\hat B]=\hat A\hat B-\hat B\hat A.
+    \end{equation*}
+\end{definition}
+In generale il commutatore di due operatori è un nuovo operatore. Nel caso particolare in cui questo sia l'operatore nullo allora si ha che il prodotto dei due operatori è commutativo.
+\begin{proposition}
+    $[\hat A,\hat B]=0\Longleftrightarrow \hat A\hat B=\hat B\hat A.$
+\end{proposition}
+\begin{proof}
+    Si supponga che $[\hat A,\hat B]=0$, questo implica che:
+    \begin{equation*}
+        \hat A\hat B-\hat B\hat A=0\qquad\Rightarrow\qquad\hat A\hat B=\hat B\hat A
+    \end{equation*}
+    che è quanto si desidera dimostrare.\\
+    L'implicazione opposta è direttamente dimostrata siccome se $\hat A\hat B=\hat B\hat A$ necessariamente il commutatore deve essere nullo.
+\end{proof}
+Si osservi che il commutatore è bilineare e gode di alcune proprietà notevoli.
+\begin{proposition}
+    Il commutatore gode delle seguenti proprietà:
+    \begin{itemize}
+        \item $[\hat A,\hat B]=-[\hat B,\hat A]$,
+        \item $[\hat A,\hat B\hat C]=[\hat A,\hat B]\hat C+\hat B[\hat A,\hat C]$,
+        \item $[\hat A\hat C,\hat B]=[\hat A,\hat B]\hat C+\hat A[\hat C,\hat B]$,
+        \item $[\hat A,[\hat B,\hat C]]+[\hat B,[\hat C,\hat A]]+[\hat C,[\hat A,\hat B]]=0$.
+    \end{itemize}
+    \begin{proof}
+        Le proprietà si dimostrano facilmente dalla definizione di commutatore.
+    \end{proof}
+\end{proposition}
+In meccanica quantistica l'uso dei commutatori è reso analogo alle parentesi di Poisson della meccanica Hamiltoniana. 
+\begin{principle}[di quantizazione]
+    Un sistema quantomeccanico in regime semiclassico\footnote{Ovvero considerando $\hslash$ piccolo.} deve soddisfare per ogni coppia di operatori $\hat Q_1,\ \hat Q_2$:
+    \begin{equation*}
+    [\hat Q_1,\hat Q_2]=i\hslash\{Q_1,Q_2\}+O(\hslash^2),
+    \end{equation*}
+    dove $Q_1,\ Q_2$ sono le versioni classiche degli operatori.
+\end{principle}
+\subsection{Basi ortonormali}
+\section{Rappresentazioni}
 \subsection{La funzione d'onda quantistica}
 Si consideri ora l'esperimento di interferenza della luce: inizialmente si fissi un punto $x$ sulla lastra fotosensibile, l'osservabile desiderato è "\emph{il moto del fotone termina in $x$?}" e a questo si associ $\hat Q_x$ con autoket $\ket{1}$, se il fotone termina in $x$, e $\ket{0}$ altrimenti. Lo stato di un fotone sarà quindi dato dalla sovrapposizione di tutti gli stati caratterizzati dal punto terminale della traiettoria: applicando $\hat Q_x$ a questo stato si otterrà quindi solamente lo stato in cui il fotone termina il moto in $x$ moltiplicato per il suo coefficiente che si chiamerà $\psi$. Facendo ora variare $x$ su tutta la lastra si ottiene una funzione di autovalori $\psi(x)$, inoltre non si potrà più parlare di autoket $\ket{1}$ ma si parlerà di autoket $\ket{x}$.\\
 Chiaramente $\psi(x)$ è una funzione caratteristica dello stato dei fotoni, per questo indicheremo tale stato con $\ket{\psi}$; inoltre per costruzione, siccome questa funzione determina i coefficienti di sovrapposizione dello stato rispetto agli autoket $\ket{x}$ ed essendo tutti questi autoket ortogonali in quanto autoket di un operatore autoaggiunto, a patto di aver normalizzato tutti i $\ket{x}$, vale la seguente relazione:
@@ -182,4 +226,3 @@ Infine si vuole esprimere $\ket{\psi}$ rispetto agli autoket $\ket x$, come si �
 \begin{equation}
     \ket{\psi}=\int \ket{x}\psi(x)\ dx=\int \ket{x}\braket{x|\psi}\ dx.
 \end{equation}
-\subsection{Basi ortonormali}
