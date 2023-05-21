@@ -26,81 +26,99 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3.1}La funzione d'onda quantistica}{11}{subsection.1.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Evoluzione temporale di un sistema}{13}{chapter.2}%
+\contentsline {section}{\numberline {1.4}Rotatore rigido}{12}{section.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Equazione di Schrödinger}{13}{section.2.1}%
+\contentsline {subsection}{\numberline {1.4.1}Spettro dell'operatore momento}{13}{subsection.1.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}L'operatore di evoluzione temporale}{13}{section.2.2}%
+\contentsline {chapter}{\numberline {2}Evoluzione temporale di un sistema}{15}{chapter.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Sistemi a due stati}{15}{chapter.3}%
+\contentsline {section}{\numberline {2.1}Equazione di Schrödinger}{15}{section.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Fondamenti matematici dei sistemi a due stati}{15}{section.3.1}%
+\contentsline {section}{\numberline {2.2}L'operatore di evoluzione temporale}{15}{section.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Formalismo di Pauli}{15}{subsection.3.1.1}%
+\contentsline {section}{\numberline {2.3}Evoluzione temporale e le rappresentazioni}{17}{section.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Problema agli autovalori}{16}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {2.3.1}Rappresentazione di Schrödinger}{18}{subsection.2.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.3}Basi ortonormali per rappresentare operatori}{17}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {2.3.2}Rappresentazione di Heisenberg}{18}{subsection.2.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.4}Matrici di Pauli}{17}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {2.3.3}Rappresentazione di Dirac}{18}{subsection.2.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.5}Esponenziale di Pauli}{18}{subsection.3.1.5}%
+\contentsline {chapter}{\numberline {3}Sistemi a due stati}{19}{chapter.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.6}Rotazioni degli autospazi}{19}{subsection.3.1.6}%
+\contentsline {section}{\numberline {3.1}Fondamenti matematici dei sistemi a due stati}{19}{section.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Modellizzare un sistema a due livelli}{21}{section.3.2}%
+\contentsline {subsection}{\numberline {3.1.1}Formalismo di Pauli}{19}{subsection.3.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Hamiltoniano a due livelli}{21}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.1.2}Problema agli autovalori}{20}{subsection.3.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Perturbazioni di un sistema a due livelli}{22}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.1.3}Basi ortonormali per rappresentare operatori}{21}{subsection.3.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Teoria dei momenti angolari}{25}{chapter.4}%
+\contentsline {subsection}{\numberline {3.1.4}Matrici di Pauli}{21}{subsection.3.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Operatori dei momenti angolari e le loro prorietà}{25}{section.4.1}%
+\contentsline {subsection}{\numberline {3.1.5}Esponenziale di Pauli}{22}{subsection.3.1.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Gli operatori momento angolare e spin}{25}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {3.1.6}Rotazioni degli autospazi}{23}{subsection.3.1.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}L'operatore momento angolare totale}{26}{subsection.4.1.2}%
+\contentsline {section}{\numberline {3.2}Modellizzare un sistema a due livelli}{25}{section.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}Sistemi di più particelle}{27}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {3.2.1}Hamiltoniano a due livelli}{25}{subsection.3.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Spettro degli operatori momento angolare}{27}{section.4.2}%
+\contentsline {subsection}{\numberline {3.2.2}Perturbazioni di un sistema a due livelli}{26}{subsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Operatori scalari}{28}{section.4.3}%
+\contentsline {chapter}{\numberline {4}Teoria dei momenti angolari}{29}{chapter.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Il momento angolare orbitale nella rappresentazione di Schrödinger}{29}{section.4.4}%
+\contentsline {section}{\numberline {4.1}Operatori dei momenti angolari e le loro prorietà}{29}{section.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Momento angolare di spin}{30}{section.4.5}%
+\contentsline {subsection}{\numberline {4.1.1}Gli operatori momento angolare e spin}{29}{subsection.4.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Spettro dell'operatore momento angolare di spin}{30}{section*.2}%
+\contentsline {subsection}{\numberline {4.1.2}L'operatore momento angolare totale}{30}{subsection.4.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Fattorizzazione spin orbita}{30}{section.4.6}%
+\contentsline {subsection}{\numberline {4.1.3}Sistemi di più particelle}{31}{subsection.4.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Operatori di creazione e distruzione}{31}{chapter.5}%
+\contentsline {section}{\numberline {4.2}Spettro degli operatori momento angolare}{31}{section.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Fondamenti matematici degli operatori di creazione e distruzione}{31}{section.5.1}%
+\contentsline {section}{\numberline {4.3}Operatori scalari}{32}{section.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.1}Definizioni degli operatori}{31}{subsection.5.1.1}%
+\contentsline {section}{\numberline {4.4}Il momento angolare orbitale nella rappresentazione di Schrödinger}{33}{section.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.2}Spettro dell'operatore numero}{32}{subsection.5.1.2}%
+\contentsline {section}{\numberline {4.5}Momento angolare di spin}{34}{section.4.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.3}Creazione e distruzione di un autoket}{34}{subsection.5.1.3}%
+\contentsline {subsubsection}{Spettro dell'operatore momento angolare di spin}{34}{section*.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.4}Sistemi di più operatori di creazione e distruzione}{34}{subsection.5.1.4}%
+\contentsline {section}{\numberline {4.6}Fattorizzazione spin orbita}{34}{section.4.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}L'oscillatore armonico con operatori di distruzione e creazione}{35}{section.5.2}%
+\contentsline {chapter}{\numberline {5}Operatori di creazione e distruzione}{35}{chapter.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Teoria delle perturbazioni}{37}{chapter.6}%
+\contentsline {section}{\numberline {5.1}Fondamenti matematici degli operatori di creazione e distruzione}{35}{section.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Perturbazioni indipendenti dal tempo}{37}{section.6.1}%
+\contentsline {subsection}{\numberline {5.1.1}Definizioni degli operatori}{35}{subsection.5.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.1}Calcolo degli stati perturbati}{39}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Spettro dell'operatore numero}{36}{subsection.5.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.2}Sistemi perturbati non degeneri}{41}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Creazione e distruzione di un autoket}{38}{subsection.5.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {mColor}Bibliografia}}{43}{chapter*.3}%
+\contentsline {subsection}{\numberline {5.1.4}Sistemi di più operatori di creazione e distruzione}{38}{subsection.5.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Libri}{43}{section*.4}%
+\contentsline {section}{\numberline {5.2}L'oscillatore armonico con operatori di distruzione e creazione}{39}{section.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Articoli}{43}{section*.5}%
+\contentsline {chapter}{\numberline {6}Teoria delle perturbazioni}{41}{chapter.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Perturbazioni indipendenti dal tempo}{41}{section.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.1}Calcolo degli stati perturbati}{43}{subsection.6.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.2}Sistemi perturbati non degeneri}{45}{subsection.6.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Perturbazioni dipendenti dal tempo}{46}{section.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.1}Probabilità di transizione}{48}{subsection.6.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.2}Perturbazioni impulsive}{49}{subsection.6.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\leavevmode {\color {mColor}Bibliografia}}{51}{chapter*.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Libri}{51}{section*.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Articoli}{51}{section*.5}%
 \contentsfinish 

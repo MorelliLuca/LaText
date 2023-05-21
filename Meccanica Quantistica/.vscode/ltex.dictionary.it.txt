@@ -4,3 +4,4 @@ hamiltoniano
 Schrödinger
 autoaggiunti
 autoaggiunte
+ortonormalità

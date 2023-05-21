@@ -14,8 +14,120 @@ Si osservi che l'equazione di Schrödinger \eqref{eqSchr} è un'equazione linear
 \end{itemize}
 Si desidera costruire un operatore che descriva l'evoluzione del sistema associando ad uno stato iniziale il suo evoluto.
 \begin{definition}
-    Si definisce $\hat U(t,0)$ \emph{operatore di evoluzione temporale} se dato uno stato $\ket{\psi(t)}$:
-    \begin{equation*}
-        \ket{\psi(t)}=\hat U(t,s)\ket{\psi(s)}.
-    \end{equation*}
+    Si definisce $\hat U(t,0)$ \emph{operatore di evoluzione temporale} se dato uno stato $\ket{\psi(t)}$ vale: $\ket{\psi(t)}=\hat U(t,s)\ket{\psi(s)}$.
 \end{definition}
+Per determinare la forma di questo operatore si può utilizzare l'equazione di Schrödinger \eqref{eqSchr} (infatti è questa che determina l'evoluzione dello stato):
+\begin{flalign*}
+    i\hslash\frac{d}{dt}\ket{\psi(t)}&=i\hslash\frac{\partial\hat U(t,s)}{\partial t}\ket{\psi(s)}=\hat H(t)\ket{\psi(t)}=\hat H(t)\hat U(t,s)\ket{\psi(s)}\\
+    \Rightarrow&\boxed{i\hslash\frac{\partial\hat U(t,s)}{\partial t}=\hat H(t)\hat U(t,s)}\ .\\
+    0=i\hslash\frac{d}{ds}\ket{\psi(t)}&=i\hslash\frac{\partial\hat U(t,s)}{\partial s}\ket{\psi(s)}+i\hslash\hat U(t,s)\frac{d}{ds}\ket{\psi(s)}\\&=i\hslash\frac{\partial\hat U(t,s)}{\partial s}\ket{\psi(s)}+\hat U(t,s)\hat H(s)\ket{\psi(s)}\\
+    \Rightarrow&\boxed{i\hslash\frac{\partial\hat U(t,s)}{\partial s}=-\hat U(t,s)\hat H(s)}\ .
+\end{flalign*}
+Queste due equazioni differenziali costituiscono un problema di Cauchy se si aggiunge la banale condizione $\hat U(t,t)=\hat I$.\\Queste due equazioni garantiscono, all'operatore di evoluzione, una serie di proprietà.
+\begin{proposition}
+    Per l'operatore di evoluzione temporale valgono le seguenti proprietà:
+    \begin{itemize}
+        \item è unitario $\hat U^*(t,s)=\hat U(t,s)^{-1}$,
+        \item $\hat U(t,u)\hat U(u,s)=\hat U(t,s)$,
+        \item $\hat U(t,s)=\hat U(s,t)^{-1}$.
+    \end{itemize}
+\end{proposition}
+\begin{proof}
+    La prima relazione è dimostrabile utilizzando la prima delle due equazioni differenziali e osservando che facendone l'aggiunto di ambo i membri si ottiene:
+    \begin{equation*}
+        \hslash\frac{\partial\hat U^*(t,s)}{\partial t}=-\hat U^*(t,s)\hat H(t).
+    \end{equation*}
+    Si ha così che il prodotto $\hat U^*(t,s)\hat U(t,s)$ non dipende da $t$, infatti:
+    \begin{flalign*}
+        i\hslash \frac{\partial }{\partial t}[\hat U^*(t,s)\hat U(t,s)]&=i\hslash \frac{\partial \hat U^*(t,s)}{\partial t}\hat U(t,s)+i\hslash \hat U^*(t,s)\frac{\partial\hat U(t,s) }{\partial t}\\&=-\hat U^*(t,s)\hat H(t)\hat U(t,s)+\hat U^*(t,s)\hat H(t)\hat U(t,s)=0.
+    \end{flalign*}
+    Utilizzando ora la condizione iniziale $\hat U(t,t)=\hat I$ si ha:
+    \begin{equation*}
+        \hat U^*(t,s)\hat U(t,s)=\hat U^*(s,s)\hat U(s,s)=\hat I^*\hat I=\hat I
+    \end{equation*}
+    che implica la prima proprietà.\\
+    La seconda proprietà è dimostrata dalla seconda equazione differenziale:
+    \begin{flalign*}
+        i\hslash \frac{\partial }{\partial u}[\hat U(t,u)\hat U(u,s)]&=i\hslash \frac{\partial \hat U(t,u)}{\partial u}\hat U(u,s)+i\hslash \hat U(t,u)\frac{\partial\hat U(u,s) }{\partial u}\\&=-\hat U(t,u)\hat H(u)\hat U(u,s)+\hat U(t,u)\hat H(u)\hat U(u,s)=0.
+    \end{flalign*}
+    Ne consegue che $\hat U(t,u)\hat U(u,s)$ non dipende da $u$, per cui:
+    \begin{equation*}
+        \hat U(t,u)\hat U(u,s)=\hat U(t,s)\hat U(s,s)=\hat U(t,s).
+    \end{equation*}
+    Infine, se nel primo membro di quest'ultima equazione si sostituisce $t\rightarrow s$ e $u\rightarrow t$, si ottiene:
+    \begin{equation*}
+        \hat U(s,t)\hat U(t,s)=\hat U(s,s)\hat U(s,s)=\hat I,
+    \end{equation*}
+    che dimostra l'ultima proprietà.
+\end{proof}
+\begin{remark}
+    Si osservi che la prima proprietà implica che il modulo quadro di $\ket{\psi(t)}$ resta costante nel tempo:
+    \begin{equation*}
+        \braket{\psi(t)|\psi(t)}=\braket{\psi(s)|\hat U^*(t,s)\hat U(t,s)|\psi(s)}=\braket{\psi(s)|\psi(s)}.
+    \end{equation*}
+\end{remark}
+In generale queste due equazioni differenziali non sono di facile risoluzione. Nel caso particolare in cui l'hamiltoniano non dipenda dal tempo queste hanno una semplice soluzione (diventano infatti due equazioni a variabili separabili). Si ha che la soluzione
+\begin{equation*}
+    \boxed{\hat U(t,s)=e^{-\frac{i}{\hslash}(t-s)\hat H}}\ ,
+\end{equation*}
+verifica le due equazioni ricavate sopra.
+\section{Evoluzione temporale e le rappresentazioni}
+Si vogliono ora costruire degli operatori che siano analoghi alle trasformazioni di sistema di riferimento. In generale si desidera che tale operatore ($\hat T$), agendo opportunamente sullo stato del sistema e sugli operatori degli osservabili, mantengano invariati i prodotti scalari (che consentono di ottenere gli osservabili stessi garantendone quindi l'invarianza). Affinché siano preservati i prodotti scalari $\hat T$ deve esse unitario $(\hat T\hat T^*=\hat I$), in questo modo infatti:
+\begin{equation*}
+    \braket{\psi|\hat T^{*}\hat T|\psi}=\braket{\psi|\psi}.
+\end{equation*}
+In questo modo si può definire lo stato trasformato $\boxed{\ket{\psi}_T=\hat T^{*}\ket{\psi}}$.\\ Analogamente si può definire il trasformato di un operatore qualsivoglia $\boxed{\hat A_T=\hat T^*\hat A\hat T}$ e in questo modo si ha:
+\begin{equation*}
+    _T\braket{\psi|\hat A_T|\psi}_T=\braket{\psi|\hat T\hat T^*\hat A\hat T\hat T^*|\psi}=\braket{\psi|\hat A|\psi}.
+\end{equation*}
+Si può ora richiedere un'ulteriore condizione su questo operatore. Infatti, rendendo dipendente dal tempo $\hat T=\hat T(t,s)$, si può richiedere che soddisfi un set particolare di equazioni differenziali:
+\begin{flalign*}
+    &i\hslash\frac{\partial\hat T(t,s)}{\partial t}=\hat K(t)\hat T(t,s)\\
+    &i\hslash\frac{\partial\hat T(t,s)}{\partial s}=-\hat T(t,s)\hat K(s).
+\end{flalign*}
+Così facendo (richiedendo anche che $\hat T(t,t)=\hat I$) l'operatore $\hat T$ diviene un fittizio operatore di evoluzione temporale di un hamiltoniano fittizio $\hat K(t)$. \\Il trasformato dello stato diviene $\boxed{\ket{\psi(t)}_K=\hat T^{*}(t,0)\ket{\psi(t)}}$.\\Lo stato trasformato si evolve secondo una nuova equazione di Schrödinger nella quale appare un nuovo hamiltoniano:
+\begin{flalign*}
+    i\hslash\frac{d}{dt}\ket{\psi(t)}_K&=i\hslash\frac{d}{dt}[\hat T^{*}(t,0)\ket{\psi(t)}]=i\hslash\frac{d\hat T^{*}(t,0)}{dt}\ket{\psi(t)}+i\hslash\hat T^{*}(t,0)\frac{d}{dt}\ket{\psi(t)}\\&=-(\hat K(t)\hat T(t,0))^*\ket{\psi(t)}+\hat T^{*}(t,0)\hat H(t)\ket{\psi(t)}\\&=\hat T^{*}(t,0)[\hat H(t)-\hat K(t)]\hat T\ket{\psi(t)}_K\\
+    \Rightarrow&\boxed{\hat H_K(t)=\hat T^{*}(t,0)[\hat H(t)-\hat K(t)]\hat T}\ .
+\end{flalign*}
+All'hamiltoniano trasformato $\hat H_K$ è associato un operatore di evoluzione temporale $\hat U_K(t,s)$. Si verifica facilmente che $\boxed{\hat U_K=\hat T^*(t,s)\hat U\hat T(t,s)}$.\\
+La scelta di $\hat K$ determina la trasformazione che viene chiamata \emph{rappresentazione}.
+\subsection{Rappresentazione di Schrödinger}
+La rappresentazione più facile da costruire è quella di Schrödinger. 
+\begin{equation*}
+    \hat K(t)=0\qquad\Rightarrow\quad\hat T(t,s) = \hat I\quad\Rightarrow\qquad
+    \begin{cases}
+        \ket{\psi(t)}_S=\ket{\psi(t)}\\
+        \hat A_S(t)=\hat A(t)\\
+        \hat H_S(t)=\hat H(t)\\
+        \hat U_S(t,s)=\hat U(t,s)
+    \end{cases}.
+\end{equation*}
+Questa coincide con il formalismo standard che si ottiene senza applicare nessuna trasformazione.
+\subsection{Rappresentazione di Heisenberg}
+La seconda rappresentazione utilizzata è chiamata rappresentazione di Heisenberg. Questa è determinata dalla scelta $\hat K(t)=\hat H(t)$.
+\begin{equation*}
+    \hat K(t)=\hat H(t)\qquad\Rightarrow\quad\hat T(t,s) = \hat U(t,s)\quad\Rightarrow\qquad
+    \begin{cases}
+        \ket{\psi(t)}_H=U^*(t,0)\ket{\psi(t)}=\ket{\psi(0)}\\
+        \hat A_H(t)=U^*(t,0)\hat A(t)U(t,0)\\
+        \hat H_H(t)=0\\
+        \hat U_H(t,s)=\hat I
+    \end{cases}.
+\end{equation*}
+In questo caso si osservi che la rappresentazione di Heisenberg rende nulla l'hamiltoniano. L'evoluzione del sistema è interamente determinata dall'evoluzione degli operatori che rappresentano gli osservabili (tanto è vero che pure gli stati diventano indipendenti dal tempo). Questo tipo di rappresentazione è analoga al cambio di sistema di riferimento che, in meccanica classica, rende l'osservatore solidale ad un corpo in moto.
+\subsection{Rappresentazione di Dirac}
+L'ultima rappresentazione è la rappresentazione di Dirac o rappresentazione di interazione. Questa è particolarmente utile quando l'hamiltoniano del sistema è dato da un termine indipendente dal tempo sommato ad un secondo termine dipendente dal tempo (solitamente una perturbazione):
+\begin{equation*}
+    \hat H(t)=\hat H_0+\hat W(t).
+\end{equation*}
+La rappresentazione di Dirac rimuove il termine indipendente dal tempo richiedendo che l'hamiltoniano fittizio sia proprio tale termine.
+\begin{equation*}
+    \hat K(t)=\hat H_0\quad\Rightarrow\quad\hat T(t,s) =\hat U_0(t,s)= e^{-\frac{i}{\hslash}(t-s)\hat H_0}\quad\Rightarrow\quad
+    \begin{cases}
+        \ket{\psi(t)}_D=U_0^*(t,0)\ket{\psi(t)}\\
+        \hat A_D(t)=U_0^*(t,0)\hat A(t)U_0(t,0)\\
+        \hat H_D(t)=U_0^*(t,0)\hat W(t)U_0(t,0)=\hat W_D(t)\\
+        \hat U_D(t,s)=U_0^*(t,0)\hat U(t,s)U_0(t,0)
+    \end{cases}.
+\end{equation*}

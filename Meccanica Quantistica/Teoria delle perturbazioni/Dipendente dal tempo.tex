@@ -1,0 +1,114 @@
+\section{Perturbazioni dipendenti dal tempo}
+Si vuole studiare ora un sistema in cui le perturbazioni sono dipendenti dal tempo mentre il sistema imperturbato no. Un sistema di questo tipo è descritto da un hamiltoniano nella forma:
+\begin{equation*}
+    \hat H(t)=\hat H_0+\hat W(t),
+\end{equation*}
+dove $\hat H_0$ è l'hamiltoniano imperturbato e $\hat W(t)$ è la perturbazione.\\
+Un sistema di questo tipo si presta ad essere studiato facendo uso della rappresentazione di Dirac. In questo modo si ha:
+\begin{equation*}
+    \hat K(t)=\hat H_0\quad\Rightarrow\quad\hat T(t,s) =\hat U_0(t,s)= e^{-\frac{i}{\hslash}(t-s)\hat H_0}\quad\Rightarrow\quad
+    \begin{cases}
+        \ket{\psi(t)}_D=U_0^*(t,0)\ket{\psi(t)}\\
+        \hat A_D(t)=U_0^*(t,0)\hat A(t)U_0(t,0)\\
+        \hat H_D(t)=U_0^*(t,0)\hat W(t)U_0(t,0)=\hat W_D(t)\\
+        \hat U_D(t,s)=U_0^*(t,0)\hat U(t,s)U_0(t,0)
+    \end{cases}.
+\end{equation*}
+Si studierà quindi il sistema caratterizzato da $\hat W_D$.
+Inoltre si vuole che questa perturbazione si piccola in senso assoluto. Questa richiesta è utilizzata per poter introdurre approssimazioni in serie ed è matematicamente espressa dalla seguente disuguaglianza:
+\begin{equation}
+    \bigg|\int_s^tw(u)\ du\bigg|\ll\hslash \,\label{condPertTempo}
+\end{equation}
+dove $w(t)$ è l'ordine di grandezza all'instante $t$ della perturbazione energetica dovuta dalla rappresentazione di Dirac della perturbazione $\hat W_D(t)$.\\
+Il sistema, secondo la teoria delle rappresentazioni, evolverà mediante l'operatore $\hat U_D(t,s)$ che è determinato dall'equazione di Schrödinger mediante
+\begin{equation*}
+    i\hslash\frac{\partial \hat U_D(t,s)}{\partial t}=\hat W_D(t)\hat U_D(t,s),\qquad \hat U_D(t,t)=\hat I.
+\end{equation*}
+Si osservi che da questa è possibile ricavare una forma semiesplicita della rappresentazione dell'operatore di evoluzione, infatti:
+\begin{flalign*}
+    \hat U_D(t,s)-\hat I&=\hat U_D(t,s)-\hat U_D(t,t)=\int_s^t\frac{\partial \hat U_D(u,s)}{\partial u}\ du
+    =-\frac{i}{\hslash}\int_s^t\hat W_D(u)\hat U_D(u,s)\ du\\
+    \Rightarrow&\boxed{\hat U_D(t,s)=\hat I -\frac{i}{\hslash}\int_s^t\hat W_D(u)\hat U_D(u,s)\ du}\ .
+\end{flalign*}
+Si osservi che questa soddisfa sia l'equazione differenziale che la condizione iniziale.\\
+In questa forma è facile approssimare $\hat U_D(t,s)$ in serie. Infatti se si suppone che sia possibile esprimere:
+\begin{equation*}
+    \hat U_D(t,s)0\sum_{k=0}^{\infty} \hat U_{D,k}(t,s),
+\end{equation*}
+dove $\hat U_{D,k}(t,s)$ è un termine di ordine $O(w^k(t))$ dell'energia di perturbazione.\\Inserendo questa serie nella forma integrale di $\hat U_D(t,s)$, precedentemente ottenuta,
+\begin{equation*}
+    \sum_{k=0}^{\infty}\hat U_{D,k}(t,s)=\hat I -\frac{i}{\hslash}\int_s^t\sum_{k=0}^{\infty}\hat W_D(u)\hat U_{D,k}(u,s)\ du 
+\end{equation*}
+e isolando i termini dello stesso ordine si ha il seguente risultato.
+\begin{proposition}
+    Il problema di Schrödinger con perturbazioni dipendenti dal tempo è risolto all'ordine k dall'operatore di evoluzione temporale (nella rappresentazione di Dirac):
+    \begin{flalign*}
+        &\hat U_{D,0}(t,s)=\hat I,\\
+        &\hat U_{D,k}(t,s)=-\frac{i}{\hslash}\int_s^t\hat W_{D}(u)\hat U_{D,k-1}(u,s)\ du.
+    \end{flalign*}
+\end{proposition}
+Si osservi che la richiesta di piccole perturbazioni \eqref{condPertTempo} è necessaria per la convergenza di questa serie\footnote{Affinchè una serie converga è necessario (ma non sufficiente) che la successione, data dai termini di tale serie, converga a zero.}.\\ Utilizzando ricorsivamente questo risultato si ottiene una forma alternativa di $\hat U_{D,k}(t,s)$:
+\begin{equation*}
+    \hat U_{D,k}(t,s)=\bigg(-\frac{i}{\hslash}\bigg)^k\int_s^tdu_1\int_s^{u_1}du_2\ \dots\int_s^{u_{k-1}}du_k\ \hat W_{D}(u_1)\hat W_{D}(u_2)\dots\hat W_{D}(u_k). 
+\end{equation*}
+\subsection{Probabilità di transizione}
+Si vuole ora determinare la probabilità che ad un determinato istante la misura di un osservabile di un sistema perturbato differisca dal suo valore imperturbato. Si consideri quindi un insieme $\{\hat a_1,\hat a_2,\dots \}$ completo di operatori autoaggiunti e commutanti con l'hamiltoniano imperturbato $\hat H_0$. La completezza garantisce che l'hamiltoniano stesso possa essere espresso come funzione di questi: 
+\begin{equation*}
+\hat H_0=h_0(\hat a_1,\hat a_2,\dots ).
+\end{equation*}
+Si può quindi prendere una base ortonormale di autoket degli $\hat a_1,\hat a_2,\dots $ tale che:
+\begin{equation*}
+    \hat a_k\ket{n}=\ket{n} a_k(n)\qquad\Rightarrow\qquad\hat H_0\ket{n}=\ket{n} h_0(n).
+\end{equation*}
+In generale la probabilità che lo stato del sistema, se preparato all'istante $s$ nello stato $\ket{n_0}$, sia all'istante $t$ $\ket{n}$ è data da:
+\begin{equation*}
+    P(n_0\rightarrow n,t,s)=|\braket{n|\hat U(t,s)|n_0}|^2.
+\end{equation*}
+Così facendo infatti si sta calcolando il modulo quadro della proiezione dello stato evoluto sullo stato che si vuole misurare.\\
+Nella rappresentazione di Dirac questa stessa probabilità è data\footnote{Si ricorda che le rappresentazioni sono costruite in maniera tale da non variare i prodotti scalari.}:
+\begin{flalign*}
+    P(n_0\rightarrow n,t,s)&=|_D\braket{n(t)|\hat U_D(t,s)|n_0(s)}_D|^2=|\bra{n}U_0(t,0)\hat U_D(t,s)\hat U_0^*(s,0)\ket{n_0}|^2\\&=|\bra{n}e^{-\frac{i}{\hslash}t\hat H_0}\hat U_D(t,s) e^{\frac{i}{\hslash}s\hat H_0}\ket{n_0}|^2=|e^{-\frac{i}{\hslash}th_0}e^{\frac{i}{\hslash}sh_0}\bra{n}\hat U_D(t,s) \ket{n_0}|^2\\
+    &=|\bra{n}\hat U_D(t,s) \ket{n_0}|^2.
+\end{flalign*}
+Così facendo si può applicare il risultato ottenuto dalla teoria delle perturbazioni per approssimare questa probabilità.
+\begin{flalign*}
+    \bra{n}\hat U_D(t,s) \ket{n_0}&=\bra{n}\sum_{k=0}^{\infty}\bigg(-\frac{i}{\hslash}\bigg)^k\int_s^tdu_1\int_s^{u_1}du_2\ \dots\int_s^{u_{k-1}}du_k\ \hat W_{D}(u_1)\hat W_{D}(u_2)\dots\hat W_{D}(u_k)\ket{n_0}\\&=\sum_{k=0}^{\infty}\bigg(-\frac{i}{\hslash}\bigg)^k\int_s^tdu_1\int_s^{u_1}du_2\ \dots\int_s^{u_{k-1}}du_k\ \bra{n}\hat W_{D}(u_1)\hat W_{D}(u_2)\dots\hat W_{D}(u_k)\ket{n_0}
+\end{flalign*}
+Il primo termine di questa serie è i prodotto scalare $\braket{n|n_0}$ che restituisce una delta $\delta_{n,n_0}$. I restanti termini possono essere manipolati esplicitando tra ogni operatore $\hat W_D$ l'identità per mezzo delle relazioni di ortonormalità degli autoket:
+\begin{flalign*}
+    \bra{n}\hat W_{D}(u_1)&\hat W_{D}(u_2)\dots\hat W_{D}(u_k)\ket{n_0}=\\&=\sum_{n_1}\sum_{n_2}\dots\sum_{n_{k-1}}\bra{n}\hat W_{D}(u_1)\ket{n_1}\bra{n_1}\hat W_{D}(u_2)\ket{n_2}\bra{n_2}\dots\ket{n_{k-1}}\bra{n_{k-1}}\hat W_{D}(u_k)\ket{n_0}.
+\end{flalign*}
+Si osservi che in generale si può riesprimere la rappresentazione di $\hat W$ in funzione di questa come:
+\begin{equation*}
+    \braket{n|\hat W_D|m}=\braket{n|\hat U^*_0(u,0)\hat W(u)\hat U_0(u,0)|m}=\braket{n|e^{\frac{i}{\hslash}u\hat H_0}\hat W(u)e^{-\frac{i}{\hslash}u\hat H_0}|m}=e^{\frac{i}{\hslash}u(h_0(n)-h_0(m))} \braket{n|\hat W|m}.
+\end{equation*}
+Si ha quindi che la probabilità $P(n_0\rightarrow n,t,s)$ è data dal modulo quadro di:
+\begin{flalign*}
+    \bra{n}& \hat U_D(t,s)\ket{n_0}=\delta_{n,n_0}-\sum_{k=1}^{\infty}\bigg(-\frac{i}{\hslash}\bigg)^k\int_s^tdu_1\ \dots\int_s^{u_{k-1}}du_k\ \sum_{n_1}\dots\sum_{n_{k-1}}\times\\&\qquad\times e^{\frac{i}{\hslash}[(h_0(n)-h_0(n_1))u_1+\dots+(h_0(n_{n-1})-h_0(n_0))u_{k}]}\bra{n}\hat W(u_1)\ket{n_1}\bra{n_1}\dots\ket{n_{k-1}}\bra{n_{k-1}}\hat W(u_k)\ket{n_0}.
+\end{flalign*}
+All'ordine perturbativo $0$ si ottiene:
+\begin{equation*}
+    P(n_0\rightarrow n,t,s)\approx \delta_{n,n_0},
+\end{equation*}
+che però non esprime alcuna dinamica del sistema (come ci si aspetterebbe siccome a quest'ordine la perturbazione è approssimata nulla).\\
+All'ordine perturbativo $1$ invece si ottiene:
+\begin{equation*}
+    \boxed{P(n_0\rightarrow n,t,s)\approx \bigg|\delta_{n,n_0}-\frac{i}{\hslash}\int_s^t e^{\frac{i}{\hslash}(h_0(n)-h_0(n_0))u}\braket{n|\hat W(u)|n_0}\ du\bigg|^2}.
+\end{equation*}
+\subsection{Perturbazioni impulsive}
+Si vuole ora studiare una perturbazione limitata nel tempo, ossia una $\hat W(t)$ che si annulla rapidamente a $\pm\infty$. In questo caso si studia la probabilità che dopo un tempo molto lungo il sistema sia transito tra due stati diversi:
+\begin{equation*}
+    P(n_0\rightarrow n,\infty,-\infty)=\lim_{\pm t\rightarrow\pm\infty}P(n_0\rightarrow n,+t,-t).
+\end{equation*}
+In questo caso si studia $\hat W(t)$ facendo uso delle trasformate di Fourier:
+\begin{equation*}
+    \hat W(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}e^{-i\omega t}\hat{\tilde{W}}(\omega)\ d\omega,\qquad\hat{\tilde{W}}(\omega)=\int_{-\infty}^{+\infty}e^{i\omega t}\hat{W}(t)\ dt. 
+\end{equation*}
+Approssimando all'ordine perturbativo più basso non nullo si ha:
+\begin{flalign*}
+    P(n_0\rightarrow n,\infty,-\infty)&\approx \bigg|\delta_{n,n_0}-\frac{i}{\hslash}\int_{-\infty}^{+\infty} e^{\frac{i}{\hslash}(h_0(n)-h_0(n_0))u}\braket{n|\hat W(u)|n_0}\ du\bigg|^2\\&=\bigg|\frac{1}{i\hslash}\braket{n|\int_{-\infty}^{+\infty} e^{\frac{i}{\hslash}(h_0(n)-h_0(n_0))u}\hat W(u)\ du|n_0}\bigg|^2=\frac{1}{\hslash^2}|\braket{n|\hat{\tilde{W}}\bigg(\frac{n-n_0}{\hslash}\bigg)\ du|n_0}|^2.
+\end{flalign*}
+Definendo \emph{frequenza di Bohr} $\omega(n,n_0)=\frac{h_0(n)-h_0(n_0)}{\hslash}$ si ha:
+\begin{equation*}
+    \boxed{P(n_0\rightarrow n,\infty,-\infty)\approx\frac{1}{\hslash^2}|\braket{n|\hat{\tilde{W}}(\omega(n,n_0))\ du|n_0}|^2}
+\end{equation*}

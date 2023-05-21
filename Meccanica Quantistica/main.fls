@@ -495,41 +495,38 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmri8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmri8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
+INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Chapter 1/Rotatore rigido.tex
+INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Chapter 1/Rotatore rigido.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7v.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Pictures/chapter_head_2.pdf
 INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Pictures/chapter_head_2.pdf
 INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Evoluzione temporale/Operatore di evoluzione temporale.tex
 INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Evoluzione temporale/Operatore di evoluzione temporale.tex
-INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Pictures/chapter_head_2.pdf
-INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Pictures/chapter_head_2.pdf
-INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Sistemi a due stati/Sistemi a due stati.tex
-INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Sistemi a due stati/Sistemi a due stati.tex
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7m.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7m.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7y.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7y.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7v.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7v.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/avantgar/pagd8t.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7t.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7t.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7m.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7m.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7y.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7y.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7v.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7v.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri7t.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8t.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
@@ -537,6 +534,20 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Pictures/chapter_head_2.pdf
+INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Pictures/chapter_head_2.pdf
+INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Sistemi a due stati/Sistemi a due stati.tex
+INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Sistemi a due stati/Sistemi a due stati.tex
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/avantgar/pagd8t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmri8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
@@ -552,8 +563,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Pictures/chapter_head_2.pdf
 INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Pictures/chapter_head_2.pdf
@@ -563,9 +572,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7v.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
@@ -579,10 +585,8 @@ INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Pictures/chapter_head_
 INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Pictures/chapter_head_2.pdf
 INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Teoria delle perturbazioni/IndipendenteTempo.tex
 INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Teoria delle perturbazioni/IndipendenteTempo.tex
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
+INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Teoria delle perturbazioni/Dipendente dal tempo.tex
+INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Teoria delle perturbazioni/Dipendente dal tempo.tex
 INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Pictures/chapter_head_2.pdf
 INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/Pictures/chapter_head_2.pdf
 INPUT /home/lyokol/Scrivania/LaText/Meccanica Quantistica/main.aux
