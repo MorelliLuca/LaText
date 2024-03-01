@@ -1,0 +1,95 @@
+\section{Pauli-Fierz equations}
+In this chapter we will introduce the equations that govern the motion of all quantum particles. The two previous chapters described the two main equations that describe spin 0 particles (Klein-Gordon) and spin $\frac{1}{2}$ particles (Dirac). All the other types of particles can be described by these two equations, with some other condition: together they form the \textbf{Pauli-Fierz equations}.\\
+
+Bosons, or particles with integer spin $s$, are described by a set of $s$ spinors (such that $\phi_{\mu_1\dots\mu_s}$ is totally symmetric) that obeys Klein-Gordon equation \eqref{KleinGordonEq}, the Pauli-Fierz equations are in this case:
+\begin{equation}\label{BosonsPF}
+    \begin{cases}
+        (\Box -m^2)\phi_{\mu_1\dots\mu_s}=0,\\
+        \partial^\mu\phi_{\mu\mu_2\dots\mu_s}=0,\\
+        \eta^{\mu_1\mu_2}\phi_{\mu_1\mu_2\dots\mu_s}=0
+    \end{cases}.
+\end{equation}
+We should now notice that the solutions of these equations are too many with respect to the $2s+1$ degree of freedom that they should have.\\
+
+Fermions, or particles with half-odd spin $s=\frac{1}{2}+s$, are described by $s$ spinors (such that $\phi_{\mu_1\dots\mu_s}$ is totally symmetric) governed by the Dirac's equation \eqref{DiracEquation}, the Pauli-Fierz equations are in this case:
+\begin{equation}\label{FermionsPF}
+    \begin{cases}
+        (\not\partial+m)\psi_{\mu_1\dots\mu_s}=0,\\
+        \partial^\mu\psi_{\mu\mu_2\dots\mu_s}=0,\\
+        \gamma^{\mu}\psi_{\mu\mu_2\dots\mu_s}=0
+    \end{cases}.
+\end{equation}
+Again we have more degrees of freedom of the expected ones.
+\subsection{Plane waves for bosonic Pauli-Fierz equations}
+Consider a particle of spin $s$, we will suppose that the solution of the equations \eqref{BosonsPF} are of the form:
+\begin{equation*}
+    \phi_{\mu_1\dots\mu_s} (x)=\epsilon_{\mu_1\dots\mu_s}(p)e^{ipx}.
+\end{equation*}
+We want to further study this ansatz, therefore we will plug it inside all the 3 equations: the first equation leads to the mass-shell condition of the particle
+\begin{equation*}
+    \epsilon_{\mu_1\dots\mu_s}(-p^2-m^2)(p)e^{ipx}=0\qquad\Rightarrow\qquad p^2+m^2=0.
+\end{equation*}
+We can now proceed to study the particle in its rest reference frame, there the second equation read:
+\begin{equation*}
+    p^\mu\epsilon_{\mu\mu_2\dots\mu_s}=0 \qquad\Rightarrow\qquad m\epsilon_{0\mu_2\dots\mu_s}=0,
+\end{equation*}
+due to symmetry we easily see that all time components vanish and we are left with $\epsilon_{i_1\dots i_s}\neq0$.\\Last equation gives:
+\begin{equation*}
+    \epsilon^i_{ii_2\dotsi_s}=0, 
+\end{equation*}
+this implies that these tensors are traceless and symmetric, thus the degrees of freedom are less than what we could expect by analyzing the indices, that reduce to the expected $2s+1$.  
+\section{Spin 1 particles}
+Spin 1 particles are described by a one index spinor $A_{\mu}$ that obeys just the first two equations of \eqref{BosonsPF}:
+\begin{equation*}
+    \begin{cases}
+        (\Box-m^2)A_\mu=0,\\
+        \partial^\mu A_\mu
+    \end{cases},
+\end{equation*}
+these equations are also called \textbf{Proca equations}.\\ We can get these equations from the following lagrangian (with $F^{\mu\nu}=\partial^\mu A\nu-\partial^\nu A^\mu$):
+\begin{equation}\label{Spin1Lag}
+    \mathcal{L} =-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}-\frac{1}{2}m^2A^\mu A_\mu.
+\end{equation}
+Evaluating the variation of the action given by this lagrangian we get:
+\begin{align*}
+    \delta\mathcal{S}&=\int d^4x\bigg[-\frac{1}{2}F_{\mu\nu}\delta F^{\mu\nu}-m^2 A_\mu \delta A^\mu\bigg]=\int d^4x\bigg[-\frac{1}{2}F_{\mu\nu}(\partial^\mu\delta A^\nu-\partial^\nu\delta A^\mu)-m^2A_\mu \delta A^\mu\bigg]\\&=\int d^4x\bigg[-F_{\mu\nu}\partial^\mu\delta A^\nu-m^2 A_\mu \delta A^\mu\bigg]=\int d^4x\bigg[\partial^\mu F_{\mu\nu}-m^2 A_\nu\bigg]\delta A^\nu=0,
+\end{align*}
+equations of motion are therefore given by
+\begin{equation*}
+    \partial^\mu F_{\mu\nu}=m^2 A_\nu.
+\end{equation*}
+We can differentiate this equation, and using the antisymmetry of $F^{\mu\nu}$ we get the second one of \eqref{BosonsPF}
+\begin{equation*}
+    \partial^\nu\partial^\mu F_{\mu\nu}=m^2\partial^\nu A_\nu=0,
+\end{equation*}
+while the first one can be obtained inserting the definition of $F_{\mu\nu}$ inside the above equation of motion
+\begin{equation*}
+    \partial^\mu F_{\mu\nu}=\partial^\mu(\partial_\mu A_\nu-\partial_\nu A_\mu)=\Box A_\nu=m^2 A_\nu.
+\end{equation*}
+
+We can now study the plane wave solutions of this system: as we already saw in the previous section, the equation \eqref{FermionsPF} will result in some conditions for the solution to hold:
+\begin{equation*}
+    \begin{cases}
+        (-p^2-m^2)\epsilon_\mu(p)e^{ipx}=0,\\
+         ip^\mu\epsilon_\mu(p)e^{ipx}=0
+    \end{cases}\qquad\Rightarrow\qquad
+    \begin{cases}
+        p^2+m^2=0,\\
+        p^\mu\epsilon_\mu(p)=0
+    \end{cases},
+\end{equation*}
+we can study the last condition in comoving reference frame, in which $p^\mu=(m,0,0,0)$, that reads $m\epsilon_0=0$. Therefore, we see that the polarization of the solutions has only 3 degree of freedom.\\
+
+Lastly we can study the propagator, which is defined by the differential equation for the Green function
+\begin{equation*}
+    [(-\Box+m^2)\eta^{\mu\nu}+\partial^\mu\partial^\nu]G_{\nu\lambda}(x-y)=\delta^{\mu}_\lambda\delta^4(x-y),
+\end{equation*}
+which can be obtained as an alternative equation of motion from \eqref{Spin1Lag}.\\
+Using Fourier transform, we can get as solution:
+\begin{equation*}
+    G_{\mu\nu}(x-y)=\int\frac{d^4p}{(2\pi)^4}e^{ip(x-y)}\tilde{G}_{\mu\nu}(p),\qquad\tilde{G}_{\mu\nu}(p)=\frac{\eta_{\mu\nu}+\frac{p_\mu p_\nu}{m^2}}{p^2+m^2}.
+\end{equation*}
+Notice that this propagator is not well-defined anymore in the massless limit: we are going to study this condition in the next section.
+\subsection{Massless case}
+
+

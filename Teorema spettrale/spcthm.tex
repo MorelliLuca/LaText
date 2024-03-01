@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{pagecolor}
+\usepackage{braket} % Per generare testo fittizio
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{MnSymbol}%
+\usepackage{wasysym}%
+
+\pagecolor{black} % Imposta il colore di sfondo della pagina a nero
+\color{white} % Imposta il colore del testo a bianco
+
+\begin{document}
+
+\LARGE \textbf{Teorema Spettrale}\normalsize\vspace{.5cm}\\
+\emph{Sia V uno spazio vettoriale su campo} $\mathbb{C}$ \emph{di dimensione n, dotato di un prodotto hermitiano definito positivo, e sia $T:V\rightarrow V$ un'applicazione lineare.\\ Se T è autoaggiunto esiste una base ortonormale costituita da autovettori di T.}\\
+
+\emph{\large Dimostrazione. }\normalsize\vspace{.2cm}\\
+Per dimostrare il teorema si procederà per induzione sulla dimensione di $V$.\\ Si osservi che, in generale, essendo $\mathbb{C}$ algebricamente chiuso, ogni endomorfismo su campo complesso ammette almeno un autovalore non nullo. Infatti è sempre possibile fissare una base ortonormale di $\mathbb{C} ^n$, isomorfo a V. In questo modo a $T$ è associata una matrice il cui polinomio caratterisco ammette sempre almeno una radice non nulla in $\mathbb{C} $.\\
+
+Se $\dim V=1$, siccome $T$ deve avere almeno un autovalore non nullo, $V$ coincide con l'unico autospazio di $T$.\\
+
+Si consideri ora $\dim V=n>1$, per quanto già detto deve esistere un autovettore non nullo $v_1$ di $T$ in $V$. Sia $W$ lo spazio ortogonale a $v_1$, questo ha chiaramente dimensione $n-1$. Si osservi che il vettore $Tw\in W$, se $w\in W$, infatti:
+\begin{equation*}
+    \langle Tw\,, v\rangle=\langle w\,, Tv\rangle=\lambda\langle w\,, v\rangle=0\qquad\forall v\in \text{span}\{v_1\}.
+\end{equation*}
+Inoltre $W$ è a sua volta dotato di un prodotto hermitiano definito positivo e la restrizione di $T$ su $W$ è ancora autoaggiunto. Per le ipotesi induttive, in $W$ esiste una base ortonormale di autovettori di $T\big|_{W}$ $\{v_2,v_3,...,v_n\}$.\\
+
+Per concludere la dimostrazione è quindi sufficente normalizzare $v_1$ (che è già ortogonale a tuttti i vettori $\{v_2,v_3,...,v_n\}$) così che $\left\{\frac{v_1}{\|v_1\|},v_2,v_3,...,v_n\right\}$ sia una base ortonormale di V costituita da autovettori di $T$. $\qquad\qquad\qquad\qquad\blacksquare$
+\newpage
+
+\Large \textbf{Corollario} \normalsize\vspace{.2cm}\\
+\emph{Sia $A\in M_{n\times n}(\mathbb{C})$ una matrice hermitiana, allora esiste una matrice unitaria $U\in M_{n\times n}(\mathbb{C})$ tale che:}
+\begin{equation*}
+    U^{\dagger}AU=\begin{pmatrix}
+        \lambda_1 && 0 && ... && 0\\
+        0&&\lambda_2&&... && 0\\
+        \vdots &&\vdots&&\ddots&&\vdots\\
+        0&&0&&\dots&&\lambda_n
+    \end{pmatrix}
+\end{equation*}
+\emph{dove $\{\lambda_1,\lambda_2,...,\lambda_n\}$ sono gli autovalori di $A$ e i vettori colonna della matrice $U$ sono gli autovettori normalizzati di $A$.} \\
+
+\emph{\large Dimostrazione. }\normalsize\vspace{.2cm}\\
+Si consideri l'applicazione lineare $T:\mathbb{C}^n\rightarrow \mathbb{C}^n$ associata alla matrice $A$, rispetto alla base canonica, questa è un'applicazione autoaggiunta. Per il teorema spettrale esiste quindi una base ortonormale di autovettori di $T$ $\{v_1,v_2,\dots,v_n\}$. In questa base la matrice associata a $T$ è diagonale siccome ogni $v_i$ è un autovettore.\\ Infine, si osservi che la matrice del cambio di base $U$ è composta dagli autovettori colonna di $A$, infatti questa trasforma la base canonica in $\{v_1,v_2,\dots,v_n\}$:
+\begin{equation*}
+   v_j=\sum_{i=0}^{n} U_{ij}e^i.
+\end{equation*}
+Da cui si conclude che $U$ è unitaria poiché $\langle v_i\,, v_j\rangle=\delta_{ij}\ \Rightarrow\ U^\dagger U=1.\qquad\qquad \blacksquare$
+\newpage
+\LARGE \textbf{Teorema Spettrale}\normalsize\vspace{.5cm}\\
+\emph{Sia V uno spazio vettoriale su campo} $\mathbb{C}$ \emph{di dimensione n, dotato di un prodotto hermitiano definito positivo, e sia $T:V\rightarrow V$ un'applicazione lineare.\\ Se T è autoaggiunto esiste una base ortonormale costituita da autovettori di T.}\\\\
+\emph{Inoltre, sia $A\in M_{n\times n}(\mathbb{C})$ la matrice associata a T (fissata la base canonica), allora esiste una matrice unitaria $U\in M_{n\times n}(\mathbb{C})$ tale che:}
+\begin{equation*}
+    U^{\dagger}AU=\begin{pmatrix}
+        \lambda_1 && 0 && ... && 0\\
+        0&&\lambda_2&&... && 0\\
+        \vdots &&\vdots&&\ddots&&\vdots\\
+        0&&0&&\dots&&\lambda_n
+    \end{pmatrix}
+\end{equation*}
+\emph{dove $\{\lambda_1,\lambda_2,...,\lambda_n\}$ sono gli autovalori di $T$ e i vettori colonna della matrice $U$ sono gli autovettori normalizzati di $T$.}
+
+\newpage
+\emph{\large Dimostrazione. }\normalsize\vspace{.2cm}\\
+Per dimostrare il teorema si procederà per induzione sulla dimensione di $V$.\\ Si osservi che, in generale, essendo $\mathbb{C}$ algebricamente chiuso, ogni endomorfismo su campo complesso ammette almeno un autovalore non nullo. Infatti è sempre possibile fissare una base ortonormale di $\mathbb{C} ^n$, isomorfo a V. In questo modo a $T$ è associata una matrice il cui polinomio caratterisco ammette sempre almeno una radice non nulla in $\mathbb{C} $.\\
+
+Se $\dim V=1$, siccome $T$ deve avere almeno un autovalore non nullo, $V$ coincide con l'unico autospazio di $T$.\\
+
+Si consideri ora $\dim V=n>1$, per quanto già detto deve esistere un autovettore non nullo $v_1$ di $T$ in $V$. Sia $W$ lo spazio ortogonale a $v_1$, questo ha chiaramente dimensione $n-1$. Si osservi che il vettore $Tw\in W$, se $w\in W$, infatti:
+\begin{equation*}
+    \langle Tw\,, v\rangle=\langle w\,, Tv\rangle=\lambda\langle w\,, v\rangle=0\qquad\forall v\in \text{span}\{v_1\}.
+\end{equation*}
+Inoltre $W$ è a sua volta dotato di un prodotto hermitiano definito positivo e la restrizione di $T$ su $W$ è ancora autoaggiunto. Per le ipotesi induttive, in $W$ esiste una base ortonormale di autovettori di $T\big|_{W}$ $\{v_2,v_3,...,v_n\}$.\\
+
+È quindi sufficiente normalizzare $v_1$ (che è già ortogonale a tuttti i vettori $\{v_2,v_3,...,v_n\}$) così che $\{v_1,v_2,v_3,...,v_n\}$ sia una base ortonormale di V costituita da autovettori di $T$.\\
+
+In questa base la matrice associata a $T$ è diagonale, siccome ogni $v_i$ è un autovettore di T. Si osservi che la matrice del cambio di base $U$ è composta dagli autovettori colonna di $A$, infatti questa trasforma la base canonica in $\{v_1,v_2,\dots,v_n\}$:
+\begin{equation*}
+   v_j=\sum_{i=0}^{n} U_{ij}e^i.
+\end{equation*}
+Da cui si conclude che $U$ è unitaria poiché $\langle v_i\,, v_j\rangle=\delta_{ij}\ \Rightarrow\ U^\dagger U=1.\qquad\qquad \blacksquare$
+\end{document}

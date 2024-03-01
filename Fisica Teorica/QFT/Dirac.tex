@@ -1,0 +1,361 @@
+\section{Dirac's representation}
+In this chapter we are going to quantize the Dirac's field, which is the one that obeys the Dirac's equation \eqref{DiracEquation}. We should pay attention, since in this approach we are going to use a different metric, for space-time, and a different basis of the Dirac representation.\\
+We will define the Clifford algebra of the gamma matrices by $\{\gamma^\mu,\gamma^\nu\}=2\eta^{\mu\nu}$, so that the matrices are:
+\begin{equation*}
+    \gamma^0=\begin{pmatrix}
+        0&&\mathds{1}_{2\times2}\\
+        \mathds{1}_{2\times2}&&0
+    \end{pmatrix},
+    \qquad\gamma^\mu=\begin{pmatrix}
+        0&&\sigma^i\\
+        -\sigma^i&&0
+    \end{pmatrix}.
+\end{equation*}
+It can be easily seen that all the operators, such as parity, that depends on $\beta$ now depend on $\gamma^0$, since now it is this last one which obeys the commutators of $\beta$ and $\alpha$. We will show now an example.\\
+A generic Lorentz transformation for a spinor $\psi$ will be of the form
+\begin{equation*}
+    \psi\xrightarrow{Lorentz}\psi'=\bigg(e^{-\frac{i}{2}\omega_{\mu\nu}\Sigma^{\mu\nu}}\bigg)\psi,
+\end{equation*}
+with $\Sigma^{\mu\nu}=\frac{i}{4}[\gamma^\mu,\gamma^\nu]$, but we will use a different matrix representation of the Lorentz group, for which the transformation of $\psi$ becomes
+\begin{equation*}
+    \psi\xrightarrow{Lorentz}\psi'=\bigg(e^{\frac{1}{2}\omega_{\mu\nu}S^{\mu\nu}}\bigg)\psi,
+\end{equation*}
+with $S^{\mu\nu}=i\Sigma^{\mu\nu}=-\frac{1}{4}[\gamma^\mu,\gamma^\nu]$.\\The matrices $S=e^{\frac{1}{2}\omega_{\mu\nu}S^{\mu\nu}}$, has we have already discussed in the part \ref{part:RQM}, these are pseudo unitary, and with these different convention this propriety reads
+\begin{equation*}
+    S^{\dagger}=\gamma^0S^{-1}\gamma^0.
+\end{equation*}
+Lastly, we can see that the Dirac conjugate has a different definition too
+\begin{equation*}
+    \bar\psi=\psi^\dagger\gamma^0.
+\end{equation*}
+Knowing all of these, we can start to discuss Dirac's theory.
+\section{Dirac's equation revisited}
+In this chapter we want to interpret Dirac's spinors formalism as a representation of the Lorentz group, and try to build the equations of motion from an action principle. Therefore, we should prove again all the results, such as the behavior of fermionic bilinears. Since those proof would be totally identical to what we have already proven during the discussion of relativistic quantum mechanics (Part \ref{part:RQM}), we will just use those results.\\
+
+A good candidate for the action must be Lorentz invariant and a scalar quantity. Furthermore, we want this action to depend on the field and, at least, its first derivatives. Therefore, the first two candidates we should consider are $\bar\psi\psi$ and $\bar\psi\gamma^\mu\partial_\mu\psi$; in analogy to the Klein-Gordon action, we could try to use $\bar\psi\psi$ in order to describe the mass of the particle. Lastly we want this action to be real, therefore each term that we are considering must be hermitian:
+\begin{align*}
+    (\bar\psi\psi)^\dagger&=\psi^\dagger(\psi^\dagger\gamma^0)^\dagger=\psi^\dagger\gamma^0\psi=\bar\psi\psi\\
+    (\bar\psi\gamma^\mu\partial_\mu\psi)^\dagger&=\partial_\mu\psi^\dagger(\gamma^\mu)^\dagger\bar\psi^\dagger=\partial_\mu\psi^\dagger\gamma^0\gamma^\mu\gamma^0\gamma^0\psi=\partial_\mu\bar\psi\gamma^\mu\psi,
+\end{align*}
+this last term can be integrated by parts (letting vanish all border terms) inside the action resulting in:
+\begin{equation*}
+    -\bar\psi\gamma^\mu\partial_\mu\psi.
+\end{equation*}
+In order to remove the minus sign that appears we can multiply this term by $i$. \\
+
+Given these observations, we can guess the lagrangian to be:
+\begin{equation}\label{DiracLagRev}
+    \mathcal{L} =i\bar\psi\gamma^\mu\partial_\mu\psi-m\bar\psi\psi=\bar\psi(i\gamma^\mu\partial_\mu-m)\psi,
+\end{equation}
+notice that, since the mass dimension of the action has to be $0$ and $[d^4x]=-4$ while $[\partial_mu]=1$, this guess implies that $[\psi]=[\bar\psi]=\frac{3}{2}$.\\
+
+It is now straightforward to use the Euler-Lagrange equations and obtain the equation of motion for this quantum system:
+\begin{equation}
+    \label{DiracEqRev} (i\gamma^\mu\partial_\mu-m)\psi(x)=0,\qquad \bar\psi(x)(i\gamma^\mu\partial_\mu-m)=0.
+\end{equation}
+These two equations are first order linear differential equation (while Klein-Gordon was of the second order) but present a nice propriety: each component of $\psi(x)$ satisfy the Klein-Gordon equation.
+This can be shown in the following way:
+\begin{align*}
+    0&=(i\gamma^\mu\partial_\mu+m)(i\gamma^\mu\partial_\mu-m)\psi(x)=-(\gamma^\mu\gamma^\nu\partial_\mu\partial_\nu-im\gamma^\mu\partial_\mu+im\gamma^\mu\partial_\mu+m^2)\psi(x)\\&=-(\gamma^\mu\gamma^\nu\partial_\mu\partial_\nu+m^2)\psi(x)=-\bigg(\frac{1}{2}\gamma^\mu\gamma^\nu\partial_\mu\partial_\nu+\frac{1}{2}\gamma^\mu\gamma^\nu\partial_\nu\partial_\mu+m^2\bigg)\psi(x)\\&=-\bigg(\frac{1}{2}\gamma^\mu\gamma^\nu\partial_\mu\partial_\nu+\frac{1}{2}\gamma^\nu\gamma^\mu\partial_\mu\partial_\nu+m^2\bigg)\psi(x)=-\bigg(\frac{1}{2}\{\gamma^\mu,\gamma^\nu\}\partial_\mu\partial_\nu +m^2\bigg)\psi(x)\\&=-(\eta^{\mu\nu}\partial_\mu\partial_\nu +m^2)\psi(x)=-(\Box +m^2)\psi(x).
+\end{align*}
+ Now, introducing the right and left projectors
+ \begin{equation*}
+    \gamma^5=i\gamma^0\gamma^1\gamma^2\gamma^3=\begin{pmatrix}
+        -\mathds{1}_{2\times2}&&0\\0&&\mathds{1}_{2\times2}
+    \end{pmatrix},\qquad P_{R/L}=\frac{1\pm\gamma^5}{2},
+ \end{equation*}
+ which project each spinor on the two irreducible Weyl's representation of the Lorentz group, we can turn the lagrangian \eqref{DiracLagRev} into the one which depends explicitly on those components. Observing that
+ \begin{align*}
+    \bar\psi\psi_{R/L}&=\bar\psi\frac{1\pm\gamma^5}{2}\psi=\psi^\dagger\beta\bigg(\frac{1\pm\gamma^5}{2}\bigg)^2\psi=\psi^\dagger\frac{1\mp\gamma^5}{2}\beta\frac{1\pm\gamma^5}{2}\psi\\&=\bar\psi_{L/R}\psi_{R/L},\\
+    \bar\psi\gamma^\mu\psi_{R/L}&=\bar\psi\gamma^\mu\frac{1\pm\gamma^5}{2}\psi=\psi^\dagger\beta\gamma^\mu\bigg(\frac{1\pm\gamma^5}{2}\bigg)^2\psi=\psi^\dagger\frac{1\pm\gamma^5}{2}\beta\gamma^\mu\frac{1\pm\gamma^5}{2}\psi\\&=\bar\psi_{R/L}\gamma^\mu\psi_{R/L},
+ \end{align*}
+ it is straightforward to obtain the lagrangian:
+\begin{equation}
+    \mathcal{L} =\bar\psi_{L}i\gamma^\mu\partial_\mu\psi_{L}+\bar\psi_{R}i\gamma^\mu\partial_\mu\psi_{R}-m(\bar\psi_{L}\psi_{R}+\bar\psi_{R}\psi_{L}).
+\end{equation}
+This lagrangian manifestly shows how right and left-handed components are mixed by the mass term, therefore only massless particles can be fully right or left-handed.\\ We can see that the right or left-handed nature of a particle is related to what we call \textbf{helicity}, the projection of the spin on the momentum of the particle. Notice that this quantity can be defined only for massless particles, since for the massive ones a boost could affect the value of this quantity. Studying the components of equation \eqref{DiracEqRev}
+\begin{equation*}
+    \begin{pmatrix}
+        0&&i\partial_t+i\vec\sigma\cdot\vec\nabla\\i\partial_t-i\vec\sigma\cdot\vec\nabla&&0
+    \end{pmatrix}\begin{pmatrix}
+        \psi_L^{(W)}\\\psi_{R}^{(W)}
+    \end{pmatrix}-m\begin{pmatrix}
+        \psi_L^{(W)}\\\psi_{R}^{(W)}
+    \end{pmatrix}=0,
+\end{equation*}
+in the case of a massless particle we get two differential equations, one for each component, those can be expressed in terms of operators:
+\begin{equation*}
+    \begin{cases}
+        i\partial_t\psi_{R}^{(W)}=-i\vec\sigma\cdot\vec\nabla\psi_{R}^{(W)}\\
+        i\partial_t\psi_{L}^{(W)}=i\vec\sigma\cdot\vec\nabla\psi_{L}^{(W)}
+    \end{cases}\qquad\Rightarrow\qquad
+    \begin{cases}
+        \hat{\mathcal{H}} \psi_{R}^{(W)}=\hat{\vec{S}}\cdot\hat{\vec{ p}}\psi_{R}^{(W)}\\
+        \hat{\mathcal{H}}\psi_{L}^{(W)}=-\hat{\vec{S}}\cdot\hat{\vec{ p}}\psi_{L}^{(W)}
+    \end{cases}.
+\end{equation*}
+Considering now that, for massless particles $E=|\vec p|$ we can define the helicity operator $\hat{\vec{S}}\cdot\vec{n}$, where $ \vec{n}$ is the versor of the 3-momentum, and thus we can see that the elicity is well-defined for right or left-handed particles:
+\begin{equation*}
+    \begin{cases}
+        \hat{\vec{S}}\cdot\vec{n}\psi_{R}^{(W)}=\psi_{R}^{(W)}\\
+        \hat{\vec{S}}\cdot\vec{n}\psi_{L}^{(W)}=-\psi_{L}^{(W)}
+    \end{cases}.
+\end{equation*}
+\subsection{Solution of the Dirac's equation}
+We will now study the plane wave solution of the equation \eqref{DiracEqRev}, of the form 
+\begin{equation*}
+    \psi_\alpha(x)=u_\alpha(\vec p)e^{-ipx},
+\end{equation*}
+where $u_\alpha(\vec p)$ is a 4-D spinor.
+By plugging it in the equation \eqref{DiracEqRev} we get that $p$ must satisfy the following relation:
+\begin{equation*}
+    (\gamma^\mu p_\mu-m)=0\quad\Rightarrow\quad\bigg[\begin{pmatrix}
+        0&&\mathds{1}_{2\times 2}\\-\mathds{1}_{2\times 2}&&0
+    \end{pmatrix}p^0+\begin{pmatrix}
+        0&&\sigma^i\\-\sigma^i&&0
+    \end{pmatrix}p_i-\begin{pmatrix}
+        \mathds{1}_{2\times 2}&&0\\0&&\mathds{1}_{2\times 2}
+    \end{pmatrix}m\bigg]u(\vec p)=0,
+\end{equation*}
+defining the two vector of matrices $\sigma^\mu=(\mathds{1}_{2\times2},\sigma^i)$ and $\bar\sigma^\mu=(\mathds{1}_{2\times2},-\sigma^i)$, we can turn the above relation in a set of two relations for the Weyl's components of the spinor $u$:
+\begin{equation*}
+    \begin{cases}
+        (p_\mu\bar\sigma^\mu)u_L=m\ u_R,\\(p_\mu\sigma^\mu)u_R=m\ u_L.
+    \end{cases}
+\end{equation*}
+In order to proceed we need to notice that
+\begin{equation*}
+    (p_\mu\sigma^\mu)(p_nu\bar\sigma^\nu)=(p_0+p_i\sigma^i)(p_0-p_j\sigma^j)=p_0^2-p_ip_j\sigma^i\sigma^j=p_0^2-p_ip_j(\delta^{ij}+\epsilon^{ijk})=m^2.
+\end{equation*}
+It is now easy to check that $u_L=A(p_\mu\sigma^\mu)\chi$ with $A$ an arbitrary constant and $\chi$ an arbitrary constant 2-d spinor, satisfy those relations, since, substituting in the first equation we get
+\begin{equation*}
+    (p_\mu\bar\sigma^\mu)u_L=A(p_\mu\bar\sigma^\mu)(p_\mu\sigma^\mu)\chi=Am^2\chi=m\ u_R,\qquad \Rightarrow\qquad u_R=Am\chi,
+\end{equation*}
+and then, substituting this result in the second equation
+\begin{equation*}
+    (p_\mu\sigma^\mu)u_R=Am(p_\mu\sigma^\mu)\chi=m\ u_L.
+\end{equation*}
+Therefore, the general solution is of the form:
+\begin{equation*}
+    u(\vec p)=A\begin{pmatrix}
+        p_\mu\sigma^\mu\\m
+    \end{pmatrix}\chi,
+\end{equation*}
+we can now choose $A$ and $\chi$ in such a way that this solution becomes more symmetric, we will use (where $\xi$ is a normalized constant spinor, such that $\xi^{\dagger}\xi=1$)\begin{equation*}
+    \begin{cases}
+        A=\frac{1}{m}\\\chi=\sqrt{p_\mu\bar\sigma^\mu}\xi
+    \end{cases}\Rightarrow
+    \begin{cases}
+        u_L=\frac{1}{m}\sqrt{(p_\mu\sigma^\mu)^2}\sqrt{(p_\nu\bar\sigma^\nu)^2}\xi=\sqrt{(p_\nu\sigma^\nu)^2}\xi\\u_R=\frac{m}{m}\chi=\sqrt{p_\mu\bar\sigma^\mu}\xi
+    \end{cases}
+\end{equation*}
+in this way the solution reads:
+\begin{equation*}
+    u(\vec p)=\begin{pmatrix}
+        \sqrt{p_\mu\sigma^\mu}\\\sqrt{p_\mu\bar\sigma^\mu}
+    \end{pmatrix}\xi
+\end{equation*}
+Notice that, if we now suppose that the solution is of the form $\psi(x)=v(\vec p)e^{ipx}$, going through the same steps as before, we would get that 
+\begin{equation*}
+    v(\vec p)=\begin{pmatrix}
+        \sqrt{p_\mu\sigma^\mu}\\-\sqrt{p_\mu\bar\sigma^\mu}
+    \end{pmatrix}\eta,
+\end{equation*}
+with $\eta$ constant normalized spinor.\\The first type of solutions are the so-called positive energy solutions, while the last ones are the negative energy solutions.\\
+
+Let's study further those in the rest reference frame of the particle (where $p^\mu=(E,0,0,0)$), in this reference frame the positive energy solution assume the form:
+\begin{equation*}
+    \psi(x)=\sqrt{m}\begin{pmatrix}
+        \xi\\\xi
+    \end{pmatrix}e^{-ip^\mu  x_\mu}.
+\end{equation*}
+Using Lorentz transformations we can now obtain solutions for moving particles.\\
+
+Lastly, notice that $\xi$ and $\eta$ really behave like the spin of a particle. If we consider a rotation, we can obtain such transformation using the generators of the rotations in the Lorentz group
+\begin{equation*}
+    S^{ij}=-\frac{i}{2}\epsilon^{ijk}\begin{pmatrix}
+        \sigma^k&&0\\0&&\sigma^k
+    \end{pmatrix}, \text{with}\ \omega_{ij}=-\epsilon_{ijk}\theta^k, 
+\end{equation*} 
+in this way the transformation of the spinor is given by
+\begin{equation*}
+    e^{\frac{\omega_{ij}}{2}S^{ij}}=\begin{pmatrix}
+        e^{i\vec\theta\cdot\frac{\vec\sigma}{2}}&&0\\0&&e^{i\vec\theta\cdot\frac{\vec\sigma}{2}}
+    \end{pmatrix}\quad\Rightarrow\quad\xi'=e^{i\vec\theta\cdot\frac{\vec\sigma}{2}}\xi,
+\end{equation*}
+and this shows that $\xi$ and $\eta$ behave  exactly as the spinors that describe spin $\frac{1}{2}$ particles, and indeed they do.
+\section{Quantization of the Dirac's field}
+In order to quantize the field, we need to derive two useful formulae: the first one is some sort of inner product between two spinors, which is simply a consequence of normalization conditions
+\begin{equation*}
+    \xi^{r\dagger}\xi^s=\eta^{r\dagger}\eta^{s}=\delta^{rs}\qquad r,s\in\{1,2\}.
+\end{equation*} 
+We can easily prove, with this relation, that:
+\begin{align*}
+    u^{r\dagger}u^s&=(\xi^{r\dagger}\sqrt{p_\mu\sigma^\mu},\ \xi^{r\dagger}\sqrt{p_\mu\bar\sigma^\mu})\begin{pmatrix}
+        \sqrt{p_\mu\sigma^\mu}\xi^{s}\\\sqrt{p_\mu\bar\sigma^\mu}\xi^{s}
+    \end{pmatrix}\\&=\xi^{r\dagger}(p_\mu\sigma^\mu)\xi^s+\xi^{r\dagger}(p_\mu\bar\sigma^\mu)\xi^s\\&=\xi^{r\dagger}p_0\xi^s+\xi^{r\dagger}(p_i\sigma^i)\xi^s+\xi^{r\dagger}p_0\xi^s-\xi^{r\dagger}(p_i\sigma^i)\xi^s\\&=2p_0\delta^{rs}\\&\text{In the same way ...}\\v^{r\dagger}v^s&=2p^0\delta^{rs}\\u^{r\dagger}v^s&=v(\vec p)^{r\dagger}v(-\vec p)^s=u(\vec p)^{r\dagger}u(-\vec p)^s=0.
+\end{align*}
+The second relation that we will use is a sort of outer product:
+\begin{align*}
+    \sum_{s=1}^{2}u^{s}(\vec p)\bar{u}^s(\vec p)&= \sum_{s=1}^{2}\begin{pmatrix}
+        \sqrt{p_\mu\sigma^\mu}\xi^{s}\\\sqrt{p_\mu\bar\sigma^\mu}\xi^{s} 
+    \end{pmatrix}(\xi^{r\dagger}\sqrt{p_\mu\sigma^\mu},\ \xi^{r\dagger}\sqrt{p_\mu\bar\sigma^\mu})\gamma^0\\&=\sum_{s=1}^{2}\begin{pmatrix}
+        \sqrt{p\sigma}\xi^s\xi^{s\dagger}\sqrt{p\bar\sigma}&&\sqrt{p\sigma}\xi^s\xi^{s\dagger}\sqrt{p\sigma}\\\sqrt{p\bar\sigma}\xi^s\xi^{s\dagger}\sqrt{p\bar\sigma}&&\sqrt{p\bar\sigma}\xi^s\xi^{s\dagger}\sqrt{p\sigma}\end{pmatrix}\\&=\begin{pmatrix}
+          \sqrt{p\sigma p\bar\sigma}  && \sqrt{p\sigma p\sigma}\\\sqrt{p\bar\sigma p\bar\sigma}  && \sqrt{p\bar\sigma p\sigma}
+        \end{pmatrix}=\begin{pmatrix}
+            m&&p^\mu\sigma_\mu\\p^\mu\bar\sigma_\mu&&m
+        \end{pmatrix}
+    =\gamma^\mu p_\mu+m\mathds{1}_{4\times4}.
+\end{align*}
+Repeating the same calculation for the negative energy solution we get:
+\begin{equation*}
+    \sum_{s=1}^{2}v^{s}(\vec p)\bar{v}^s(\vec p)=\gamma^{\mu}p_{\mu}-m\mathds{1}_{4\times4}.
+\end{equation*}
+\subsection{The wrong quantization of the Dirac's field}
+We will now attempt to quantize Dirac's theory in the same manner as for the Klein-Gordon one, this procedure will lead us to the conclusion that a different approach is necessary in order to do so.\\
+
+To start we will impose the canonical quantization conditions
+\begin{equation*}
+    \begin{cases}
+        [\hat{\psi}_\alpha(\vec x),\hat{\psi}_\beta(\vec y)]=[\hat{\pi}_\alpha(\vec x),\hat{\pi}_\beta(\vec y)]=0\\
+        [\hat{\psi}_\alpha(\vec x),\hat{\pi}_\beta(\vec y)]=i\delta^{\alpha\beta}\delta^3(\vec x-\vec y)
+    \end{cases},
+\end{equation*}
+where the conjugate field $\pi$ is given by the lagrangian \eqref{DiracLagRev} by $\frac{\partial\mathcal{L} }{\partial \dot\psi}=i\bar\psi\gamma^0=i\psi^{\dagger}$. \\
+
+We will now suppose that, for each solution, with positive and negative energy and different spin, there exist some creation and annihilation operators, such that the fields operators assume the following form:
+\begin{equation*}
+    \begin{cases}
+        \hat{\psi}(\vec x)=\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\vec p}}}\bigg(\hat{b}^s_{\vec p}u^s(\vec p)e^{i\vec p\cdot \vec x}+\hat{c}^{s\dagger}_{\vec p}v^s(\vec p)e^{-i\vec p\cdot \vec x}\bigg)\\
+        \hat{\pi}(\vec x)=i\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\vec p}}}\bigg(\hat{b}^{s\dagger}_{\vec p}u^{s\dagger}(\vec p)e^{-i\vec p\cdot \vec x}+\hat{c}^{s}_{\vec p}v^{\dagger}(\vec p)e^{i\vec p\cdot \vec x}\bigg)
+    \end{cases},
+\end{equation*}
+we can easily prove that, in order to get the canonical commutation relation above, we need to define these operators with the following commutators
+\begin{align*}
+    [\hat{b}^s_{\vec p},\hat{b}^{r\dagger}_{\vec q}]&=(2\pi)^3\delta^{sr}\delta^3(\vec{ p}-\vec{ q}),\\ [\hat{c}^s_{\vec p},\hat{c}^{r\dagger}_{\vec q}]&=-(2\pi)^3\delta^{sr}\delta^3(\vec{ p}-\vec q),\\
+    [\hat{b}^s_{\vec p},\hat{b}^{r}_{\vec q}]&=[\hat{c}^s_{\vec p},\hat{c}^{r}_{\vec q}]=[\hat{b}^s_{\vec p},\hat{c}^{r}_{\vec q}]=[\hat{b}^{s\dagger}_{\vec p},\hat{c}^{r}_{\vec q}]=[\hat{b}^{s}_{\vec p},\hat{c}^{r\dagger}_{\vec q}]=0.
+\end{align*}
+In fact using these relations we get:
+\begin{align*}
+    [\hat{\psi}_\alpha(\vec x),\hat{\pi}_\beta(\vec y)]&=\sum_{r,s}\int\frac{d^3p\ d^3q}{(2\pi)^6}\frac{1}{2\sqrt{E_{\vec{p}E_{\vec{q}}}}}\bigg([\hat{b}^s_{\vec p},\hat{b}^{r\dagger}_{\vec q}]u^s(\vec p)u^{r\dagger}(\vec q)e^{i(\vec p\cdot\vec x-\vec q\cdot\vec y)}+\\&\qquad\qquad\qquad+[\hat{c}^s_{\vec p},\hat{c}^{r\dagger}_{\vec q}]v^s(\vec p)v^{r\dagger}(\vec q)e^{-i(\vec p\cdot\vec x-\vec q\cdot\vec y)}\bigg)\\&=\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\vec p}}\bigg(u^s(\vec p)u^{s\dagger}(\vec p)e^{i\vec p\cdot(\vec x-\vec y)}v^s(\vec p)v^{s\dagger}(\vec p)e^{-i\vec p\cdot(\vec x-\vec y)}\bigg)\\&=\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\vec p}}\bigg((\gamma^\mu p_\mu+m)\gamma^0e^{i\vec p\cdot(\vec x-\vec y)}+(\gamma^\mu p_\mu-m)\gamma^0e^{-i\vec p\cdot(\vec x-\vec y)}\bigg)\\&=\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}\frac{\gamma^0p_0\gamma^0}{2E_{\vec p}}e^{i\vec p\cdot(\vec x -\vec y)}=\delta^3(\vec x-\vec y),
+\end{align*}
+where we have firstly used the commutation relations above, after the integration over q-space we have used the outer product that we calculated in the previous section, and lastly we have changed the variables $\vec p\rightarrow-\vec p$ in the last term of the integrand, in order to cancels out all spacial and mass terms.\\
+
+Notice how strange these commutation relations are: instead of the normal ones, that come from the harmonic oscillator, here we have a minus sign in the commutator of $\hat c$, we will now show that this sign leads to negative probabilities or negative energies.\\In order to do so we will compute the hamiltonian operator for this system: starting from the Legendre's transform of \eqref{DiracLagRev}
+\begin{equation*}
+    \mathcal{H} =\pi\dot\psi-\mathcal{L} =i\psi^{\dagger}\psi-i\bar\psi\gamma^\mu\partial_\mu\psi+m\bar\psi\psi= i\bar\psi(-\gamma^i\partial_i+m)\psi,
+\end{equation*}
+we can get the classical hamiltonian by integrating over configuration space this one, then we have to substitute the fields operators, starting with
+\begin{align*}
+    (-\gamma^i\partial_i+m)\hat{\psi}&=\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\vec p}}}\bigg(\hat{b}^s_{\vec p}(-i\gamma^i\partial_i+m)u^s(\vec p)e^{i\vec p\cdot \vec x}+\hat{c}^{s\dagger}_{\vec p}(-i\gamma^i\partial_i+m)v^s(\vec p)e^{-i\vec p\cdot \vec x}\bigg)\\&=\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\vec p}}}\bigg(\hat{b}^s_{\vec p}(\gamma^ip^i+m)u^s(\vec p)e^{i\vec p\cdot \vec x}+\hat{c}^{s\dagger}_{\vec p}(-\gamma^ip^i+m)v^s(\vec p)e^{-i\vec p\cdot \vec x}\bigg)\\ &=\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\vec p}}}\bigg(\hat{b}^s_{\vec p}(-\gamma^ip_i+m)u^s(\vec p)e^{i\vec p\cdot \vec x}+\hat{c}^{s\dagger}_{\vec p}(\gamma^ip_i+m)v^s(\vec p)e^{-i\vec p\cdot \vec x}\bigg)\\ &=\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\vec p}}}\bigg(\hat{b}^s_{\vec p}\gamma^0p_0u^s(\vec p)e^{i\vec p\cdot \vec x}-\hat{c}^{s\dagger}_{\vec p}\gamma^0p_0v^s(\vec p)e^{-i\vec p\cdot \vec x}\bigg)\\&=\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}\sqrt{\frac{E_{\vec p}}{2}}\gamma^0\bigg(\hat{b}^s_{\vec p}u^s(\vec p)e^{i\vec p\cdot \vec x}-\hat{c}^{s\dagger}_{\vec p}v^s(\vec p)e^{-i\vec p\cdot \vec x}\bigg),
+\end{align*}
+then we have to evaluate
+\begin{align*}
+    \hat{\mathcal{H} }&=\int d^3x\ \hat{\bar\psi }(-\gamma^i\partial_i+m)\hat{\psi}\\
+    &=\sum_{r,s}\int\frac{d^3x\ d^3p\ d^3q}{(2\pi)^6}\frac{1}{2}\sqrt{\frac{E_{\vec p}}{E_{\vec{q}}}}\bigg(\hat{b}^{r\dagger}_{\vec q}u^{r\dagger}(\vec q)e^{-i\vec q\cdot \vec x}+\hat{c}^{r}_{\vec q}v^{r\dagger}(\vec q)e^{i\vec q\cdot \vec x}\bigg)\bigg(\hat{b}^s_{\vec p}u^s(\vec p)e^{i\vec p\cdot \vec x}-\hat{c}^{s\dagger}_{\vec p}v^s(\vec p)e^{-i\vec p\cdot \vec x}\bigg)\\&=\sum_{r,s}\int\frac{d^3p}{2(2\pi)^3}\bigg(\hat{b}^{r\dagger}_{\vec p}\hat{b}^{s}_{\vec p}u^{r\dagger}(\vec p)u^s(\vec p)-\hat{c}^{r}_{\vec p}\hat{c}^{s\dagger}_{\vec p}v^{r\dagger}(\vec p)v^s(\vec p)-\hat{b}^{r\dagger}_{-\vec p}\hat{c}^{s\dagger}_{\vec p}u^{r\dagger}(-\vec p)v^s(\vec p)+\hat{c}^{r}_{-\vec p}\hat{b}^{s}_{\vec p}v^{r\dagger}(-\vec p)u^s(\vec p)\bigg),
+\end{align*}
+recalling that $u^{r\dagger}(-\vec p)v^s(\vec p)=v^{r\dagger}(-\vec p)u^s(\vec p)=0$ and $u^{r\dagger}(\vec p)u^s(\vec p)=v^{r\dagger}(\vec p)v^s(\vec p)=2p_0\delta^{rs}$ we get:
+\begin{equation*}
+    \hat{\mathcal{H} }=\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}E_{\vec p}(\hat{b}^{s\dagger}_{\vec p}\hat{b}^{s}_{\vec p}-\hat{c}^{s}_{\vec p}\hat{c}^{s\dagger}_{\vec p}).
+\end{equation*}
+Lastly, using the commutator of $\hat{c}$ we can get the final expression for the hamiltonian operator:
+\begin{equation*}
+    \hat{\mathcal{H} }=\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}E_{\vec p}(\hat{b}^{s\dagger}_{\vec p}\hat{b}^{s}_{\vec p}-\hat{c}^{s\dagger}_{\vec p}\hat{c}^{s}_{\vec p}+(2\pi)^3\delta^3(0)),
+\end{equation*}
+again we have obtained a divergence term (as in Klein-Gordon hamiltonian) and some number operators, one for each type of particle and spin. Notice that the ones for the c type particles have a minus sign, which come from the strange sign of the commutator. We will now show that this doesn't lead to negative energies but to negative probabilities.\\Let's compute the commutators
+\begin{align*}
+    [\hat{\mathcal{H} },\hat{b}^{s\dagger}_{\vec{p}}]&=\sum_{r=1}^{2}\int\frac{d^3q}{(2\pi)^3}E_{\vec q}\ [\hat{b}^{r\dagger}_{\vec q}\hat{b}^{r}_{\vec q},\hat{b}^{s\dagger}_{\vec{p}}]=\sum_{r=1}^{2}\int\frac{d^3q}{(2\pi)^3}E_{\vec q}\bigg(\hat{b}^{r\dagger}_{\vec q}[\hat{b}^{r}_{\vec q},\hat{b}^{s\dagger}_{\vec{p}}]+[\hat{b}^{r\dagger}_{\vec q},\hat{b}^{s\dagger}_{\vec{p}}]\hat{b}^{r}_{\vec q}\bigg)\\&=\sum_{r=1}^{2}\int\frac{d^3q}{(2\pi)^3}E_{\vec q}\ (2\pi)^3\delta^{rs}\delta^{3}(\vec q-\vec p)\hat{b}^{r\dagger}_{\vec q}=E_{\vec p}\hat{b}^{s\dagger}_{\vec p},\\
+    [\hat{\mathcal{H} },\hat{c}^{s\dagger}_{\vec{p}}]&=\sum_{r=1}^{2}\int\frac{d^3q}{(2\pi)^3}E_{\vec q}\ [\hat{c}^{r\dagger}_{\vec q}\hat{c}^{r}_{\vec q},\hat{c}^{s\dagger}_{\vec{p}}]=\sum_{r=1}^{2}\int\frac{d^3q}{(2\pi)^3}E_{\vec q}\bigg(\hat{c}^{r\dagger}_{\vec q}[\hat{c}^{r}_{\vec q},\hat{c}^{s\dagger}_{\vec{p}}]+[\hat{c}^{r\dagger}_{\vec q},\hat{c}^{s\dagger}_{\vec{p}}]\hat{c}^{r}_{\vec q}\bigg)\\&=\sum_{r=1}^{2}\int\frac{d^3q}{(2\pi)^3}E_{\vec q}\ (2\pi)^3\delta^{rs}\delta^{3}(\vec q-\vec p)\hat{c}^{r\dagger}_{\vec q}=E_{\vec p}\hat{c}^{s\dagger}_{\vec p},
+\end{align*}
+therefore we can clearly see that each state created by those operators have positive energy:
+\begin{align*}
+    \hat{\mathcal{H} }\hat{b}^{s\dagger}_{\vec{p}}\ket{0}&=(E_{\vec p}\hat{b}^{s\dagger}_{\vec p}+\hat{b}^{s\dagger}_{\vec{p}}\hat{b}^{s}_{\vec{p}})\ket{0}=E_{\vec p}\hat{b}^{s\dagger}_{\vec p}\ket{0},\\
+    \hat{\mathcal{H} }\hat{c}^{s\dagger}_{\vec{p}}\ket{0}&=(E_{\vec p}\hat{c}^{s\dagger}_{\vec p}+\hat{c}^{s\dagger}_{\vec{p}}\hat{c}^{s}_{\vec{p}})\ket{0}=E_{\vec p}\hat{c}^{s\dagger}_{\vec p}\ket{0}.
+\end{align*}
+However, as previously mentioned, the probability associated to a certain state can be negative:
+\begin{equation*}
+    \bra{0}\hat{c}_{\vec p}^{s}\hat{c}_{\vec q}^{r\dagger}\ket{0}=\bra{0}\bigg([\hat{c}_{\vec p}^{s}\hat{c}_{\vec q}^{r\dagger}]+\hat{c}_{\vec q}^{r\dagger}\hat{c}_{\vec p}^{s}\bigg)\ket{0}=-(2\pi)^3\delta^{rs}\delta^3(\vec p-\vec q).
+\end{equation*}
+One could try to solve this issue by interpreting $\hat{c}^\dagger$ as an annihilation operator while $\hat c$ as the creator one: this doesn't solve the problem since it would mean that $\hat{c}^s_{\vec p}\ket{0}$ would have negative energy.\\
+For these reasons this quantization approach fails.
+\subsection{The right quantization of the Dirac's field}
+In order to obtain the right Dirac's theory we will need to impose anticommutation relations, as the following
+\begin{equation*}
+    \{\hat{\psi}_\alpha(\vec x),\hat{\psi}_\beta(\vec y)\}=\delta_{\alpha\beta}\delta^3(\vec x-\vec y),\qquad \text{all the others vanish.}
+\end{equation*}
+Imposing these relations on the previous field operators we obtain that creation and annihilation operators should obey 
+\begin{equation*}
+    \{\hat{b}^r_{\vec p},\hat{b}^{s\dagger}_{\vec q}\}=\{\hat{c}^r_{\vec p},\hat{c}^{s\dagger}_{\vec q}\}=(2\pi)^3\delta^3(\vec p-\vec q).
+\end{equation*}
+In this way the hamiltonian operator reads:
+\begin{equation*}
+    \hat{\mathcal{H} }=\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}E_{\vec p}(\hat{b}^{s\dagger}_{\vec p}\hat{b}^{s}_{\vec p}-\hat{c}^{s}_{\vec p}\hat{c}^{s\dagger}_{\vec p})=\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}E_{\vec p}(\hat{b}^{s\dagger}_{\vec p}\hat{b}^{s}_{\vec p}+\hat{c}^{s\dagger}_{\vec p}\hat{c}^{s}_{\vec p}-(2\pi)^3\delta^3(0)),
+\end{equation*}
+here we can notice that now the "strange" minus sign is disappeared, but the energy of vacuum is now negative: this behavior is the key element of why supersymmetry theories could be a solution to the infinite energy of vacuum.\\
+
+If we now evaluate again the commutator of the hamiltonian, we obtain:
+\begin{equation*}
+    [\hat{\mathcal{H} },\hat{b}^{s\dagger}_{\vec{p}}]=E_{\vec p}\hat{b}^{s\dagger}_{\vec{p}},\qquad[\hat{\mathcal{H} },\hat{c}^{s\dagger}_{\vec{p}}]=E_{\vec p}\hat{c}^{s\dagger}_{\vec{p}},
+\end{equation*}
+and, by the same steps as before, we can prove that there aren't negative energy states.\\
+Furthermore, the probability is conserved, as the norm of states is positive:
+\begin{equation*}
+    \bra{0}\hat{c}_{\vec p}^{s}\hat{c}_{\vec q}^{r\dagger}\ket{0}=\bra{0}\bigg(\{\hat{c}_{\vec p}^{s},\hat{c}_{\vec q}^{r\dagger}\}-\hat{c}_{\vec q}^{r\dagger}\hat{c}_{\vec p}^{s}\bigg)\ket{0}=(2\pi)^3\delta^{rs}\delta^3(\vec p-\vec q).
+\end{equation*}
+\section{Conserved charge}
+Directly from the steps that led us to the lagrangian of the Dirac equation (recall that we wanted fermionic bilinears) we can easily obtain that the system that we have quantized has a $U(1)$ symmetry. Using the Nother's theorem we can obtain the conserved current associated with this symmetry: first let's consider an infinitesimal transformation
+\begin{equation*}
+    \psi'=e^{iq\theta}\psi\approxeq(1+iq\theta)\psi,\qquad\bar\psi'=\bar\psi e^{-iq\theta}\approxeq\bar\psi(1+-q\theta),
+\end{equation*}
+given the lagrangian $\mathcal{L} =\bar\psi(i\gamma^\mu\partial_\mu-m)\psi$ the theorem gives:
+\begin{equation*}
+    J^\mu=\frac{\partial\mathcal{L} }{\partial\partial_\mu\psi}\delta\psi=-q\theta\bar\psi\gamma^\mu\psi.
+\end{equation*}
+Again we can rescale (to give the right units) the associated charge, which is
+\begin{equation*}
+    Q=\int d^3x\ J^0=q\int d^3x\ \bar\psi\gamma^0\psi.
+\end{equation*}
+We can that proceed to quantize this charge inserting the operators of the fields, thus:
+\begin{align*}
+    \hat{Q}&=\int d^3x\hat{\bar\psi}\gamma^0\hat{\psi}=
+    \hat{Q}=\int d^3x\hat{\psi}^\dagger\hat{\psi}\\&=q\sum_{s,r=1}^{2}\int\frac{d^3p\ d^3q\ d^3x}{(2\pi)^6}\frac{1}{2\sqrt{E_{\vec p}E_{\vec q}}}\big(\hat{b}^{r\dagger}_{\vec q}u^{r\dagger}(\vec q)e^{-i\vec q\cdot\vec x}+\hat{c}^{r}_{\vec q}v^{s\dagger}(\vec q)e^{i\vec q\cdot\vec x}\big)\times\\&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\times\big(\hat{b}^{s}_{\vec p}u^s(\vec p)e^{i\vec p\cdot\vec x}+\hat{c}^{s\dagger}_{\vec p}v^s(\vec p)e^{-i\vec p\cdot\vec x}\big)\\&=q\sum_{s,r=1}^{2}\int\frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\vec p}}\big(\hat{b}^{r\dagger}_{\vec p}\hat{b}^{s}_{\vec p}u^{r\dagger}(\vec p)u^s(\vec p)+\hat{b}^{r\dagger}_{\vec p}\hat{c}^{s\dagger}_{-\vec p}u^{r\dagger}(\vec p)v^s(-\vec p)\\&\qquad\qquad\qquad\qquad\qquad\qquad\qquad+\hat{c}^{r\dagger}_{-\vec p}\hat{b}^{s}_{\vec p}v^{r\dagger}(-\vec p)u^s(\vec p)+\hat{c}^{r}_{\vec p}\hat{c}^{s\dagger}_{\vec p}v^{r\dagger}(\vec p)v^s(\vec p)\big)\\&=q\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}\big(\hat{b}_{\vec p}^{s\dagger}\hat{b}_{\vec p}^{s}-\hat{c}_{\vec p}^{s\dagger}\hat{c}_{\vec p}^{s}\big).
+\end{align*}
+Now, we can better understand the meaning of the two operators $\hat{b}^\dagger$ and $\hat{c}$, in fact the charge eigenvalue of a state created by $\hat{b}^\dagger$ will have a positive charge
+\begin{align*}
+    \hat{Q}\hat{b}^{r\dagger}_{\vec q}\ket{0}&=q\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}\big(\hat{b}_{\vec p}^{s\dagger}\hat{b}_{\vec p}^{s}-\hat{c}_{\vec p}^{s\dagger}\hat{c}_{\vec p}^{s}\big)\hat{b}^{r\dagger}_{\vec q}\ket{0}\\&=q\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}\big(\{\hat{b}_{\vec p}^{s\dagger}\hat{b}_{\vec p}^{s},\hat{b}^{r\dagger}_{\vec q}\}-\hat{b}_{\vec p}^{s\dagger}\hat{b}^{r\dagger}_{\vec q}\hat{b}_{\vec p}^{s}+\hat{c}_{\vec p}^{s\dagger}\hat{b}^{r\dagger}_{\vec q}\hat{c}_{\vec p}^{s}\big)\ket{0}\\&=q\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}\big(\hat{b}_{\vec p}^{s\dagger}\{\hat{b}_{\vec p}^{s},\hat{b}^{r\dagger}_{\vec q}\}+\{\hat{b}_{\vec p}^{s\dagger},\hat{b}^{r\dagger}_{\vec q}\}\hat{b}_{\vec p}^{s}\big)\ket{0}\\&=q\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^3}\hat{b}_{\vec p}^{s\dagger}(2\pi)^3\delta^{rs}\delta^3(\vec{ p}-\vec{ q})\ket{0}=q\hat{b}_{\vec p}^{s\dagger}\ket{0},
+\end{align*}
+while the same calculation, made with $\hat{a}^\dagger$, would have a minus sign, and thus a negative charge. In this way we have showed that $\hat{b}^\dagger$ creates particles, while $\hat{c}^\dagger$ antiparticles.
+\section{Statistic of fermions and Pauli exclusion principle}
+We will now discuss how the statistics followed by fermionic particles (which obeys Dirac's equation) emerges naturally from this quantization procedure.\\Let's consider a two particle system, if those are identical it can be obtained by using twice the same operator with different momenta and spins
+\begin{equation*}
+    \hat{b}^{s_1\dagger}_{\vec p_1}\hat{b}^{s_2\dagger}_{\vec p_2}\ket{0}=\ket{\vec p_1,s_1,\vec p_2,s_2}.
+\end{equation*} 
+If we exchange the two particle we would obtain a state created by the same operators but in the reverse order, this can be expressed as the previous one using anticommutation relations
+\begin{equation*}
+    \ket{\vec p_2,s_2,\vec p_1,s_1}=\hat{b}^{s_2\dagger}_{\vec p_2}\hat{b}^{s_1\dagger}_{\vec p_1}\ket{0}=-\hat{b}^{s_1\dagger}_{\vec p_1}\hat{b}^{s_2\dagger}_{\vec p_2}\ket{0}=-\ket{\vec p_1,s_1,\vec p_2,s_2}.
+\end{equation*} 
+In this way we have showed that identical particle states are antisymmetric under exchange of particles. This naturally leads to the \textbf{Pauli exclusion principle}, which states that two fermionic particles cannot be in the same state. In fact, if the two operators have the same momenta and spins it would mean that after the exchange of particles the system should be the same as before, but due to the antisymmetry it then should vanish
+\begin{equation*}
+    \ket{\vec p,s,\vec p,s}=- \ket{\vec p,s,\vec p,s}\quad\Rightarrow\quad \ket{\vec p,s,\vec p,s}=0.
+\end{equation*}
+\section{Propagator and time evolution of the Dirac's field}
+To end our discussion on the quantization of the Dirac's field we will analyze the time evolution of it. In order to do so we should go to the Heisenberg picture, in the same way we have done for the Klein-Gordon theory. Doing so it is easy to show that, in the Heisenberg picture, the field should have the following form\begin{equation*}
+    \hat{\psi}(x)=\sum_{r=1}^{2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\vec p}}}\bigg(\hat{b}^{s}_{\vec p}u^s(\vec p)e^{-ip^\mu x_\mu}+\hat{c}^{s\dagger}_{\vec p}v^s(\vec p)e^{ip^\mu x_\mu}\bigg).
+\end{equation*} 
+We then have to check that this theory is consistent with causality prescription given by relativity: to do so we define the propagator
+\begin{equation*}
+    iS_{\alpha\beta}(x-y)=\{\hat{\psi}_\alpha,\hat{\bar\psi}_\beta\}.
+\end{equation*}
+Let's compute this propagator in terms of the propagator of Klein-Gordon theory
+\begin{align*}
+    iS(x-y)&=\sum_{r,s=1}^{2}\int\frac{d^3p\ d^3q}{(2\pi)^6}\frac{1}{2\sqrt{E_{\vec p}E_{\vec q}}}\bigg[\{\hat{b}^{s}_{\vec p},\hat{b}^{r\dagger}_{\vec q}\}u^s(\vec p)\bar{u}^r(\vec q)e^{-i(px-qy)}+\{\hat{c}^{s\dagger}_{\vec p},\hat{c}^{r}_{\vec q}\}v^s(\vec p)\bar{v}^r(\vec q)e^{i(px-qy)}\bigg]\\&=\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^6}\frac{1}{2E_{\vec p}}\bigg[u^s(\vec p)\bar{u}^s(\vec p)e^{-ip(x-y)}+v^s(\vec p)\bar{v}^s(\vec p)e^{ip(x-y)}\bigg]\\&=\sum_{s=1}^{2}\int\frac{d^3p}{(2\pi)^6}\frac{1}{2E_{\vec p}}\bigg[(\gamma^\mu p_\mu+m)e^{-ip(x-y)}+(\gamma^\mu p_\mu-m)e^{ip(x-y)}\bigg]\\
+    &=(i\gamma^\mu\partial_\mu+m)(D(x-y)-D(y-x)),\qquad\text{with}\qquad D(x-y)=\int\frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\vec p}}e^{-ip_\mu(x^\mu-y^\mu)}.
+\end{align*}
+In the discussion of the  have already shown that $D(x-y)-D(y-x)$ vanishes outside the light cone, and thus it does the propagator for Dirac's field too. Now, since all the observables, for fermionic particles, are bilinears, the anticommutation of the fields are enough to make commute the observable, thus granting the causality of the theory.\\
+
+Lastly, observe that the propagator satisfy the Dirac's equation itself
+\begin{align*}
+    &(i\gamma^\mu\partial_\mu^{(x)}-m)S(x-y)=0\\&
+    \frac{1}{i}(i\gamma^\nu\partial_\nu^{(x)}-m)(i\gamma^\mu\partial_\mu+m)(D(x-y)-D(y-x))\\&=-\frac{1}{i}(\gamma^\nu\partial_\nu^{(x)}\gamma^\mu\partial_\mu^{(x)}+m^2)(D(x-y)-D(y-x))\\&=i\bigg(\frac{1}{2}\{\gamma^\nu\gamma^\mu\}\partial_\nu^{(x)}\partial_\mu^{(x)}+m^2\bigg)(D(x-y)-D(y-x))\\&=i(\eta^{\mu\nu}\partial_\nu^{(x)}\partial_\mu^{(x)}+m^2)(D(x-y)-D(y-x))\\&=i(\Box^{(x)}+m^2)(D(x-y)-D(y-x))\\&=i\int\frac{d^3p}{(2\pi)^3}\bigg[(-p^\mu p_\mu+m^2)e^{-ip(x-i)}-(-p^\mu p_\mu+m^2)e^{ip(x-i)}\bigg]=0,
+\end{align*}
+where in the last line we have used the mass-shell condition.

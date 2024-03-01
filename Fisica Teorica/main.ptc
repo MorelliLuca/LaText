@@ -1,0 +1,90 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\leavevmode {\color {mColor}Introduction}}{7}{chapter*.1}%
+\contentsline {part}{\@mypartnumtocformat {I}{Fundaments of theoretical physics}}{9}{part.1}%
+\ttl@starttoc {default@1}
+\contentsline {chapter}{\numberline {1}The fundaments of physics}{11}{chapter.1}%
+\contentsline {section}{\numberline {1.1}The principles of physics}{11}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Space and time}{11}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Inertial reference frames and relativity}{12}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Transformations of inertial reference frames}{12}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Principle of least action}{12}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Euler-Lagrange equations}{13}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Noether's theorem}{14}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Euler-Lagrange equations for fields}{14}{subsection.1.2.3}%
+\contentsline {section}{\numberline {1.3}The phase space}{15}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Special relativity}{17}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Mechanics}{19}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Quantum mechanics}{21}{chapter.4}%
+\contentsline {part}{\@mypartnumtocformat {II}{Statistical mechanics}}{23}{part.2}%
+\ttl@stoptoc {default@1}
+\ttl@starttoc {default@2}
+\contentsline {chapter}{\numberline {5}Basic thermodynamics concepts}{25}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Thermodynamic systems}{25}{section.5.1}%
+\contentsline {section}{\numberline {5.2}The laws of thermodynamic}{26}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Thermodynamic potential}{27}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Classical statistical mechanics}{29}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The microcanonical ensemble}{29}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Microcanonical entropy}{29}{subsection.6.1.1}%
+\contentsline {section}{\numberline {6.2}The canonical ensemble}{32}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Partition function and free energy}{34}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Equipartition theorem}{35}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Grand canonical ensemble}{37}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Van deer Waals' law}{40}{subsection.6.3.1}%
+\contentsline {part}{\@mypartnumtocformat {III}{Relativistic Quantum Mechanics}}{43}{part.3}%
+\ttl@stoptoc {default@2}
+\ttl@starttoc {default@3}
+\contentsline {chapter}{\numberline {7}First quantization of special relativity}{45}{chapter.7}%
+\contentsline {section}{\numberline {7.1}From classical to relativistic quantum mechanics}{45}{section.7.1}%
+\contentsline {section}{\numberline {7.2}The Yukawa potential}{47}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Green's functions for the generalized Klein-Gordon equation}{48}{subsection.7.2.1}%
+\contentsline {chapter}{\numberline {8}Dirac's equation}{51}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Deriving the Dirac's equation}{51}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Some proprieties of the $\gamma $ matrices}{53}{subsection.8.1.1}%
+\contentsline {section}{\numberline {8.2}Plane wave solution of Dirac's equation}{54}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Non-relativistic limit of the Dirac's equation}{55}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}The spin operator}{57}{subsection.8.3.1}%
+\contentsline {section}{\numberline {8.4}Relativistic invariance of the Dirac's equation}{58}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}The moving particle}{61}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}Fermionic bilinears}{62}{subsection.8.4.2}%
+\contentsline {section}{\numberline {8.5}Discrete transformation}{63}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}Charge symmetry and the hole theory}{65}{subsection.8.5.1}%
+\contentsline {section}{\numberline {8.6}Propagator of the Dirac's equation}{66}{section.8.6}%
+\contentsline {section}{\numberline {8.7}Action of the Dirac's equation}{67}{section.8.7}%
+\contentsline {chapter}{\numberline {9}Particles with spin greater than 1}{69}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Pauli-Fierz equations}{69}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Plane waves for bosonic Pauli-Fierz equations}{70}{subsection.9.1.1}%
+\contentsline {section}{\numberline {9.2}Spin 1 particles}{70}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Massless case}{71}{subsection.9.2.1}%
+\contentsline {chapter}{\numberline {10}Path integrals}{73}{chapter.10}%
+\contentsline {section}{\numberline {10.1}A heuristic approach to path integrals}{73}{section.10.1}%
+\contentsline {section}{\numberline {10.2}1-D path integrals}{74}{section.10.2}%
+\contentsline {section}{\numberline {10.3}A general way to solve path integrals}{76}{section.10.3}%
+\contentsline {part}{\@mypartnumtocformat {IV}{Quantum field theory}}{77}{part.4}%
+\ttl@stoptoc {default@3}
+\ttl@starttoc {default@4}
+\contentsline {chapter}{\numberline {11}Introduction to Quantum Filed Theory}{79}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Why quantum field theory?}{79}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Quantum field theory framework}{81}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}Units and scales}{82}{subsection.11.2.1}%
+\contentsline {section}{\numberline {11.3}The mechanical model of a quantum field}{82}{section.11.3}%
+\contentsline {chapter}{\numberline {12}Quantization of the Klein-Gordon field}{87}{chapter.12}%
+\contentsline {section}{\numberline {12.1}The second quantization}{87}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Charges and symmetries of the field}{91}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Heisenberg picture}{95}{section.12.3}%
+\contentsline {chapter}{\numberline {13}Quantization of the Dirac field}{99}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Dirac's representation}{99}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Dirac's equation revisited}{100}{section.13.2}%
+\contentsline {subsection}{\numberline {13.2.1}Solution of the Dirac's equation}{102}{subsection.13.2.1}%
+\contentsline {section}{\numberline {13.3}Quantization of the Dirac's field}{103}{section.13.3}%
+\contentsline {subsection}{\numberline {13.3.1}The wrong quantization of the Dirac's field}{104}{subsection.13.3.1}%
+\contentsline {subsection}{\numberline {13.3.2}The right quantization of the Dirac's field}{107}{subsection.13.3.2}%
+\contentsline {section}{\numberline {13.4}Conserved charge}{108}{section.13.4}%
+\contentsline {section}{\numberline {13.5}Statistic of fermions and Pauli exclusion principle}{109}{section.13.5}%
+\contentsline {section}{\numberline {13.6}Propagator and time evolution of the Dirac's field}{109}{section.13.6}%
+\contentsline {chapter}{\numberline {14}Quantization of the EM field}{111}{chapter.14}%
+\contentsline {section}{\numberline {14.1}The electromagnetic field}{111}{section.14.1}%
+\contentsline {subsection}{\numberline {14.1.1}Gauge symmetries}{112}{subsection.14.1.1}%
+\contentsline {section}{\numberline {14.2}Quantization of the EM field}{113}{section.14.2}%
+\contentsline {section}{\numberline {14.3}The Lorenz gauge for the quantized field}{114}{section.14.3}%
+\contentsline {section}{\numberline {14.4}The hamiltonian of the electromagnetic field}{117}{section.14.4}%
+\contentsfinish 

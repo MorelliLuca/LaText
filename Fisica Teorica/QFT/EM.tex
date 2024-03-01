@@ -1,0 +1,222 @@
+\section{The electromagnetic field}
+We are going to discuss the quantization of the electromagnetic field, in order to do so we will need to understand first how classical field theory describe such field. From electromagnetism, we know that we can describe all electromagnetic interactions using two vector fields, which are solutions of the Maxwell's equations. These two fields can be combined in a covariant tensor, called \textbf{electromagnetic tensor} 
+\begin{equation*}
+    F_{\mu\nu}\begin{pmatrix}
+        0&&E_x&&E_y&&E_z\\
+        -E_x&&0&&-B_z&&B_y\\
+        -E_y&&B_z&&0&&-B_x\\
+        -E_z&&-B_y&&B_x&&0\\
+    \end{pmatrix}.
+\end{equation*} 
+Introducing the 4-potential $A^\mu=(\phi,\vec A)$, as the 4-vector containing the electric potential $\phi$ and the magnetic vector potential $\vec A$, from the classical definitions of these two we obtain
+\begin{equation*}
+    \begin{cases}
+        \vec E=-\vec\nabla\phi-\partial_t\vec A,\\
+        \vec B=\vec\nabla \times \vec A
+    \end{cases}\Rightarrow\qquad F_{\mu\nu}=\partial_{\mu}A_\nu-\partial_\nu A_\mu.
+\end{equation*}
+Given all of these quantities, we can now guess that the lagrangian of the electromagnetic field is a scalar quantity such as $F^{\mu\nu}F_{\mu\nu}$ (actually there exist only two possible scalars, but the other one would vanish in the action). We can test our guess finding the equations of motion and comparing them to the Maxwell's equations:
+\begin{equation*}
+    \mathcal{L} =-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}\quad\Rightarrow\quad0=\frac{\partial\mathcal{L} }{\partial\partial_\mu A_\nu}=-\partial_\mu F^{\mu\nu},
+\end{equation*}
+from this one equation we can obtain two Maxwell's equations 
+\begin{equation*}
+    \vec \nabla\cdot\vec E=0,\qquad \partial_{t}\vec E=\vec\nabla\times\vec B,
+\end{equation*}
+the others can be obtained from the Bianchi's identity (which the electromagnetic tensor satisfies)
+\begin{equation*}
+    \partial_\lambda F^{\mu\nu}+ \partial_\mu F^{\nu\lambda}+
+    \partial_\nu F^{\lambda\mu}=0\quad \Rightarrow\begin{cases}
+        \vec \nabla\cdot\vec B=0,\\\partial_{t}\vec B=-\vec\nabla\times\vec E
+    \end{cases}.
+\end{equation*} 
+Alternatively, we could describe the system using the \textbf{dual field strength}
+\begin{equation*}
+    \tilde F^{\mu\nu}=\epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma},
+\end{equation*}
+this one will introduce the so called \emph{E-M duality}, swapping the roles of the electric and magnetic fields.
+\subsection{Gauge symmetries}
+Notice that our system is described by $6$ scalar fields, but we have already introduced the 4-potential and defined all of those in terms of the components $A^\mu$, thus $2$ of the $6$ d.o.f are actually not needed to describe our system. It turns out the d.o.f can be reduced even more, in fact we can observe that 
+\begin{equation*}
+    F^{00}=\partial_{0}A_0-\partial_0 A_0=0,
+\end{equation*}
+this implies that in the lagrangian there isn't any term containing $A_0$ or its derivatives and thus its isn't a physical degree of freedom of the system. \\
+
+This particular structure can be used to add more constraints on the system, and thus reduce even more the degrees of freedom of the field. In fact, we can add the 4-gradient of an arbitrary function to the for potential and the electromagnetic tensor wouldn't change, and thus the lagrangian too
+\begin{equation*}
+    A^\mu\rightarrow A'^\mu= A^\mu+\partial_\mu\lambda\ \Rightarrow\ F'^{\mu\nu}=\partial_\mu A_\mu -\partial_\mu\partial_\nu\lambda-\partial_\nu A^\mu+\partial_\mu\partial_\nu\lambda=F^{\mu\nu}.
+\end{equation*} 
+This symmetry is called \textbf{Gauge symmetry}, and it is an internal local symmetry, and let us impose others constraints con the equations of motion called gauges:
+\begin{itemize}
+    \item the \textbf{Lorenz gauge} $\partial_\mu A^\mu=0$,
+    \item the \textbf{Coulomb gauge} $\vec \nabla\cdot\vec A=0$.
+\end{itemize}
+We should notice that the Lorentz gauge is Lorentz invariant and for this reason it is the one that we will use during quantization.
+\section{Quantization of the EM field} 
+We will now quantize the system, thus promote to operators the conjugate field and the hamiltonian, therefore we need to obtain the classical form of those
+\begin{align*}
+    \pi^\mu&=\frac{\partial\mathcal{L} }{\partial\dot{A}_\mu}=\begin{cases}
+        \pi^0=0 \qquad\text{Because $\mathcal{L} $ doesn't contain $\dot{A}_0$,}\\
+        \pi^i=\frac{\partial }{\partial\dot{A}_i}\bigg[-\frac{1}{4}(\partial_\mu A_\nu-\partial_\nu A_\mu)(\partial^\mu A^\nu-\partial^\nu A^\mu)\bigg]
+    \end{cases}\\&=\begin{cases}
+        \pi^0=0 \qquad\text{Because $\mathcal{L} $ doesn't contain $\dot{A}_0$,}\\
+        \pi^i=-\frac{1}{2}[\partial^0 A^i-\partial^i A^0-\partial^i A^0+\partial^0 A^i]=-\dot{A}^i+\partial^iA^0=E^i
+    \end{cases},\\
+    \mathcal{H} &=\int d^3x(\pi^\mu \dot{A}_\mu-\mathcal{L} )\\
+    &=\int d^3x(E^i (-\partial_iA_0-E_i)-\mathcal{L} )=\int d^3x\bigg(\vec E^2+\vec E\cdot\vec\nabla A_0-\frac{\vec E^2-\vec B^2}{2}\bigg)\\&=\int d^3x\bigg(\vec E\cdot\vec\nabla A_0+\frac{\vec E^2+\vec B^2}{2}\bigg)=\int d^3x\bigg(-A_0\vec \nabla\cdot\vec E +\frac{\vec E^2+\vec B^2}{2}\bigg),
+\end{align*}
+where we have used that $E_i=-\partial_i A_0-\partial_0A^i$ and $\mathcal{L} =\frac{\vec E^2-\vec B^2}{2}$.\\We should now notice that here the fact that $A_0$ is non-physical is manifest, since it could be interpreted as a sort lagrange multiplier imposing the constraint $\nabla\cdot\vec E=0$.\\
+
+Lastly, before quantizing, we should impose the Lorenz gauge $\partial_\mu A^\mu=0$, in this way the equations of motion reduces to a wave equation 
+\begin{equation*}
+    \partial_\mu(\partial^\mu A^\nu-\partial^\nu A^\mu)=\Box A^\nu-\partial^\nu(\partial_\mu A^\mu)=\Box A^\nu=0,
+\end{equation*}
+this help us a lot in the process of quantization, since this is actually a Klein-Gordon equation with mass zero, and thus we can quantize each component of the field as a Klein-Gordon field.\\
+To impose this gauge we can add an appropriate (total derivative) term to the lagrangian
+\begin{equation*}
+    \mathcal{L}=-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}-\frac{1}{2}(\partial_\mu A^\mu)^2,
+\end{equation*} 
+in this way the equations of motion reads\begin{equation*}
+    0=-\partial_\mu F^{\mu\nu}-\partial_\nu\eta^{\mu\nu}(\partial_\sigma A^\sigma)=-\partial_\mu(\partial^\mu A^\nu-\partial^\nu A^\mu+\partial^\nu A^\mu)=\Box A^\nu.
+\end{equation*}
+In this way also the conjugate filed changes, resulting in
+\begin{equation*}
+    \pi^{\mu}=\partial^\mu A^0-\partial^0 A^\mu-\delta^\nu_0\partial_\nu A^\nu.
+\end{equation*}
+
+We now need to impose commutation relations on the fields operators, such as in Klein-Gordon
+\begin{equation*}
+    [\hat{A}_\mu(\vec x),\hat{A}_\nu(\vec y)]=[\hat{\pi}_\mu(\vec x),\hat{\pi}_\nu(\vec y)]=0,\qquad  [\hat{A}_\mu(\vec x),\hat{\pi}_\nu(\vec y)]=i\eta_{\mu\nu}\delta^3(\vec x-\vec y),
+\end{equation*}
+these relations are verified defining the following field
+\begin{equation*}
+    \hat{A}_\mu(\vec x)=\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2|\vec p|}}(\hat{\xi}_\mu(\vec p)e^{i\vec p\cdot x}+\hat{\xi}_\mu^\dagger(\vec p)e^{-i\vec p\cdot x}).
+\end{equation*}
+The expression of this field can be simplified by expanding $\hat{\xi}$, which are some vectors of operators, on an orthonormal basis
+\begin{equation*}
+    \hat{A}_\mu(\vec x)=\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2|\vec p|}}\sum_{\lambda=0}^{3}\epsilon_\mu^{(\lambda)}(\vec p)(\hat{a}^{(\lambda)}_{\vec p}e^{i\vec p\cdot x}+\hat{a}^{(\lambda)\dagger}_{\vec p}e^{-i\vec p\cdot x}),
+\end{equation*}
+and the conjugate field operator
+\begin{equation*}
+    \hat{\pi}_\mu(\vec x)=i\int\frac{d^3p}{(2\pi)^3}\sqrt{\frac{|\vec p|}{2}}\sum_{\lambda=0}^{3}\epsilon_\mu^{(\lambda)}(\vec p)(\hat{a}_{\vec p}^{(\lambda)}e^{i\vec p\cdot x}-\hat{a}^{(\lambda)\dagger}_{\vec p}e^{-i\vec p\cdot x}).
+\end{equation*}
+We now check that this sort of ansatz is correct utilizing the canonical commutation relation for the creation annihilation operators
+\begin{align*}
+    &\begin{cases}
+        [\hat{a}_{\vec p}^{(\lambda)},\hat{a}_{\vec q}^{(\lambda')}]=[\hat{a}_{\vec p}^{(\lambda)\dagger},\hat{a}_{\vec q}^{(\lambda')\dagger}]=0,\\
+        [\hat{a}_{\vec p}^{(\lambda)},\hat{a}_{\vec q}^{(\lambda')\dagger}]=-\eta^{\lambda\lambda'}(2\pi)^3\delta^3(\vec p-\vec q)
+    \end{cases}\\
+    &[\hat{A}_\mu(\vec x),\hat{\pi}_\nu(\vec y)]=i\int\frac{d^3p\ d^3q}{2(2\pi)^6}\sqrt{\frac{|\vec q|}{|\vec p|}}\sum_{\lambda,\lambda'=0}^{3}\epsilon_\mu^{(\lambda)}(\vec p)\epsilon_\mu^{(\lambda')}(\vec p)\bigg(-[\hat{a}_{\vec p}^{(\lambda)},\hat{a}_{\vec q}^{(\lambda')\dagger}]e^{i(\vec p\cdot\vec x\vec q\cdot\vec y)}+[\hat{a}_{\vec p}^{(\lambda)\dagger},\hat{a}_{\vec q}^{(\lambda')}]e^{-i(\vec p\cdot\vec x\vec q\cdot\vec y)}\bigg)\\&i\int\frac{d^3p\ d^3q}{2(2\pi)^6}\sqrt{\frac{|\vec q|}{|\vec p|}}\sum_{\lambda,\lambda'=0}^{3}\epsilon_\mu^{(\lambda)}(\vec p)\epsilon_\mu^{(\lambda')}(\vec p)\bigg(\eta^{\lambda\lambda'}\delta^3(\vec p-\vec q)e^{i(\vec p\cdot\vec x\vec q\cdot\vec y)}+\eta^{\lambda\lambda'}\delta^3(\vec p-\vec q)e^{-i(\vec p\cdot\vec x\vec q\cdot\vec y)}\bigg)\\&=i\int\frac{d^3p}{(2\pi)^3}\sum_{\lambda,\lambda'=0}^{3}\epsilon^{\lambda}_\mu(\vec p)\epsilon^{\lambda'}_\nu(\vec p)\eta^{\lambda,\lambda'}e^{ip(\vec x-\vec y)}=i\sum_{\lambda,\lambda'=0}^{3}\epsilon^{\lambda}_\mu(\vec p)\epsilon^{\lambda'}_\nu(\vec p)\eta^{\lambda,\lambda'}\delta^3(\vec p-\vec q)\\&=i\eta_{\mu\nu}\delta^3(\vec p-\vec q),
+\end{align*}
+where we used the orthonormality condition $\sum_{\lambda,\lambda'=0}^{3}\epsilon^{\lambda}_\mu(\vec p)\epsilon^{\lambda'}_\nu(\vec p)\eta^{\lambda,\lambda'}=\eta_{\mu\nu}$.
+
+Notice that these commutation relations leads to a strange, and usually unwanted, behavior of the states: $\hat{s}^{(0)\dagger}_{\vec p}$ creates negative norm photons, called \textbf{ghosts}
+\begin{equation*}
+    \bra{0}\hat{a}^{(0)}_{\vec q}\hat{a}^{(0)\dagger}_{\vec p}\ket{0}=-\eta^{00}(2\pi)^3\delta^3(\vec p-\vec q).
+\end{equation*}
+To remove this strange behavior we will study how to impose the Lorenz gauge to the quantized field.
+\section{The Lorenz gauge for the quantized field}
+Imposing the Lorenz gauge to the quantized field is not a trivial task since now the 4-potential is an operator ant thus it is not clear anymore how to translate $\partial_\mu A^\mu=0$.\\
+This can be thought, at a first glance, as the condition
+\begin{equation*}
+    \partial_\mu\hat{A}^\mu=0,
+\end{equation*} 
+but some further inspections show that this cannot be the right condition since in this way the first component of the momentum field $\pi^0=-\partial_\mu\hat{A}^\mu$ should be identically equals to zero. In this way we would contradict the canonical commutation relations.\\
+
+A second approach is to impose the gauge condition on the states of the Fock's space: for example we could ask that
+\begin{equation*}
+    \partial_\mu\hat{A}^\mu\ket{\psi}=0,\qquad \forall\ket{\psi}/\ \braket{\psi|\psi}\geq0,
+\end{equation*}
+however, in this way, we mess up the vacuum state. In fact, $\hat{A}^\mu(\vec x)$ contains both creations and annihilation operators and thus its 4-divergence too, it is clear though that this operator won't result in the null state. We now go to the Heisenberg picture and split the filed operator in
+\begin{align*}
+  & \hat{A}^{\mu+}(x)=\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2p}}\sum_{\lambda=0}^{3}\epsilon_{\mu}^{(\lambda)}\hat{a}_{\vec p}^{(\lambda)}e^{-ip_\nu x^\nu},\\&  \hat{A}^{\mu-}(x)=\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2p}}\sum_{\lambda=0}^{3}\epsilon_{\mu}^{(\lambda)}\hat{a}_{\vec p}^{(\lambda)\dagger}e^{ip_\nu x^\nu},\\&  \hat{A}^{\mu}(x)=\hat{A}^{\mu+}(x)+ \hat{A}^{\mu-}(x),
+\end{align*}
+in this way it is easy to see that, containing only annihilator operators, $ \hat{A}^{\mu+}(x)$ will vanish acting on the vacuum state, while this is impossible for $ \hat{A}^{\mu-}(x)$ to vanish in this way.\\
+In order to preserve how the vacuum state behaves we will ask the stricter condition $ \partial_\mu\hat{A}^{\mu+}(x)\ket{\psi}=0\ \forall \ket{\psi}$. Actually only apparently this is stricter, since  
+\begin{equation*}
+    \partial_\mu\hat{A}^{\mu+}(x)\ket{\psi}=0\ \Longleftrightarrow\  \bra{\psi}\partial_\mu\hat{A}^{\mu-}(x)=0,
+\end{equation*}
+since $(\partial_\mu\hat{A}^{\mu+}(x))^\dagger=\partial_\mu\hat{A}^{\mu-}(x)$, and thus we obtain the \textbf{Gupta-Bleuler condition}:
+\begin{equation}
+    \bra{\psi}\partial_\mu\hat{A}^{\mu}(x)\ket{\psi}=0,\qquad\forall\ket{\psi},\label{GuptaBleuerConditon}
+\end{equation}
+which is the general condition that the trace of this operator is zero.\\
+
+We now want to study what implies this condition: first let's consider a field describing a classical EM wave propagating in the $z$ direction, thus its 4-momentum is $p^\mu=(E,0,0,E)$. The \emph{"plus"} field operator, once differentiated, becomes
+\begin{equation*}
+    \partial_\mu\hat{A}^{\mu+}(x)=-i\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2p}}\sum_{\lambda=0}^{3}\epsilon_{\mu}^{(\lambda)}p^\mu\hat{a}_{\vec p}^{(\lambda)}e^{-ip_\nu x^\nu},
+\end{equation*}
+the gauge condition we imposed, choosing $\epsilon$ to be the canonical basis, now reads
+\begin{equation*}
+    E(\epsilon_0^{(0)}\hat{a}_{\vec p}^{(0)}+\epsilon_3^{(3)}\hat{a}_{\vec p}^{(3)})\ket{\psi}=E(\hat{a}_{\vec p}^{(0)}-\hat{a}_{\vec p}^{(3)})\ket{\psi}=0,\quad \forall\ket{\psi},
+\end{equation*}
+this can be used to obtain the following relation:
+\begin{equation*}
+    \bra{\psi}\hat{a}_{\vec p}^{(0)\dagger}\hat{a}_{\vec p}^{(0)}\ket{\psi}=\bra{\psi}\hat{a}_{\vec p}^{(3)\dagger}\hat{a}_{\vec p}^{(3)}\ket{\psi},
+\end{equation*}
+which implies that the number of time-like and longitudinal photons of a state is always the same.\\
+A second consequence of the Gupta-Bleuler condition \ref{GuptaBleuerConditon} is that now the Fock's space has zero norm states. To see this we can introduce the following operators
+\begin{equation*}
+    \hat{b}_{\pm,\vec p}=\hat{a}_{\vec p}^{(0)}\pm\hat{a}_{\vec p}^{(3)}
+\end{equation*} 
+which creates or annihilates states given by a linear combination of time-like and longitudinal photons, since we want to have states where the number of those photons is the same. We have now to deduce the commutation relations of these operators
+\begin{align*}
+    [ \hat{b}_{\pm,\vec p}, \hat{b}^\dagger_{\pm,\vec q}]&=[\hat{a}^{(0)}_{\vec{p}},\hat{a}^{(0)\dagger}_{\vec{q}}]+[\hat{a}^{(3)}_{\vec{p}},\hat{a}^{(3)\dagger}_{\vec{q}}]=(-(2\pi)^3+(2\pi)^3)\delta^3(\vec p-\vec q)=0,\\
+    [ \hat{b}_{\pm,\vec p}, \hat{b}^\dagger_{\mp,\vec q}]&=[\hat{a}^{(0)}_{\vec{p}},\hat{a}^{(0)\dagger}_{\vec{q}}]-[\hat{a}^{(3)}_{\vec{p}},\hat{a}^{(3)\dagger}_{\vec{q}}]=-2(2\pi)^3\delta^3(\vec p-\vec q),
+\end{align*}
+ in this way we can compute the norm of the states created by these two operators
+ \begin{align*}
+    \bra{0}\hat{b}_{\pm,\vec p}\hat{b}^\dagger_{\pm,\vec p}\ket{0}=\bra{0}[\hat{b}_{\pm,\vec p},\hat{b}^\dagger_{\pm,\vec p}]\ket{0}=0,
+ \end{align*}
+ which is zero.\\
+ 
+ This could seem strange but it is actually intended to be like this: in fact we will use the Gupta-Bleuler condition to distinguish between physical and nonphysical states (those who are in our Fock's space but should be removed to obtain the 2 d.o.f of EM field)
+ \begin{equation*}
+    \hat{b}_{-,\vec p}\ket{\psi}=0,
+ \end{equation*} 
+ those sates which satisfy this relation are physical, while the others must be discarded.\\
+ This request is enough to remove longitudinal and time-like photons, since
+ \begin{align*}
+    \hat{b}_{-,\vec q}\hat{a}^{(0)\dagger}_{\vec p}\ket{0}&= \frac{1}{2}\hat{b}_{-,\vec q}(\hat{b}^\dagger_{+,\vec p}+\hat{b}^\dagger_{-,\vec p})\ket{0}=\frac{1}{2}[\hat{b}_{-,\vec q},\hat{b}^\dagger_{+,\vec p}]\ket{0}\neq0,\\
+    \hat{b}_{-,\vec q}\hat{a}^{(3)\dagger}_{\vec p}\ket{0}&= \frac{1}{2}\hat{b}_{-,\vec q}(\hat{b}^\dagger_{+,\vec p}-\hat{b}^\dagger_{-,\vec p})\ket{0}=\frac{1}{2}[\hat{b}_{-,\vec q},\hat{b}^\dagger_{+,\vec p}]\ket{0}\neq0,
+ \end{align*}
+ and also the states created by $\hat{b}_{+,\vec p}^\dagger$
+ \begin{equation*}
+    \hat{b}_{-,\vec q}\hat{b}^{\dagger}_{+,\vec p}\ket{0}= [\hat{b}_{-,\vec q},\hat{b}^\dagger_{+,\vec p}]\ket{0}\neq0,
+ \end{equation*}
+ but the same doesn't happen for those created by $\hat{b}_{-,\vec p}^\dagger$
+ \begin{equation*}
+    \hat{b}_{-,\vec q}\hat{b}^{\dagger}_{-,\vec p}\ket{0}= [\hat{b}_{-,\vec q},\hat{b}^\dagger_{-,\vec p}]\ket{0}=0,
+ \end{equation*}
+ but their norm is zero.\\Lastly we should check the the transversal photons are physical, as they are premitted in the classical theory
+ \begin{equation*}
+    \hat{b}_{-,\vec q}\hat{a}_{\vec p}^{(1,2)\dagger}\ket{0}=\hat{a}_{\vec p}^{(1,2)\dagger}\hat{b}_{-,\vec q}\ket{0}=0,
+ \end{equation*}
+ thus they satisfy Gupta-Bleuler condition and they have positive norm.
+\section{The hamiltonian of the electromagnetic field}
+To end the quantization process of the field we need to quantize energy, and thus obtain the hamiltonian operator.\\ First we have to calculate the classical hamiltonian of the system
+\begin{align*}
+    \mathcal{L}&=-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}-\frac{1}{2}\partial_\mu A^\mu\partial_\nu A^\nu\\
+    &=-\frac{1}{4}(\partial^\mu A^\nu-\partial^\nu A^\mu)(\partial_\mu A_\nu-\partial_\nu A_\mu)-\frac{1}{2}\partial_\mu A^\mu\partial_\nu A^\nu\\
+    &=-\frac{1}{2}(\partial^\mu A^\nu\partial_\mu A_\nu-\partial^\mu A^\nu\partial_\nu A_\mu)-\frac{1}{2}\partial_\mu A^\mu\partial_\nu A^\nu\\&\text{Integrating by parts}\\&
+    =-\frac{1}{2}\partial^\mu A^\nu\partial_\mu A_\nu-\frac{1}{2}(A^\nu\partial^\mu\partial_\nu A_\mu-A^\nu\partial^\nu\partial_\mu A_\mu)\\&=-\frac{1}{2}\partial^\mu A^\nu\partial_\mu A_\nu,\\
+    \pi^\mu&=\frac{\partial\mathcal{L} }{\partial\dot{A}_\mu}=-\dot{A}^\mu,\\
+    \pi^\mu&\dot{A}_\mu-\mathcal{L}=-\pi^\mu\pi_\mu+\frac{1}{2}\dot{A}^\mu\dot{A}_\mu+\frac{1}{2}\partial^i A^\mu\partial_i A_\mu=\frac{1}{2}(\partial^i A^\mu\partial_i A_\mu-\pi^\mu\pi_\mu),\\
+    \mathcal{H} &=\int d^3x\ \frac{1}{2}(\partial^i A^\mu\partial_i A_\mu-\pi^\mu\pi_\mu).
+\end{align*}
+We now quantize the hamiltonian by plugging the field operators in Schrödinger picture: evaluating each pice and the summing all up:
+\begin{align*}
+    &\int d^3x\ \partial^i \hat{A}^\mu\partial_i \hat{A}_\mu=
+    \\&=\int\frac{d^3p\ d^3q\ d^3x}{(2\pi)^6}\frac{\vec p\cdot\vec q}{2\sqrt{|\vec p||\vec q|}}\sum_{\lambda,\lambda'=0}^{3}\epsilon^{\mu(\lambda)}\epsilon_{\mu}^{(\lambda')}(\hat{a}_{\vec p}^{(\lambda)}e^{i\vec p\cdot\vec x}-\hat{a}_{\vec p}^{(\lambda)\dagger}e^{-i\vec p\cdot\vec x})\times\\&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\times(\hat{a}_{\vec q}^{(\lambda')}e^{i\vec q\cdot\vec x}-\hat{a}_{\vec q}^{(\lambda')\dagger}e^{-i\vec q\cdot\vec x})\\
+    &=\int\frac{d^3p}{(2\pi)^3}\frac{|\vec p|}{2}\sum_{\lambda,\lambda'=0}^{3}\eta^{\lambda\lambda'}(-\hat{a}_{\vec p}^{(\lambda)}\hat{a}_{-\vec p}^{(\lambda)}-\hat{a}_{\vec p}^{(\lambda)}\hat{a}_{\vec p}^{(\lambda')\dagger}-\hat{a}_{\vec p}^{(\lambda)\dagger}\hat{a}_{\vec p}^{(\lambda')}-\hat{a}_{\vec p}^{(\lambda)\dagger}\hat{a}_{-\vec p}^{(\lambda')\dagger})\\
+    &\int d^3x\ \hat{\pi}^\mu\hat{\pi}_\mu=
+    \\&=-\int\frac{d^3p\ d^3q\ d^3x}{(2\pi)^6}\sqrt{\frac{|\vec p||\vec q|}{4}}\sum_{\lambda,\lambda'=0}^{3}\epsilon^{\mu(\lambda)}\epsilon_{\mu}^{(\lambda')}(\hat{a}_{\vec p}^{(\lambda)}e^{i\vec p\cdot\vec x}-\hat{a}_{\vec p}^{(\lambda)\dagger}e^{-i\vec p\cdot\vec x})\times\\&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\times(\hat{a}_{\vec q}^{(\lambda')}e^{i\vec q\cdot\vec x}-\hat{a}_{\vec q}^{(\lambda')\dagger}e^{-i\vec q\cdot\vec x})\\
+    &=-\int\frac{d^3p}{(2\pi)^3}\frac{|\vec p|}{2}\sum_{\lambda,\lambda'=0}^{3}\eta^{\lambda\lambda'}(\hat{a}_{\vec p}^{(\lambda)}\hat{a}_{-\vec p}^{(\lambda)}-\hat{a}_{\vec p}^{(\lambda)}\hat{a}_{\vec p}^{(\lambda')\dagger}-\hat{a}_{\vec p}^{(\lambda)\dagger}\hat{a}_{\vec p}^{(\lambda')}+\hat{a}_{\vec p}^{(\lambda)\dagger}\hat{a}_{-\vec p}^{(\lambda')\dagger})
+\end{align*}
+thus the hamiltonian operator is
+\begin{align*}
+    \hat{\mathcal{H}} &=\int d^3x\ \frac{1}{2}(\partial^i \hat{A}^\mu\partial_i \hat{A}_\mu-\hat{\pi}^\mu\hat{\pi}_\mu)\\&=-\frac{1}{2}\int\frac{d^3p}{(2\pi)^3}|\vec p|\sum_{\lambda,\lambda'=0}^{3}\eta^{\lambda\lambda'}(\hat{a}_{\vec p}^{(\lambda)}\hat{a}_{\vec p}^{(\lambda')\dagger}+\hat{a}_{\vec p}^{(\lambda)\dagger}\hat{a}_{\vec p}^{(\lambda')})\\&\text{Using normal ordering}\\
+    &=-\int\frac{d^3p}{(2\pi)^3}|\vec p|(\hat{a}_{\vec p}^{(0)}\hat{a}_{\vec p}^{(0)\dagger}-\hat{a}_{\vec p}^{(1)}\hat{a}_{\vec p}^{(1)\dagger}-\hat{a}_{\vec p}^{(2)}\hat{a}_{\vec p}^{(2)\dagger}-\hat{a}_{\vec p}^{(3)}\hat{a}_{\vec p}^{(3)\dagger})\\
+    &=\int\frac{d^3p}{(2\pi)^3}|\vec p|\bigg[\sum_{i=1}^{2}\hat{a}_{\vec p}^{(i)\dagger}\hat{a}_{\vec p}^{(i)}-(\hat{a}_{\vec p}^{(0)}\hat{a}_{\vec p}^{(0)\dagger}-\hat{a}_{\vec p}^{(3)}\hat{a}_{\vec p}^{(3)\dagger})\bigg].
+\end{align*}
+Clearly we have obtained number operators of each type of photon multiplied by its own momentum, which is its energy; notice that we have obtained a term in which we have the difference between the time-like and transversal photon, however the Gupta-Bleuler condition \eqref{GuptaBleuerConditon} requires that those two numbers are the same, thus the presence of those photons would not be seen by the hamiltonian operator.

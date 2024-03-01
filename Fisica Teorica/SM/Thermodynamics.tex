@@ -1,0 +1,73 @@
+\section{Thermodynamic systems}
+Classical mechanics is able to predicts the motion of bodies using the differential equation given by the principle of least action \ref{LeastAction}. Usually these are some kind of second order ordinary differential equations, thus, in order to get a certain solution, we should use initial conditions such as the initial position and the initial velocity. This approach results in exact solutions only if the system is made up of few particles (usually less than 3) or if we impose other assumption, such as that all the particles form a rigid body.\\
+Studying in this way a gas or a fluid is practically impossible, such systems will have a number of particles of the order of at least $10^23$, in these cases, it is not just mathematically impossible to get some exact solutions, but it becomes impossible to manage so many initial conditions (at least 6 for every particle). In the $19^{th}$ century it was developed a new branch of physics that tried to study these systems using, apparently, non-mechanical quantities: thermodynamics.\\
+
+Every thermodynamic system is characterized by the so-called \textbf{thermodynamic variables}: quantities defined empirically that describe microscopically the system. There are two main types of these:
+\begin{itemize}
+    \item \textbf{extensive variables} that scale with the system (energy, entropy, volume, polarization, ...);
+    \item  \textbf{intensive variables} that doesn't scale with the system (temperature, pressure, chemical potential, ...).
+\end{itemize}
+Every the extensive variable has an intensive conjugate (such as volume and pressure) and vice versa.\\
+The variables of a system are connected each other by the \textbf{state equation of the system}.
+
+\section{The laws of thermodynamic}
+In general thermodynamic variables are connected by the \textbf{laws of thermodynamic}. These hold for every system and are the empirical axioms of thermodynamics.\\
+\begin{law}[Zeroth]
+  Two systems in thermal contact have the same empirical temperature at equilibrium.
+\end{law}
+As we can see the zeroth law defines what does equilibrium means in thermodynamics, and to do so it defines \textbf{temperature} as the variable that determines if two systems are at equilibrium.
+\begin{law}[First]
+    The variation of internal energy of a system is given by:
+    \begin{equation}
+        \label{FirstTHLaw} dE=\delta Q-\delta L+\mu dN,
+    \end{equation}
+    where $Q$ is the heat, $L$ is the work, $\mu$ the chemical potential and $N$ the number of particles of the system. 
+\end{law}
+This law connects the main variables of the system together. We should notice that, while $E$ and $N$ are actual thermodynamic variables, the same is not true for $Q$ and $L$, that are not some kind of intrinsic proprieties of the system, but the just describe how energy is transferred. This is reflected in the fact that in \eqref{FirstTHLaw} these two are not exact differentials, but they depend on the type of transformation the system is subject to.
+\begin{law}[Second]
+    The variation of internal entropy of a system is such:
+    \begin{equation}
+        \label{SecondTHLaw} ds\geq\frac{\delta Q}{T},
+    \end{equation}
+    where the equality holds only if the system undergoes a \textbf{reversible process}. 
+\end{law}
+The second law of thermodynamic define what is a reversible process giving an exact formulation of what entropy is in that case. Further, it tells us that in the case of reversible processes the heat becomes a exact differential. This law can have others equivalent formulations that state that heat always moves from a hotter body to a colder one.
+\begin{law}[Third]
+    The variation of entropy goes to 0 as the temperature goes too for any \textbf{reversible isothermal} process. 
+\end{law}
+The last law actually states that it is not possible to reach the \textbf{absolute zero} temperature using a finite amount of reversible processes.\\
+We can now use the first principle, together with the observation that energy must be extensive and the second law for reversible processes, to get the explicit form of this state function:
+\begin{equation}
+    \label{InternalEnergy} E=TS-PV+\mu N.
+\end{equation}
+From this we also get explicit relations between intensive and extensive quantities:
+\begin{equation}
+    T=\frac{\partial E}{\partial S}\bigg|_{V,N},\qquad P=-\frac{\partial E}{\partial V}\bigg|_{S,N},\qquad \mu=\frac{\partial E}{\partial N}\bigg|_{V,S}.
+\end{equation}
+\section{Thermodynamic potential}
+Using the Legrand transform of the energy \eqref{InternalEnergy} it is easy to obtain other functions, that will be really useful later on, called \textbf{thermodynamic potentials}:
+\begin{itemize}
+    \item \textbf{Helmholtz free energy}: $F(T,V,N)=E-TS$;
+    \item \textbf{Enthalpy}: $H(S,P,N)=E+PV$;
+    \item \textbf{Gibbs free energy}: $G(T,P,N)=E-TS+PV$;
+    \item \textbf{Grand potential}: $\Omega(T,V,\mu)=E-TS-\mu N$.
+\end{itemize} 
+These can be used with the second law ($ds\geq\frac{\delta Q}{T}$) to get relations that define equilibrium for the system and how it evolves to reach it.
+Using the Helmholtz free energy, for example:
+\begin{align*}
+    dF&=dE-SdT-TdS=\delta Q-\delta L+\mu dN-SdT-TdS\\
+    &\leq\delta Q-\delta L+\mu dN-SdT-\delta Q=-PdV+\mu dN-SdT.
+\end{align*}
+If we take $T,N,V$ constants we get a minimum principle (since having them constants implies that their differentials are zero):
+\begin{equation*}
+    dF\leq0,
+\end{equation*}
+which implies that the system, at constant temperature, volume, and amount of matter, will evolve in such a way that $F$ is decreasing.\\
+Studying where $F$ has a minimum, we can get the conditions to have equilibrium:
+\begin{equation*}
+    \begin{cases}
+        \frac{\partial^2F}{\partial T^2}\big|_V<0,\\
+        \frac{\partial^2F}{\partial V^2}>0,\\
+        \frac{\partial^2F}{\partial T\partial N}=\frac{\partial \mu}{\partial T}\leq0.
+    \end{cases}
+\end{equation*}

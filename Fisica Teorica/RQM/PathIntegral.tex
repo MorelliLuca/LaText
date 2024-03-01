@@ -1,0 +1,100 @@
+\section{A heuristic approach to path integrals}
+In this section we will introduce the main ideas of behind path integral considering one of the most fundamental experiments of quantum mechanics, the double slit experiment for electrons.\\
+We will now, temporarily, forget the wave interpretation of quantum mechanics, and we will think to electrons as particles. Each one, classically, should follow a precise path, passing through one or the other slit, we will instead think that they can go through all possible path $\Gamma_i$. To each one we will associate one amplitude $A(\Gamma_i)$, that can be used to recover the probabilistic interpretation of quantum mechanics: in this way the probability of a particle to reach a certain point on the screen of the experimental setup is given by 
+\begin{equation*}
+    P=\bigg|\sum_{\text{All path}}A(\Gamma_i)\bigg|^2.
+\end{equation*}
+We can test this idea (in a non-formal way) proposing that $A(\Gamma_i)=e^{\frac{i}{\hslash}\mathcal{S}[\Gamma_i]}$, we will show that this guess reproduces the interference pattern of the double slit experiment.\\
+We will consider a path, from the first slit, that has a length of $D$, while the path that goes to the same point on the screen but passing through the second slit has a length $D+d$, with $D\gg d$. Considering electrons moving at a constant velocity, we can write the action evaluated on the two different path:
+\begin{equation*}
+    \mathcal{S} (\Gamma_1)=\frac{m}{2}\bigg(\frac{D}{T}\bigg)^2T,\qquad\mathcal{S} (\Gamma_2)=\frac{m}{2}\bigg(\frac{D+d}{T}\bigg)^2T=\frac{mD^2}{2T}+\frac{mDd}{T}+O(d^2),
+\end{equation*}
+where $T$ is the time of flight of the particle. In this way we can get the amplitude associated with this point on the screen by
+\begin{equation*}
+    A=A(\Gamma_1)+A(\Gamma_2)=e^{i\frac{mD^2}{2T\hslash}}\bigg(1+e^{i\frac{mDd}{T}}\bigg),
+\end{equation*}
+from this one we can clearly see that the probability has a maximum if $\frac{mDd}{T}=2\pi n$. We can recognize that $m\frac{D}{T}$ is the momentum of the particle and then $\frac{\hslash}{p}=\lambda$, therefore 
+\begin{equation*}
+    \frac{d}{\lambda}=2\pi n\qquad n\in\mathbb{N},
+\end{equation*}
+this de Borglie relation shows how this path integral interpretation is an appropriate interpretation of quantum mechanics. In fact, using the approximation $d\approx l\sin\theta$, with $l$ distance between the two slits, we obtain the formula describing the interference path that we experimentally observe.\\
+The ideas coming from this experiment can be generalized to an infinite amount of slits on an infinite number of screens (so that there is a slit in each point of space), in this way we define the path integral
+\begin{equation*}
+    A=\int Dx\ e^{\frac{i}{\hslash}\mathcal{S} [x]}.
+\end{equation*}
+Notice that considering a classical system (for which $\mathcal{S} \gg\hslash$) the least action principle assures us that, considering a trajectory $x(t)$, the action
+\begin{equation*}
+    \frac{\mathcal{S} [x(t)+\delta x(t)]}{\hslash}\approx \frac{\mathcal{S} [x(t)]}{\hslash}+ \frac{\delta\mathcal{S} [x(t)]}{\hslash}
+\end{equation*}
+is equals to $\frac{\mathcal{S} [x(t)]}{\hslash}$ nearby the classical solution, while it gets arbitrarily large far from it. In this way we get constructive interference around the classical solution while, every elsewhere destructive interference makes vanish all the other paths. 
+\section{1-D path integrals}
+We will now show in a rigorous way that path integrals can be used to describe the evolution of a 1-D quantum mechanical system. To do so we will start by the definition of transition amplitude in regular quantum mechanics
+\begin{equation*}
+    A(\psi_i\rightarrow\psi_f,t)=\bra{\psi_f}e^{-\frac{i}{\hslash}\hat{\mathcal{H} }t}\ket{\psi_f},
+\end{equation*}
+from this one we introduce the completeness relation of the position operator twice
+\begin{equation*}
+    \bra{\psi_f}\int dx_f\int dx_i\ket{x_f}\bra{x_f}e^{-\frac{i}{\hslash}\hat{\mathcal{H} }t}\ket{x_i}\bra{x_i}\ket{\psi_f}=
+        \int dx_f\int dx_i \psi_f^*(x_f)\bra{x_f}e^{-\frac{i}{\hslash}\hat{\mathcal{H} }t}\ket{x_i}\psi_f(x_i),
+\end{equation*}
+in this way we will have to calculate just the scalar product $\bra{x_f}e^{-\frac{i}{\hslash}\hat{\mathcal{H} }t}\ket{x_i}$.\\
+In order to evaluate this scalar product using the idea of checking every possible path (this is equivalent to using the infinite slits that we introduced previously) we will divide $N$ times the time $t\rightarrow\epsilon=\frac{t}{N}$
+\begin{equation*}
+    \bra{x_f}e^{-\frac{i}{\hslash}\hat{\mathcal{H} }t}\ket{x_i}=\bra{x_f}\bigg(e^{-\frac{i}{\hslash}\hat{\mathcal{H} }\epsilon}\bigg)^N\ket{x_i},
+\end{equation*}
+and then we inter $N-1$ identities that we are again going to expand using completeness of the position operator (we are going to relabel $x_i=x_0$ and $x_f=x_N$)
+\begin{equation*}
+    \bra{x_f}e^{-\frac{i}{\hslash}\hat{\mathcal{H} }\epsilon}\mathds{1}\dots\mathds{1}e^{-\frac{i}{\hslash}\hat{\mathcal{H} }\epsilon}\ket{x_i}=\int\bigg(\prod_{k=1}^{N-1}dx_k\bigg)\bigg(\prod_{k=1}^{N}\bra{x_k}e^{-\frac{i}{\hslash}\hat{\mathcal{H} }\epsilon}\ket{x_{k-1}}\bigg).
+\end{equation*} 
+The same procedure can be repeated $N$ times with the momentum operator and its eigenkets
+\begin{align*}
+    \int\bigg(\prod_{k=1}^{N-1}dx_k\bigg)\bigg(\prod_{k=1}^{N}\frac{dp_k}{2\pi\hslash}\bigg)\bigg(\prod_{k=1}^{N}\braket{x_k|p_k}\bra{p_k}e^{-\frac{i}{\hslash}\hat{\mathcal{H} }\epsilon}\ket{x_{k-1}}\bigg)\\=\int\bigg(\prod_{k=1}^{N-1}dx_k\bigg)\bigg(\prod_{k=1}^{N}\frac{dp_k}{2\pi\hslash}\bigg)\bigg(\prod_{k=1}^{N}e^{\frac{i}{\hslash}p_kx_k}\bra{p_k}e^{-\frac{i}{\hslash}\hat{\mathcal{H} }\epsilon}\ket{x_{k-1}}\bigg),
+\end{align*}
+in this way we have to evaluate a different scalar product; we should notice that the form of this one helps us in the calculation since the operator $\hat{\mathcal{H} }$ is a function of momentum and position operators.\\
+Until now, we have considered $N$ slits, therefore we will now impose a limiting procedure, for which $\epsilon\rightarrow0$ and $N\rightarrow\infty$. In this limit we can consider the infinitesimal action of the time evolution operator as $e^{-\frac{i}{\hslash}\hat{\mathcal{H} }\epsilon}\approxeq1-\frac{i}{\hslash}\hat{\mathcal{H}}\epsilon$, thus
+\begin{equation*}
+    \bra{p_k}\bigg[1-\frac{i}{\hslash}\epsilon\bigg(\frac{\hat{p}^2}{2m}+V(\hat{x})\bigg)\bigg]\ket{x_{k-1}}=\braket{p_k|x_{k-1}}\bigg[1-\frac{i}{\hslash}\epsilon\bigg(\frac{\hat{p}_k^2}{2m}+V(x_{k-1})\bigg)\bigg],
+\end{equation*}
+in this way the previous integral reads
+\begin{equation*}
+    \lim_{n\rightarrow\infty}\int\bigg(\prod_{k=1}^{N-1}dx_k\bigg)\bigg(\prod_{k=1}^{N}\frac{dp_k}{2\pi\hslash}\bigg)\exp\bigg\{\frac{i}{\hslash}\sum_{k=1}^{N}\bigg(p_k(x_k-x_{k-1})-\epsilon\mathcal{H}(p_k,x_{k-1})\bigg) \bigg\},
+\end{equation*}
+if we multiply and divide the sum by $\epsilon$ the sum in the exponential we obtain the Riemann definition of an integral
+\begin{equation*}
+    \lim_{n\rightarrow\infty}\int\bigg(\prod_{k=1}^{N-1}dx_k\bigg)\bigg(\prod_{k=1}^{N}\frac{dp_k}{2\pi\hslash}\bigg)\exp\bigg\{\frac{i}{\hslash}\sum_{k=1}^{N}\epsilon\bigg(p_k\frac{x_k-x_{k-1}}{\epsilon}-\mathcal{H}(p_k,x_{k-1})\bigg) \bigg\},
+\end{equation*}
+which we can recognize as the action (in the limit of $N\rightarrow\infty$ the integrand becomes the Legrand transform of the hamiltonian). We define \textbf{path integral} as this limit and we will indicate those by the following notation:
+\begin{equation*}
+    \int Dx(t)Dp(t)e^{\frac{i}{\hslash}\mathcal{S} [x(t),p(t)]}.
+\end{equation*} 
+We want now to solve this kind of integral, this can be easily done when the hamiltonian contains only quadratic forms, since in those cases we can use the gaussian integral
+\begin{equation*}
+    \int_{-\infty}^{+\infty}dx\ e^{-\alpha\frac{x^2}{2}}=\sqrt{\frac{2\pi}{\alpha}},
+\end{equation*}
+that can be analytically continuated in all the complex plane.\\
+With this tool we can integrate over the momentum space (since energy is quadratic with respect to momentum): to do so we complete the square and recognizing $\alpha=\frac{i\epsilon}{\hslash m}$ we obtain the \textbf{path integral over configuration space}
+\begin{align*}
+    &\lim_{n\rightarrow\infty}\int\bigg(\prod_{k=1}^{N-1}dx_k\bigg)\bigg(\prod_{k=1}^{N}\frac{dp_k}{2\pi\hslash}\bigg)\exp\bigg\{\frac{i}{\hslash}\sum_{k=1}^{N}\epsilon\bigg(p_k\frac{x_k-x_{k-1}}{\epsilon}-\frac{p_k^2}{2m}-V(x_{k-1})\bigg) \bigg\}\\&=\lim_{n\rightarrow\infty}\int\bigg(\prod_{k=1}^{N-1}dx_k\bigg)\bigg(\prod_{k=1}^{N}\frac{1}{2\pi\hslash}\sqrt{\frac{2\pi\hslash m}{i\epsilon}}\bigg)\exp\bigg\{\frac{i}{\hslash}\sum_{k=1}^{N}\epsilon\bigg(m\frac{(x_k-x_{k-1})^2}{2\epsilon^2}-V(x_{k-1})\bigg) \bigg\}\\&=\lim_{n\rightarrow\infty}\int\bigg(\prod_{k=1}^{N-1}dx_k\bigg)\bigg(\frac{m}{2\pi\hslash i\epsilon}\bigg)^{\frac{N}{2}}\exp\bigg\{\frac{i}{\hslash}\sum_{k=1}^{N}\epsilon\bigg(\frac{m}{2}\bigg(\frac{x_k-x_{k-1}}{\epsilon}\bigg)^2-V(x_{k-1})\bigg) \bigg\}\\&=\int Dx(t)e^{\frac{i}{\hslash}\mathcal{S} [x(t)]}.
+\end{align*}
+Last, considering the free particle, we can again use the gaussian integral, over configuration space, to obtain
+\begin{equation*}
+    \int Dx(t)e^{\frac{i}{\hslash}\mathcal{S} [x(t)]}=\sqrt{\frac{m}{2\pi i\hslash t}}e^{\frac{i}{\hslash}m\frac{(x_f-x_i)^2}{2t}}.
+\end{equation*}
+One could show that this path integral satisfy the free Schrödinger equation in one dimension.
+\section{A general way to solve path integrals}
+We will now how to derive solutions of these path integrals in a more general way. Consider the path integral
+\begin{equation*}
+    A=\int Dx\ e^{\frac{i}{\hslash}\mathcal{S} [x]},
+\end{equation*}
+we introduce $x_{c}(t)$, the classical trajectory of motion, and small variations from it given by $\delta q(t)$ that vanish at initial and final time. The path integral can be computed with respect to $q$, since $x_c$ is fixed
+\begin{equation*}
+    A=\int Dq\ e^{\frac{i}{\hslash}\mathcal{S} [x_c+\delta q]},
+\end{equation*}
+to do so we want to split the action in the classical part and the variation part; for a free particle this is easy since\begin{equation*}
+    \int\ dt \frac{m}{2}(\dot{x}_c^2+2\dot{x}_c\dot{q}+\dot{q}^2)
+\end{equation*}
+can be manipulated by integrating by parts $2\dot{x}_c\dot{q}$ which becomes proportional to the classical free Newton's equation $\ddot{x}_c=0$, thus $\mathcal{S} [x_c+\delta q]=\mathcal{S} [x_c]+\mathcal{S} [q]$, and then
+\begin{equation*}
+    A=e^{\frac{i}{\hslash}\mathcal{S} [x_c]}\int Dx\ e^{\frac{i}{\hslash}\mathcal{S} [q]}=ke^{\frac{i}{\hslash}\mathcal{S} [x_c]},
+\end{equation*}
+with $k=\int Dx\ e^{\frac{i}{\hslash}\mathcal{S} [q]}$ constant. This procedure reproduces the exact result that we derived previously with gaussian integrals.

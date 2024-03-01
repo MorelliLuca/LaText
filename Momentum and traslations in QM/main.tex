@@ -1,0 +1,85 @@
+\documentclass[11pt,a4paper,english]{article}
+
+\usepackage[english]{babel} % Italian language/hyphenation
+
+\usepackage{float} % Required for [H] positioniong
+
+\usepackage{braket} % Allow the use of braket notation for Q.M.
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm} % For math equations, theorems, symbols, etc
+
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{sublemma}{Lemma}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+\numberwithin{equation}{section}
+
+\begin{document}
+
+\begin{center}
+    
+\LARGE \textbf{Translations and momentum operator in quantum mechanics}
+	
+\rule{7cm}{0.4pt} 
+
+\Large From commutators to rappresentations
+
+\vspace{10pt}
+
+\large \textbf{Luca Morelli}
+
+\vspace{5pt}
+
+\large 30 September 2023
+
+\end{center}
+
+\section{The translation operator}
+We want to define an operator that translate the position of the state of a system. This should be analogous to the translation of a classical particle and from this analogy we will deduce its proprieties. For simplicity, we will consider a system for which his position is defined on just one dimension.
+\begin{definition}
+    Given an arbitrary autoket of the position operator $\ket{x}$, the translation, of a distance $\Delta x$, operator $\hat T(\Delta x)$ is defined such as:
+    \begin{equation}
+        \hat T(\Delta x)\ket{x}=\ket{x+\Delta x}
+    \end{equation}
+\end{definition}
+Now, from the assumption that $\hat T(\Delta x)$ should behave as a classical translation, we impose that this operator satisfies a set of proprieties:
+\begin{itemize}
+    \item classical translations can be composed $\ \Rightarrow\  \hat T(\Delta x)\hat T(\Delta y)=\hat T(\Delta x+\Delta y)$,
+    \item classical translations commute $\ \Rightarrow\  [\hat T(\Delta x),\hat T(\Delta y)]=0$,
+    \item as $\Delta x\rightarrow0$ a classical particle doesn't move $\ \Rightarrow\  \hat T(0)=\hat 1$.
+\end{itemize}
+From these proprieties we can get another one:
+\begin{equation*}
+    \hat T(\Delta x)\hat T(-\Delta x)=\hat T(\Delta x-\Delta x)=\hat T(0)=\hat 1 \ \Rightarrow \ \hat T^{-1}(\Delta x)=\hat T(-\Delta x).
+\end{equation*}
+Lastly we need to evaluate the commutator of this new operator with the position operator $\hat x$, Given an arbitrary autoket $\ket{x}$:
+\begin{flalign*}
+    [\hat x,\hat T(\Delta x)]\ket{x}&=\hat x\hat T(\Delta x)\ket{x}-\hat T(\Delta x)\hat x\ket{x}&&\\ &=\hat x\ket{x+\Delta x}-\hat T(\Delta x)\ket{x}x=\hat x\ket{x+\Delta x}-\hat T(\Delta x)\ket{x}x&&\\&=\ket{x+\Delta x}(x+\Delta x)-\ket{x+\Delta x}x=\ket{x+\Delta x}\Delta x.&&
+\end{flalign*}
+Using the definition of the translation operator we get:
+\begin{equation}
+    \label{commFT} [\hat x,\hat T(\Delta x)]=\hat T(\Delta x)\Delta x
+\end{equation}
+\subsection{Infinitesimal translations}
+From the translation operator, that we have just defined, we can obtain another, perhaps more useful, operator. Let's consider an infinitesimal translation $dx$, its operator counterpart will be $\hat T(dx)$ such that:
+\begin{equation*}
+    \hat T(dx)\ket{x}=\ket{x+dx}.
+\end{equation*}
+It is clear that being still a translation $\hat T(dx)$ has the same proprieties of a finite translation, we will ask furthermore that every infinitesimal translation will be same kind of expression of the first order in $dx$. In this way, every expression of higher order will be considered negligible.\\
+
+We will also think the infinitesimal translation as the limit for $\Delta x\rightarrow0$ of a finite translation, in this way we can calculate the commutator $[\hat x, \hat T(dx)]$ using a limit procedure. \\Firstly we can express (in this limit) the translated state as $\ket{x+dx}=\ket{x}+O(dx)$, the equation \eqref{commFT} reads:
+\begin{equation*}
+    [\hat x, \hat T(dx)]\ket{x}=\ket{x+dx}dx=\ket{x}dx+O[(dx)^2].
+\end{equation*}
+Discarding higher order terms in $dx$ we get that the commutator for infinitesimal translations is then:
+\begin{equation}
+    [\hat x, \hat T(dx)]=\hat 1 dx.
+\end{equation}
+
+
+
+
+
+\end{document}

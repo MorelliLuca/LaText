@@ -1,0 +1,130 @@
+\section{Manifolds}
+The main idea that will guide us defining manifolds is that we want to generalize structures of $\mathbb{R}^n$ to a generic set of points. With this idea in mind, a manifold should be just the most basic set of points that we can use, combined with maps from it to $\mathbb{R}^n$.\\ If this construction is done in the right way, we will be able to transport backwards operation from $\mathbb{R}^n$ to our manifold.
+\subsection{Topological spaces}
+One of the most crucial properties of functions on $\mathbb{R}^n$ is \emph{continuity}, therefore it is natural to consider as starting point some kind of set on which continuity is definable: those are \textbf{topological spaces}. 
+\begin{defin}[Topological spaces]
+	A topological space is the pair of a generic set $\mathcal{M}$ and a family of some of its subsets $\mathcal{T}$ (called opens) such that:
+    \begin{itemize}
+	       \item $\varnothing,\mathcal{M} \in \mathcal{T}$,
+	       \item $\bigcup_\alpha O_\alpha\in\mathcal{T}$ with $\{O_\alpha/\  O_\alpha \in\mathcal{T}\}$ (finite collection or not),
+	       \item $\bigcup_{i=1}^N O_i\in\mathcal{T}$ with $\{O_1,O_2,...,O_N /\ O_i \in\mathcal{T}\}$.
+    \end{itemize}
+\end{defin}
+Furthermore, we are interested in a specific family of topological spaces, \textbf{Hausdorff spaces}.
+\begin{defin}
+	A topological space $(\mathcal{M},\mathcal{T} )$ is a Hausdorff one if $\forall P,Q\in\mathcal{M}$ exist $U$ and $V$, neighborhoods respectively of $P$ and $Q$, such that $U\cap V=\varnothing$. 
+\end{defin}
+On this kind of spaces we can define a topological continuity (which is actually equivalent to the one form calculus) and thus we will be able to define \textbf{continuous maps}.
+\begin{defin}
+A map $\phi:\mathcal{M}\rightarrow\mathcal{N} $, with $\mathcal{M},\ \mathcal{N} $ topological spaces, is continuous if, given $V\in\mathcal{N}$ open, then $\phi^{-1}(V)\in\mathcal{M}$ is an open set.
+\end{defin}
+\subsection{Maps, charts and atlases}
+From the topological space we now want to build a connection to $\mathbb{R}^n$: this process is inspired by the process of building the map of a specific portion of land, since on the map we can evaluate distances and other quantities that otherwise we would have to determine by moving around that specific portion of land. In the same way we will do all the calculation on $\mathbb{R}^n$ instead of directly using points on the topological space, where we don't have coordinates and other constructions. 
+\begin{defin}[Maps]
+	An application $\phi:D\rightarrow \mathbb{R}^n$, with $D\subseteq \mathcal{M} $ open, is called a map.
+\end{defin}
+Not all the maps are \emph{"good"} maps, more precisely we want maps that are continuous (near points get mapped to near points) and that allow us to go back from $\mathbb{R}^n$ to the topological space. Lastly, since usually the domain of a map doesn't correspond to the whole topological space, it is useful to know where the map is valid, and thus we want to encode the domain and the map together. 
+\begin{defin}[Charts]
+	A pair of a continuous invertible map $\phi:A\rightarrow\mathbb{R}^n$ and its domain, $(A,\phi)$, is called a chart. 
+\end{defin}
+As we said, usually a chart is not enough to cover the whole topological space, however we need to map it all to $\mathbb{R}^n$. To do so we can use multiple charts, with some sort of notion of compatibility between them.
+\begin{defin}[Atlases]
+	A collection of charts $\mathcal{A}=\{(A_i,\phi_i)\}$ is an atlas if:
+	\begin{itemize}
+		\item $\bigcup_i A_i \supseteq \mathcal{M}$,
+		\item for each pair $(A_i,\phi_i),\ (A_j,\phi_j)$ exist a function $\psi:\phi_i(A_i)\rightarrow\phi_j(A_j)$, invertible and such that $(\phi_j^{-1}\circ \psi\circ \phi_i)=id$, on $A_i\cap A_j$.
+	\end{itemize}
+\end{defin}
+Constructing the atlas of a topological space means (operationally) to build the \textbf{manifold}, which actually is the class of equivalence of all the atlases that can be put in bijection.\\ Furthermore, the functions that assure the compatibility of charts will characterize the manifold itself:
+\begin{itemize}
+	\item since all $\psi$ are invertible, all charts of an atlas will map to the same $\mathbb{R}^n$, and thus $n$ is the \textbf{dimension} of the manifold;
+	\item if all the $\psi\in C^p(\mathbb{R}^n)$, the manifold is said a \textbf{p-differentiable manifold}.
+\end{itemize} 
+
+\subsection{Functions, curves and vectors}
+Now, that we have built the full structure of a manifold, we can start to use it. On a topological space we can define function $f:\mathcal{M} \rightarrow\mathbb{R}$ and then determine if it is continuous, but we cannot define whether it is smooth, since we cannot take derivatives on the manifold. Instead, we can map the manifold to $\mathbb{R} ^n$ and from there define differentiability. 
+\begin{defin}
+	A function $f:\mathcal{M} \rightarrow \mathbb{R} $ is p-differentiable if $$ f\circ\phi_i^{-1}\in C^p(\phi_i(A_i)),$$ for all the charts $(A_i,\phi_i)$ of the given manifold.
+\end{defin} 
+Functions represent scalars, since their value depends only on the point of the manifold and not from the coordinates of the charts. After scalars, we also need to define vectors, to do that we will rely on the intuition that tangent vectors, to a curve, are given by the derivative of the coordinates along it (in $\mathbb{R} ^n$).
+\begin{defin}[Curves]
+	A curve is a piece-wise continuous map $\gamma:I\subseteq\mathbb{R} \rightarrow\mathcal{M}$.
+\end{defin}
+\begin{obs}
+   Derivative operators are linear and thus they form a vector space.\\ Let's consider a map $\phi:A\rightarrow\mathbb{R}^n$, a curve  $\gamma:I \rightarrow\mathcal{M}$ and a function $f:\mathcal{M} \rightarrow\mathbb{R}$. Composing $f$ with $\gamma$ we can evaluate its derivative along the curve:$$\frac{d}{d\lambda}(f\circ\gamma)=\frac{d}{d\lambda}f(\gamma(\lambda)).$$
+   Composing now $f\circ\gamma$ with the map $\phi$ and using the Leibniz rule we obtain:
+   $$\frac{d}{d\lambda}[(f\circ\phi^{-1})(\phi\circ\gamma)]=\frac{\partial(f\circ\phi^{-1})}{\partial x^\mu}\frac{d(\phi\circ\gamma)}{d\lambda}=\frac{\partial f}{\partial x^\mu}\frac{dx^\mu}{d\lambda}.$$
+   This procedure gives us a way construct the vector space of derivatives, along a given curve, at each point of the manifold $$\frac{d}{d\lambda}=\frac{dx^\mu}{d\lambda}\frac{\partial}{\partial x^\mu}.$$
+   Notice that the chart induces a basis for the vectors: $\frac{dx^\mu}{d\lambda}\in\mathbb{R} $, and thus can be interpreted as components, while $\frac{\partial}{\partial x^\mu}$ are still derivatives from which (by linear combinations) we can construct all the others. For an $n$-dimensional manifold, each chart will induce $n$ partial derivatives and thus it is natural to use those as basis for the tangent spaces.
+\end{obs}
+\begin{defin}[Vectors]
+	A vector in a point $P\in\mathcal{M}$ is defined as the differential operator along a curve $\gamma$ $$\boxed{\vec V_\gamma= \frac{d}{d\lambda}\bigg|_P=\frac{dx^\mu}{d\lambda}\frac{\partial}{\partial x^\mu}\bigg|_P},$$
+    whose components are defined by the choice of a chart.\\
+	The vector space spanned by $\frac{\partial}{\partial x^\mu}\big|_P$ is called the tangent space in $P$, $T_P$.
+\end{defin}
+Notice that also vectors are really invariant objects; the components are not and from chain rule, changing chart, we get the components' transformation law:
+$$\vec V= V^\mu \frac{\partial}{\partial x^\mu}= V^\mu \frac{\partial y^{\nu'}}{\partial x^\mu}\frac{\partial}{\partial y^{\nu'}}=V^{\nu'}\frac{\partial}{\partial y^{\nu'}}.$$
+\begin{defin}
+	Given an open subset of the manifold $U\in\mathcal{M}$, a vector field is an application that maps each point $P\in U$ to a vector $\vec V(P)\in T_P$.
+\end{defin}
+\subsection{Integral curves, exponential maps and commutators}
+Right now we have defined vectors from the notion of curves, we will now show how from a vector field we can construct a set of curves.\\ Consider a vector field $\vec V=\frac{d}{d\lambda}$, defined on some open subset $U$ of a manifold, and let's pick point $P_0\in U$. If we introduce coordinates, through a chart $\phi(P)=x^\mu(P)$, we can define a \emph{Cauchy problem} from the composition of the first two objects and the chart:
+\begin{equation*}
+	\begin{cases}
+		\frac{d}{d\lambda}x^\mu=V^\mu(\lambda),\\x^\mu(\lambda_0)=x^\mu(P_0).
+	\end{cases}
+\end{equation*}
+From calculus theorems, we know that there exist a unique solution $x^\mu(\lambda)$, if we now compose this function with the inverse of the chart we obtain a unique curve $\gamma(\lambda)$ on the manifold.
+\begin{defin}[Integral curves]
+	Given a vector field $\vec V$, defined on $U\in\mathcal{M} $, and a curve $\gamma:I \rightarrow U$, we call $\gamma$ the integral curve of  $\vec{V}$ if: $\frac{d}{d\lambda}\big|_{P}=\vec{V}(P)\quad \forall P\in \gamma(I)$. \footnote{Here $\frac{d}{d\lambda}$ is defined as the tangent vector to $\gamma$.}
+\end{defin}
+
+Another way, to better resume the previous result, is the \emph{exponential map}: consider a vector field and its integral curve on some open set, composing this last one with a chart we can then Taylor expand it along the curve to get:
+$$x^\mu(\lambda_0+\epsilon)= x^\mu(\lambda_0)+\epsilon\frac{dx^\mu}{d\lambda}\bigg|_{\lambda_0}+\frac{\epsilon^2}{2!}\frac{d^2x^\mu}{d\lambda^2}\bigg|_{\lambda_0}+\dots=e^{\epsilon \frac{d}{d\lambda}}x^\mu\big|_{\lambda_0}=e^{\epsilon \vec V}x^\mu\big|_{\lambda_0}.$$
+Notice that the exponential map is an implicit way to define a solution of the Cauchy problem we defined for integral curves and gives us an easy way (but most of the time just formal) to obtain connected points on a manifold, using just a vector field. Also notice that we could Taylor expand every smooth function defined on the manifold (along a curve), in the same way as we have just done, in this way the exponential map gives us the function in other points:$$\boxed{f(\lambda+\epsilon)=f(\lambda_0)+\epsilon\frac{df}{d\lambda}\bigg|_{\lambda_0}+\frac{\epsilon^2}{2!}\frac{d^2f}{d\lambda^2}\bigg|_{\lambda_0}+\dots=e^{\epsilon \frac{d}{d\lambda}}f\big|_{\lambda_0}=e^{\epsilon \vec V}f\big|_{\lambda_0}}.$$
+
+Having exponential maps, we can now discuss a rather unexpected object that we can define for vector, as we have constructed them.
+\begin{defin}[Commutators]
+	Given two vectors $\vec V=\frac{d}{d\lambda},\ \vec W=\frac{d}{d\sigma}$, in the tangent space $T_P$ of a given manifold, we can define the commutator: $$\big[\vec V,\vec W\big]=\frac{d}{d\lambda}\frac{d}{d\sigma}-\frac{d}{d\sigma} \frac{d}{d\lambda}.$$
+\end{defin}
+We are not used to define commutators of vectors, even thought now these are linear operators, therefore it could seem hard to interpret the meaning of this object.\\ Consider two vector fields $\frac{d}{d\lambda},\ \frac{d}{d\sigma}$ and let's follow their integral maps from a point $P$ to some other point. A priori we cannot know if moving along one vector field first will lead to the same point we would get starting first from the other.
+\begin{align*}
+	x^\mu(A)=e^{\epsilon_1\frac{d}{d\lambda}}e^{\epsilon_2\frac{d}{d\sigma}}x^\mu\big|_P=x^\mu(P)+\epsilon_1\frac{dx^\mu}{d\lambda}\bigg|_P+\epsilon_2\frac{dx^\mu}{d\sigma}\bigg|_P+\epsilon_1\epsilon_2\frac{d}{d\lambda}\frac{dx^\mu}{d\sigma}\bigg|_P+\dots\ ,\\
+	x^\mu(B)=e^{\epsilon_2\frac{d}{d\sigma}}e^{\epsilon_1\frac{d}{d\lambda}}x^\mu\big|_P=x^\mu(P)+\epsilon_1\frac{dx^\mu}{d\lambda}\bigg|_P+\epsilon_2\frac{dx^\mu}{d\sigma}\bigg|_P+\epsilon_1\epsilon_2\frac{d}{d\sigma}\frac{dx^\mu}{d\lambda}\bigg|_P+\dots\ .	
+\end{align*}
+Subtracting the coordinates of the second point from the first we obtain:
+$$x^\mu(A)-x^\mu(B)=\epsilon_1\epsilon_2\bigg[\frac{d}{d\lambda}\frac{d}{d\sigma}\bigg]x^\mu\big|_P\dots\ ,$$
+clearly, from this calculation, we can see that in order to have the two path to end in the same point $A=B$, the commutator must vanish. Therefore, two commuting vector fields will generate "commuting" paths as integral curves.\\ In this way we can use the parametrization parameter, of the integral curves of $n$ linearly independent\footnote{Linearly independent here means that the coefficients of the linear combination are functions on $\mathcal{M}$, and in each point they make the vectors independents.} vector fields, as coordinates of some chart. In this case, the chart is well-defined, since the change of coordinate matrix, $\frac{\partial x^\mu}{\partial \lambda_i}$, is really just the coordinates of each vector, and thus it is invertible (we assumed linearly independent vectors).\\
+
+Lastly we evaluate in components the commutator of two vectors: fixing a chart
+\begin{align*}
+	\big[\vec V,\vec W\big]&=\frac{d}{d\lambda}\frac{d}{d\sigma}-\frac{d}{d\sigma} \frac{d}{d\lambda}=\frac{dx^\nu}{d\lambda}\partial_\nu\bigg(\frac{dx^\mu}{d\sigma}\partial_\mu\bigg)-\frac{dx^\nu}{d\sigma}\partial_\nu\bigg(\frac{dx^\mu}{d\lambda}\partial_\mu\bigg)\\&=\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\sigma}(\partial_\mu\partial_\nu-\partial_\nu\partial_\mu)+\bigg(\frac{dx^\nu}{d\lambda}\partial_\nu\frac{dx^\mu}{d\sigma}-\frac{dx^\nu}{d\sigma}\partial_\nu\frac{dx^\mu}{d\lambda}\bigg)\partial_\mu\\&=(V^\nu\partial_\nu W^\mu-W^\nu\partial_\nu V^\mu)\partial_\mu,
+\end{align*}
+it is now clear that the commutator of two vectors is still another one (this was trivial).
+\subsection{1-Forms and tensors}
+We have now introduced vectors and their formalism, actually what we have introduced is really, in components, what we usually refer as contravariant vectors, we now want to define co-vectors and tensors, which contain both.\\
+On manifolds co-vectors are linear maps from tangent spaces to $\mathbb{R} $, which are the natural generalization of vectors of the dual space\footnote{Actually co-vectors are really vectors of the dual space even in special relativity.}.
+\begin{defin}[1-forms]
+	Given a specific point $P\in\mathcal{M}$, we can define a 1-form in that point as a linear map $\tilde{\omega}:T_P\rightarrow\mathbb{R}$.\\ 1-forms made up a vector space at each point of a manifold called cotangent space $T^*_P$.
+\end{defin}
+Notice that also vectors, when applied to functions, result in a real number, therefore it is natural to define a 1-form associated to a function (in the opposite way a vector is associated to a curve) such that, when applied to a vector, it will result in the directional derivative of the function along the curve:
+$$\tilde{df}(\vec V)=\frac{df}{d\lambda}=\vec V(f).$$
+Imposing this consistency relation, we can define a dual basis: to better see this we just need to use the chain rule with composition with a chart, then we substitute every term containing the parameter of the curve with the supposed 1-form basis:
+$$\tilde{df}(\vec V)=\frac{\partial f}{\partial x^\mu}\frac{dx^\mu}{d\lambda}\quad\Rightarrow\quad\boxed{\tilde{df}=\frac{\partial f}{\partial x^\mu}\tilde{dx}^\mu}\ .$$
+We just now need to define the 1-form basis $\tilde{dx}^\mu$ such that $\tilde{dx}^\mu(\vec V)=\tilde{dx}^\mu\big(\frac{x^\nu}{d\lambda}\partial_\nu\big)=\frac{x^\nu}{d\lambda}\delta^\mu_\nu$. This basis is thus defined by:
+$$\boxed{\tilde{dx}^\mu(\partial_\nu)=\delta^\mu_\nu}.$$
+
+Having defined 1-form, we can now introduce tensors, which are just combinations of vectors and 1-forms.
+\begin{defin}[Tensors]
+	A (n,m) rank tensor, in a specific point $P\in\mathcal{M}$, is a multilinear map $$T: \underbrace{T_p^*\otimes\dots\otimes  T_p^*}_\text{$m$ times}\otimes \underbrace{T_P\otimes \dots \otimes T_P}_\text{$n$ times}\longrightarrow \mathbb{R} .$$
+\end{defin}
+Fixing a chart, and thus a basis in both $T_P$ and $T_P^*$, we can expand $T$ in components:
+$$\boxed{T=T^{i_1,\dots,i_n}_{j_i\dots,j_m}\partial_{i_1}\otimes\dots\otimes\partial_{i_n}\otimes\tilde{dx}^{j_1}\otimes\dots_\otimes\tilde{dx}^{j_m}}$$$$ \text{where}\quad T^{i_1,\dots,i_n}_{j_i\dots,j_m}=T(\partial_{i_1},\dots\partial_{i_n},\tilde{dx}^{j_1},\dots,\tilde{dx}^{j_m}).$$
+
+Both 1-forms and tensors can be generalized to fields that maps each point of the manifold to a tensor in that point.
+
+Lastly we should concern about the change of basis for 1-forms, from which we can obtain the full transformation law of tensor components. Let's consider the action of $\tilde{dx}^\mu$ on the basis of $T_P$, then let's consider a new chart and a new associated basis, defined by: $$\tilde{dy}^{\mu'}\bigg(\frac{\partial}{\partial y^{\nu'}}\bigg)=\delta^{\mu'}_{\nu'}.$$
+The transformation of the vector basis is given by the chain rule $\frac{\partial}{\partial y^{\nu'}}=\frac{\partial x^\mu}{\partial y^{\nu'}}\frac{\partial}{\partial x^{\mu}}$, inserting this in the above we get $$\tilde{dy}^{\mu'}\bigg(\frac{\partial x^\rho}{\partial y^{\nu'}}\frac{\partial}{\partial x^{\rho}}\bigg)=\frac{\partial x^\rho}{\partial y^{\nu'}}\tilde{dy}^{\mu'}\bigg(\frac{\partial}{\partial x^{\rho}}\bigg)=\delta^{\mu'}_{\nu'},$$
+to hold the Kronecker delta it must be $\tilde{dy}^{\mu'}=\frac{\partial y^{\mu'}}{\partial x^{\nu}}\tilde{dx}^{\nu}$, so that$$\frac{\partial x^\rho}{\partial y^{\nu'}}\tilde{dy}^{\mu'}\bigg(\frac{\partial}{\partial x^{\rho}}\bigg)=\frac{\partial x^\rho}{\partial y^{\nu'}}\frac{\partial y^{\mu'}}{\partial x^{\nu}}\tilde{dx}^{\nu}\bigg(\frac{\partial}{\partial x^{\rho}}\bigg)=\frac{\partial x^\rho}{\partial y^{\nu'}}\frac{\partial y^{\mu'}}{\partial x^{\nu}}\delta^\nu_\rho=\delta^{\mu'}_{\nu'}.$$
+In this way, we also obtain the general rule of transformation of components of tensors:
+$$\boxed{T^{i_1',\dots,i'_n}_{j'_i\dots,j'_m}=T^{i_1,\dots,i_n}_{j_i\dots,j_m}\frac{\partial x^{j_1}}{\partial y^{j_1'}}\dots\frac{\partial x^{j_m}}{\partial y^{j_m'}}\ \frac{\partial y^{i_1'}}{\partial x^{i_1}}\dots\frac{\partial y^{i_n'}}{\partial x^{i_n}}}\ .$$
