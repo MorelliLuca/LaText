@@ -1,0 +1,68 @@
+\section{The metric: lengths and integrals}
+We now want to introduce basics concepts of physics, such as length and angles. Usually we measure length and define angles, in vector spaces, using the scalar product. 
+\subsection{The metric tensor}
+A scalar product is defined by a metric tensor, which we now introduce in the context of lengths but really posses a deeper physical meaning.
+\begin{defin}[Metric tensor]
+    The metric tensor, $g$, is a $(0,2)$ tensor, defined on a tangent space $T_P$, such that:
+    \begin{itemize}
+        \item $g(\vec V,\vec W)=g(\vec w,\vec V)\qquad \forall\ \vec V,\vec W\in T_P$;
+        \item $g(\vec V,\vec W)=0\quad\forall\ \vec W\in T_P\quad\Leftrightarrow \quad \vec V=0$.
+    \end{itemize}
+\end{defin} 
+We call \emph{scalar product} of two vectors $g(\vec V,\vec W)\in\mathbb{R}$ and $g(\vec V,\vec V)=|\vec V|^2$ defines the \emph{norm} of a vector.\\
+Notice that, this definition is the usual one of scalar product on regular vector spaces, here the metric tensor is really a tensor field: in each tangent space $T_P$ we have precise metric tensor corresponding to the point $P$ itself.\\
+
+We can decompose this tensor in components, on the basis $\tilde{dx}^\mu$, induced by some chart, obtaining: $$\boxed{g(x)=g_{\mu\nu}(x)\ \tilde{dx}^\mu\otimes\tilde{dx}^\nu}, \qquad\boxed{g_{\mu\nu}=g(\partial_\mu,\partial_\nu)}.$$
+This allows us to show that the metric, as well as in special relativity flat space-time, lowers and rises the indices: given some vector $\vec V\in T_P$, we can define $\tilde{V}=g(\vec V,\cdot )\in T_P^*$:$$V_\nu=\tilde{V}(\partial_\nu)=g(V^\mu\partial_\mu,\partial_\nu)=V^\mu g_{\mu\nu}.$$
+
+Lastly, we are going to show a peculiar propriety of the metric: from linear algebra we know that the metric can be always be put (via a change of basis) in canonical form\footnote{The metric is diagonal with only $\pm1$ as entries.}, we should now adapt this result to the generalization of it as a tensor field on a manifold.\\
+Consider the metric in two different basis $$g_{\mu'\nu'}=\frac{\partial x^\mu}{\partial y^{\mu'}}\frac{\partial x^\nu}{\partial y^{\nu'}}g_{\mu\nu}$$ and Taylor expand both sides, around some point $P$, to the first order,
+\begin{align*}
+    g_{\mu'\nu'}&=g_{\mu'\nu'}\big|_P+\frac{\partial g_{\mu'\nu'}}{\partial y^{\lambda'}}\bigg|_P\delta y^{\lambda'}+\dots\\
+    &=\frac{\partial x^\mu}{\partial y^{\mu'}}\frac{\partial x^\nu}{\partial y^{\nu'}}g_{\mu\nu}\bigg|_{P}+\bigg[2\frac{\partial x^\mu}{\partial y^{\mu'}}\frac{\partial^2x^\nu}{\partial y^{\lambda'}\partial y^{\nu'}}g_{\mu\nu}+\frac{\partial x^\mu}{\partial y^{\mu'}}\frac{\partial x^\nu}{\partial y^{\nu'}}\frac{\partial}{\partial y^{\lambda'}}(g_{\mu\nu})\bigg]\bigg|_P\delta y^{\lambda'}+\dots
+\end{align*}
+now we should compare same order terms, since they will correspond.\\
+At each order we will have free terms, defined by the change of basis, that are equals to those of the Taylor expansion in the new basis, thus defining the properties of the new metric components:
+\begin{itemize}
+    \item the term $g_{\mu'\nu'}\big|_P$ is determined by $\frac{\partial x^\mu}{\partial y^{\mu'}}\frac{\partial x^\nu}{\partial y^{\nu'}}g_{\mu\nu}\big|_{P}$, the first posses (in an $n$-dimensional manifold) $(n^2-n)/2+n=(n^2+n)/2$ independent components (it is symmetric), while the second has $n^2$ independent components, in this way $(n^2+n)/2$ components of the change of basis can be used to reach the canonical form in $P$, the remaining are just free parameters\footnote{Notice that, for $n=4$, there will be $(n^2-n)/2=6$ free parameters, that we can think as not fixed by the freedom of choice of the inertial reference frame ($3$ rotations and $3$ boosts).};
+    \item $\frac{\partial g_{\mu'\nu'}}{\partial y^{\lambda'}}\bigg|_P$ is determined by $\bigg[2\frac{\partial x^\mu}{\partial y^{\mu'}}\frac{\partial^2x^\nu}{\partial y^{\lambda'}\partial y^{\nu'}}g_{\mu\nu}+\frac{\partial x^\mu}{\partial y^{\mu'}}\frac{\partial x^\nu}{\partial y^{\nu'}}\frac{\partial}{\partial y^{\lambda'}}(g_{\mu\nu})\bigg]\bigg|_P,$ the second addend is fixed by the zeroth order expansion, the first one, $2\frac{\partial x^\mu}{\partial y^{\mu'}}\frac{\partial^2x^\nu}{\partial y^{\lambda'}}\big|_P$, posses $n(n^2+n)/2$ independent parameters, while the derivatives of the new metric components has $(n^2+n)/2$ independent parameters, again we can use this abbundacy of parameter to set the value of $\frac{\partial g_{\mu'\nu'}}{\partial y^{\lambda'}}\big|_P=0$.\\
+\end{itemize}
+To sum up, we can always choose a change of basis such that the new metric tensor is in canonical form in $P$, its first derivatives vanish in $P$ and, lastly, the components reads:$$\boxed{g_{\mu'\nu'}=\pm\delta_{\mu'\nu'}+\frac{1}{2}\frac{\partial g_{\mu\nu}}{\partial y^{\mu'}\partial y^{\nu'}}\bigg|_P\delta y^{\mu'}\delta y^{\nu '}+\dots}.$$
+Physically, this corresponds to using a \emph{locally inertial reference frame}, in which (only in $P$) we recover special relativity.
+\subsection{The length of a curve}
+Let's consider a curve on a manifold and its tangent vectors $\frac{d}{d\lambda}$. We can define a vector representing a small displacement, over the curve, $$\Delta \vec{V}=\frac{d}{d\lambda}\Delta \lambda=\vec V\Delta \lambda,$$
+from which we can evaluate its modulus $$\Delta s^2=g\big(\Delta \vec V,\Delta \vec V\big)=g\big( \vec V, \vec V\big)\Delta\lambda^2.$$
+In the limit of $\Delta \lambda\rightarrow0$ and summing all the infinitesimal lengths $\Delta s$, by integration, we get the definition of the length of the curve:$$\boxed{S(\lambda_1,\lambda_2)=\int_{\lambda_1}^{\lambda_2}\sqrt{g\big(\vec V,\vec V\big)} d\lambda=\int_{\lambda_1}^{\lambda_2}\sqrt{g_{\mu\nu}(\lambda)\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda}} d\lambda}.$$
+We have used that $\vec V=\frac{d x^\mu}{d\lambda}\partial_\mu$ and $g(\partial_\mu,\partial_\nu)=g_{\mu\nu}$.
+\subsection{n-forms}
+Now that we  have introduced integrals to evaluate the length of a curve, we want to obtain a way to evaluate more general integrals over subsets of the manifold.\\
+Notice that in $\mathbb{R}^3$ we can define the area of a parallelogram, which is determined by two vectors $\vec V,\ \vec W$ (used as sides), by their vector product. From this product we can obtain the volume of a prism using the scalar product and then, summing infinitesimal prisms or parallelograms, we can define integration.\\ Here we will follow the same idea but, instead of scalar or vector products, we are going to use a more general tool, the $n$-forms.
+\begin{defin}[n-forms]
+    An n-form is $(0,n)$ tensor, defined on $T_P$, such that it is antisymmetric. 
+\end{defin}
+A $2$-form can be explicitly written as an antisymmetric linear combination of the basis element of $T_P^*\otimes T_P^*$
+$$\tilde{\omega}=\sum_{\mu<\nu}\omega_{\mu\nu}(\tilde{dx}^\mu\otimes\tilde{dx}^\nu-\tilde{dx}^\nu\otimes\tilde{dx}^\mu),$$
+to summarize this kind of linear combination we can define the \textbf{wedge product}, such that$$\tilde{\omega}=\omega_{\mu\nu}\tilde{dx}^\mu\wedge\tilde{dx}^\nu.$$
+In this way we can write the general form of an n-form as:
+$$\boxed{\tilde\omega=\omega_{\mu_1,\dots,\mu_n}\ \tilde{dx}^{\mu_1}\wedge\dots\wedge\tilde{dx}^{\mu_n}}.$$
+\subsection{Integration over manifolds}
+Now we can define the volume of an $n$-polyhedron using $n$-forms, notice that this is the beast way to do so, since the antisymmetry of $n$-forms guarantees that the sides of it must be $n$ linear independent vectors, otherwise it will give  a zero measure volume.\\
+Considering $n$ independent vectors $\{\vec{\Delta x_i}\}$, which are the sides of a polyhedron, we can define its volume through the $n$-form:
+\begin{align*}
+    \tilde{\omega}(\vec{\Delta x_1},\dots,\vec{\Delta x_n})&=f \tilde{dx}^{1}(\vec{\Delta x_1})\wedge\dots\wedge\tilde{dx}^{n}(\vec{\Delta x_n})\\&=f\Delta x^1_{(1)}\dots\Delta x^n_{(n)},
+\end{align*}
+where we used that $n$-forms, in a $n$-dimensional manifold, form 1-dimensional vector spaces (since constructing the first antysimmetric base element we already used all the 1-forms). \\
+In the limit of $\Delta x_{(i)}^\mu\rightarrow dx^\mu_{(i)}$ we obtain the definition of the infinitesimal element of integration$$\tilde{\omega}(\vec{d x_1},\dots,\vec{d x_n})= f\ d x^1_{(1)}\dots d x^n_{(n)}=dV.$$
+Summing all the polyhedra defined in some region $U\in\mathcal{M}$ we obtain the definition of the integral over the volume of $U$:
+$$\boxed{V(U)=\int_U\tilde{\omega}=\int_{\phi(U)}f\ dx^1dx^2\dots dx^n}.$$
+A key point of this definition is that the integral is actually defined ad an integral over some region of $\mathbb{R}^n$ by the $n$-form composed with a chart, that we know ho to evaluate.\\
+
+We can generalize the above definition to submanifolds just by applying $\tilde\omega$ to all the linearly independent vectors that are not in the tangent space of the submanifold, for an $n-1$ submanifold we get$$A(\Sigma)=\int_\Sigma\tilde{\omega}(\vec{dx}_1,\dots,\vec{dx}_{n-1},\vec {v})=\int_{\phi(\Sigma)}fv\ dx^1\dots dx^{n-1}.$$ 
+
+Until now the definition of volume is still arbitrary up to some constant, that we labelled $f$, thus the usefulness of this definition is somewhat unclear. To give the right meaning to this measure of volume we need to impose consistency between the metric (which defines length) and volume.\\
+Choosing a chart in which $g$ is in canonical form, we first define the $n$-form$$\tilde\omega_g=\tilde{dx}^{1}\wedge\dots\wedge\tilde{dx}^{n},$$ a change of the chart will induce a change of basis, that reads for the $n$-form:
+$$\tilde\omega_{g'}=J\tilde{dy}^{1}\wedge\dots\wedge\tilde{dy}^{n},\qquad J=\text{det}\bigg(\frac{\partial y^\mu}{\partial x^\nu}\bigg).$$
+To better understand the connection with the metric let's study how the determinant of the metric transforms
+$$\text{det}(g')=\text{det}(\Lambda^t g'\Lambda)=\text{det}(g) \text{det}(\Lambda)^2=\pm J^2$$
+therefore we can write the integral over a volume in a generic chart as 
+$$\boxed{V(U)=\int_U\tilde{\omega}_g=\int_{\phi(U)}\sqrt{|\text{det}(g')|}d^ny}.$$

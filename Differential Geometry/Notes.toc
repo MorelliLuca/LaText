@@ -1,8 +1,14 @@
 \babel@toc {english}{}\relax 
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
-\contentsline {section}{\numberline {2}Manifolds}{3}{section.2}%
+\contentsline {section}{\numberline {2}Manifolds: vectors, 1-forms and tensors}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Topological spaces}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Maps, charts and atlases}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Functions, curves and vectors}{4}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Integral curves, exponential maps and commutators}{5}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}1-Forms and tensors}{7}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Submanifolds}{8}{subsection.2.6}%
+\contentsline {section}{\numberline {3}The metric: lengths and integrals}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The metric tensor}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}The length of a curve}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}n-forms}{11}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Integration over manifolds}{11}{subsection.3.4}%
