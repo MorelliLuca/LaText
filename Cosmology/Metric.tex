@@ -2,28 +2,28 @@
 Modern cosmology is based upon two basics principles:
 \begin{itemize}
     \item \textbf{the Copernican Principle}, or that there not exist a preferred observer in the universe;
-    \item \textbf{the Cosmological Principle}, or that the universe is homogeneous and isotropic.
+    \item \textbf{the Cosmological Principle}, which states that the universe is homogeneous and isotropic.
 \end{itemize}
-These principles may not seem to be consistent with physical reality, clearly the core of a star is very different from the empty space or even from the intern of planets, but in order to describe the whole universe we need to make some assumption that are valid on the largest scales. Observations, for example of the distribution of galaxies or of the cosmic microwave background radiation, show that at large scales, on average, the universe looks the same in all directions. From the Copernican Principle we than get that all observer should see an isotropic universe, thus we can claim that all points of the universe should also look the same. Again we should stress that these are just assumptions that, at some large scale, we think that can become adequate to approximate the description of spacetime.\\
+These principles may not seem to be consistent with physical reality, clearly the core of a star is very different from the empty space or even from the intern of planets, but in order to describe the whole universe we need to make some assumptions that are valid on the largest scales. Observations, for example of the distribution of galaxies or of the cosmic microwave background radiation, show that at large scales, on average, the universe looks the same in all directions. From the Copernican Principle we than get that all observer should see an isotropic universe, thus we can claim that all points of the universe should also look the same. Again we should stress that these are just assumptions that, at some large scale, we think that can become adequate to approximate the description of spacetime.\\
 
-We now have to translate the proprieties of isotropy and homogeneity to the language of different geometry and manifolds.\\ Notice that the two above principles refer only to the universe, or better, to space at a fixed time, therefore it is space which is really isotropic and homogeneous, while time has no particular symmetries.
-Thus, space is \textbf{maximally symmetric}, or simply that it possesses the maximum number of killing vectors. In fact, homogeneity guarantees 3 killing vectors, corresponding to the 3 possible space translations, while isotropy guarantees other 3 killing vectors, the 3 rotations around a point, and the maximum number of independent killing vectors for a $3D$ manifold is indeed 6.
+We now have to translate the proprieties of isotropy and homogeneity to the language of differential geometry and manifolds.\\ Notice that the two above principles refer only to the universe, or better, to space at a fixed time, therefore it is space which is really isotropic and homogeneous, while time has no particular symmetries.
+Space is \textbf{maximally symmetric}, which means that it possesses the maximum number of killing vectors. In fact, homogeneity guarantees 3 killing vectors, associated to the 3 possible space translations, while isotropy guarantees other 3 killing vectors, associated to the 3 rotations around a point, and the maximum number of independent killing vectors for a $3D$ manifold is indeed 6.
 \subsection{The Robertson-Walker metric}
 We will now construct a set of charts that are the more convenient to describe the assumed geometry.\\
-First, consider a hypersurface $\Sigma$ (a volume in this case), which is a slice of the spacetime manifold, corresponding to space (the universe) at a fixed time. On this hypersurface we chose one chart with coordinates $x^\mu=(0,x^1,x^2,x^3)$. At each point $P\in\Sigma$ we pick a vector $\vec n$ that is orthogonal to $\Sigma$ (it should be orthogonal to each vector of the tangent space, in $P$, of the submanifold defined by $\Sigma$ and our chart) such that those are normalized to $-1$, since they must be time-like. In each point $P$ we can now build a unique geodesic, for which $\vec n$ is the tangent vector in $P$, from the following Chaucy problem
+First, consider a space-like hypersurface $\Sigma$ (a volume in this case), which is a slice of the spacetime manifold, corresponding to space (the universe) at a fixed time. On this hypersurface we chose one chart with coordinates $x^\mu=(0,x^1,x^2,x^3)$. At each point $P\in\Sigma$ we pick a vector $\vec n$ that is orthogonal to $\Sigma$ (it should be orthogonal to each vector of the tangent space, in $P$, of the submanifold defined by $\Sigma$ and our chart) such that those are normalized to $-1$, since they must be time-like. In each point $P$ we can now build a unique geodesic, for which $\vec n$ is the tangent vector in $P$, from the following Chaucy problem
 \begin{equation}\label{Chaucy problem}
     \begin{cases}
         \big(\nabla_{\vec n}\vec n\big)^\mu=\frac{d^2x^\mu}{dt^2}+\Gamma_{\nu\lambda}^{\mu}\frac{dx^\nu}{dt}\frac{dx^\lambda}{dt}=0,\\\frac{dx^\mu}{dt}\big|_{P}=n^\mu\big|_P,\\x^\mu(0)=x^\mu\big|_P.
     \end{cases}
 \end{equation}
-If $t$ is the parameter of each geodesic, we can extend our initial chart in a neighborhood of $\Sigma$ assigning to each point $Q$ the coordinates $x^\mu=(t,x^1,x^2x^3)$, where $t$ is the value of the parameter of one geodesic, that we have constructed, passing through $Q$, and $(x^1,x^2x^3)$ are the coordinates of the point $P$, from which the geodesic starts. These coordinates will eventually fail once some geodesics, from our construction, will meet and intersect.\\
+We can extend our initial chart, in a neighborhood of $\Sigma$, assigning to each point $Q$ the coordinates $x^\mu=(t,x^1,x^2x^3)$, where $t$ is the value (in $Q$) of the parameter of one geodesic passing through $Q$, and $(x^1,x^2x^3)$ are the coordinates of the point $P$, from which the geodesic starts. These coordinates will eventually fail once some geodesics, from our construction, will meet and intersect.\\
 
 We now want to describe the metric of our spacetime manifold using one of these charts. To do so we will take the chart induced basis of each tangent space $(\partial_t,\partial_1,\partial_2,\partial_3)$ and then label them:
 \begin{equation}
     \partial_t=\vec n,\qquad \partial_i= \vec Y_{(i)},
 \end{equation}
-where the components of $\partial_t$ are really the ones of the normal vectors we have defined since they are parallel transported along the geodesics and defined by \ref{Chaucy problem}.\\
-Using this basis the first component of the metric reads, by our initial construction,
+where $\partial_t$ is really the normal vector field we have defined, since they are parallel transported along the geodesics and defined by \eqref{Chaucy problem}.\\
+Using this basis, the first component of the metric reads, by our initial construction,
 \begin{equation}
     g_{tt}=g(\partial_t,\partial_t)=n^\mu n_\mu=-1.\label{gen gtt}
 \end{equation} 
@@ -48,8 +48,114 @@ Summing up all the above results, we can write the metric, from \eqref{gen gtt} 
     ds^2=-dt^2+g_{ij}dx^i dx^j.
 \end{equation*}
 In this expression the absence of the mixed terms $dt\ dx^i$ reflects that there exist a family of hypersurfaces, defined by $t=$const, that are all orthogonal to the vector field $\vec n$. These represent the evolved universe at different times.\\
-The spacial components of the metric now depend on all the coordinates of the chart we have introduced. If we consider how time evolution could affect the spacial terms we can deduce that all the components $g_ij$ should scale in the same way, otherwise we could have different scaling in different directions, which is against the idea that space is isotropic. We will write explicitly the time dependence as
+The spacial components of the metric now depend on all the coordinates of the chart we have introduced. If we consider how time evolution could affect the spacial terms we can deduce that all the components $g_{ij}$ should scale in the same way, otherwise we could have different scaling in different directions, which is against the idea that space is isotropic. We will write explicitly the time dependence as
 \begin{equation*}
     ds^2=-dt^2+a^2(t)g_{ij}dx^i dx^j.
 \end{equation*} 
-Let's now take into account that each space hypersurface is a maximally symmetric submanifold.
+Let's now take into account that each space hypersurface is a maximally symmetric submanifold. 
+As showed in Appendix, maximally symmetric manifolds have the peculiar propriety that, due to its high number of symmetries, the Riemann tensor reduces, in 3 dimensions, to 
+\begin{equation}
+    ^{(3)}R_{ijkl}=\frac{^{(3)}R}{6}(g_{ik}g_{jl}-g_{il}g_{jk}),
+\end{equation}
+in which the $^{(3)}$ is used to signal that these are tensor referred to the submanifold and $^{(3)}R$ is the Ricci scalar. The Ricci tensor reads:
+\begin{equation}\label{maxsymRicci}
+    ^{(3)}R_{ij}=\frac{^{(3)}R}{6}(3g_{ij}-g^{lk}g_{il}g_{jk})=\frac{^{(3)}R}{3}g_{ij},
+\end{equation}
+we want to use this relation to determine the metric, without the Einstein field equation.\\
+To simplify the metric, we can notice that being maximally symmetric, each space submanifold will also have spherical symmetry, which allows us to write the metric in spherical coordinates
+\begin{equation}
+    ds^2=-dt^2+a(t)^2\big[e^{2\beta(r)}dr^2+e^{2\gamma(r)}r^2(d\theta^2+\sin^2\theta\ d\phi^2)\big].
+\end{equation}  
+Here we introduced some unknown functions $\beta(r),\ \gamma(r)$, that depend only on the radial coordinate due to spherical symmetry, and can be expressed as an exponential because we want to preserve the signature. The angular part, $d\Omega^2= d\theta^2+\sin\theta\ d\phi^2$, scale with the same factor $e^{2\gamma}$, in order to maintain sphere to be perfectly round.\\
+We can simplify this metric even more by scaling the radial coordinate
+\begin{equation}
+    r\rightarrow e^{-\gamma(r)}r,\qquad dr\rightarrow \bigg(1-r\frac{d\gamma}{dr}\bigg)e^{-\gamma(r)}dr,
+\end{equation}
+in this way the metric becomes
+\begin{equation}
+    ds^2=-dt^2+a^2(t)\bigg[\bigg(1-r\frac{d\gamma}{dr}\bigg)^{2}e^{2(\beta(r)-\gamma(r))}dr^2+r^2(d\theta^2+\sin^2\theta\ d\phi^2)\bigg],
+\end{equation}
+since $g_{rr}$ must be positive, we can define a function $\alpha(r)$, such that $e^{2\alpha}=\big(1-r\frac{d\gamma}{dr}\big)^{2}e^{2(\beta(r)-\gamma(r))}$, so that the metric reads
+\begin{equation}
+    ds^2=-dt^2+a^2(t)\big[e^{2\alpha(r)}dr^2+r^2(d\theta^2+\sin^2\theta\ d\phi^2)\big].
+\end{equation}
+Now, we can evaluate the Christoffel symbols of the metric on the universe submanifold:
+\begin{align}
+    ^{(3)}\Gamma_{rr}^r&=\frac{d\alpha}{dr},\qquad^{(3)}\Gamma_{r\theta}^\theta=\frac{1}{r},\qquad^{(3)}\Gamma_{\theta\theta}^r=-re^{-2\alpha},\qquad^{(3)}\Gamma_{rr}^r=\frac{\cos\theta}{\sin\theta},\nonumber\\
+    ^{(3)}\Gamma_{r\phi}^\phi&=\frac{1}{r},\qquad^{(3)}\Gamma_{\phi\phi}^r=-re^{-2\alpha}\sin^2\theta,\qquad^{(3)}\Gamma_{\phi\phi}^\theta=-\sin\theta\cos\theta,
+\end{align}
+all the others are zero or deducible from the symmetries of the above.\\ Therefore, the non-vanishing components of the Riemann tensor are:
+\begin{align}
+    ^{(3)}R^r_{\theta r\theta}&=re^{-2\alpha}\frac{d\alpha}{dr},\nonumber\\
+    ^{(3)}R^r_{\phi r\phi}&=re^{-2\alpha}\sin^2\theta\frac{d\alpha}{dr},\nonumber\\
+    ^{(3)}R^\theta_{\phi \theta\phi}&=(1-e^{-2\alpha})\sin^2\theta.
+\end{align}
+Lastly, we can get the Ricci tensor:
+\begin{equation}
+    ^{(3)}R_{rr}=\frac{2}{r}\frac{d\alpha}{dr},\qquad ^{(3)}R_{\theta\theta}=e^{-2\alpha}\bigg[r\frac{d\alpha}{dr}-1\bigg]+1,\qquad ^{(3)}R_{\phi\phi}=\sin^2\theta R_{\theta\theta}.\label{Ricci1}
+\end{equation}
+Combining the expression for the Ricci tensor of maximally symmetric space \eqref{maxsymRicci} and the one above \eqref{Ricci1} we get 2 differential equation that we can solve to determine the metric
+\begin{align*}
+    ^{(3)}R_{rr}&=\frac{^{(3)}R}{3}g_{tt}\quad\Rightarrow\quad\boxed{\frac{2}{r}\frac{d\alpha}{dr}=\frac{^{(3)}R}{3}e^{2\alpha}}\\ ^{(3)}R_{ij}&=\frac{^{(3)}R}{3}g_{ij}\quad\Rightarrow\quad \boxed{e^{-2\alpha}\bigg[r\frac{d\alpha}{dr}-1\bigg]+1=\frac{^{(3)}R}{3}r^2}.
+\end{align*}
+Substituting the first one into the second, we can get an initial condition for the first
+\begin{equation}
+    \frac{d\alpha}{dr}=\frac{^{(3)}R}{6}re^{2\alpha},\qquad\qquad e^{-2\alpha}\bigg[\frac{^{(3)}R}{6}r^2e^{2\alpha}-1\bigg]+1=\frac{^{(3)}R}{3}r^2.
+\end{equation}
+To solve this differential equation we start by defining $k=\frac{^{(3)}R}{6}$, and then we can integrate
+\begin{align}
+    \int e^{-2\alpha}\ d\alpha=\int kr\ dk \Rightarrow e^{-2\alpha}=-kr^2+C,
+\end{align}
+then, to determine $C$ we plug this solution into the initial condition
+\begin{align*}
+    2kr^2&=e^{-2\alpha}\bigg[kr^2e^{2\alpha}-1\bigg]+1=kr^2-e^{-2\alpha}+1\\
+       &=kr^2+kr^2-C+1=2kr^2-C+1,\quad \Rightarrow\quad C=1.
+\end{align*}    
+In this way we have obtained the \textbf{Robertson Walker metric}
+\begin{equation}\label{RWMetric}
+    ds^2=-dt^2+a^2(t)\bigg[\frac{dr^2}{1-kr^2}+r^2(d\theta^2+\sin^2\theta\ d\phi^2)\bigg],
+\end{equation}
+notice that, to obtain this metric, we never used the Einstein field equation, but only geometrical proprieties of spacetime, deduced from the cosmological principle, therefore this metric is totally generic once we assume that.\\
+The coordinates $(t,r,\theta.\phi)$ are called \emph{comoving coordinates}, since these precise choice makes manifest the isotropy and homogeneity of the universe, that wouldn't be manifest in a moving reference frame with respect to the universe (the cosmic fluid that we will use to model it).\\
+In the metric appear two parameters
+\begin{itemize}
+    \item $a(t)$, the \textbf{cosmic scale factor}, which measure how the "size" of the universe change with time;
+    \item $k$, the \textbf{curvature constant}, that is proportional to the Ricci scalar of each universe submanifold and thus measures the curvature of space.
+\end{itemize}
+These parameters can be rescaled without affecting the metric \eqref{RWMetric} in the following way
+\begin{equation}
+    r\rightarrow\lambda r,\qquad a\rightarrow\lambda^{-1} a,\qquad k\rightarrow\lambda^{-2} k,
+\end{equation}
+this allows us to give dimensions of a length arbitrarily to $r$ or to $a$.\\
+Lastly we should stress that the distance between the origin of our reference frame and a point is given by
+\begin{equation}
+    R=\int_{0}^{r^*}\frac{a(t)\ dr}{\sqrt{1-kr^2}},
+\end{equation}
+while $a(t)r$ should really be interpreted as an areal radius, which scales distances on different concentric spheres. 
+\subsection{The curvature of the universe}
+We will now give some interpretation to the curvature constant of the Robertson Walker metric \eqref{RWMetric}.\\First, it is useful to use the scale invariance of the metric to reduce the possible values of this parameter just to three, we will see that the actual value of this constant isn't really relevant, while it is just its sign to determine the curvature. Rescaling 
+\begin{equation}
+    r\rightarrow\sqrt{|k|}r,\qquad a\rightarrow\frac{a}{\sqrt{|k|}},\qquad k\rightarrow\frac{k}{|k|},
+\end{equation}  
+$k$ can only be $\{-1,0,+1\}$. \\
+Let's discuss each case studying just the spacial metric $d\sigma^2=\frac{dr^2}{1-kr^2}+r^2(d\theta^2+\sin^2\theta\ d\phi^2)$.
+\begin{itemize}
+    \item \textbf{Flat universe}, for $k=0$, the metric reduces to usual metric of $\mathbb{R}^3$ in spherical coordinates $$d\sigma^2= dr^2+r^2(d\theta^2+\sin^2\theta\ d\phi^2)$$ which correspond to a flat universe.
+    \item \textbf{Closed universe}, for $k=+1$, the metric can be reduced to a more familiar one introducing $$d\chi=\frac{dr}{\sqrt{1-r^2}}\quad\Rightarrow\quad r=\sin\chi,$$$$d\sigma^2=d\chi^2+\sin^2\chi(d\theta^2+\sin^2\theta\ d\phi^2),$$which clearly shows that the radial coordinate is bounded\footnote{This behavior is signaled by the fact that in the previous chart the metric was singular for $r=1$.} ($r\in[0,+1]$) and the metric is really the one of a $3$-dimensional sphere.
+    \item \textbf{Open universe}, for $k=-1$, the metric can be better interpreted by introducing$$d\chi=\frac{dr}{\sqrt{1+r^2}}\quad\Rightarrow\quad r=\sinh\chi,$$$$d\sigma^2=d\chi^2+\sinh^2\chi(d\theta^2+\sin^2\theta\ d\phi^2),$$ which shows that $r$ is not bounded, and the metric takes the form of the one of a $3$-dimensional hyperboloid.
+\end{itemize}
+The value of $k$ will be determined by the energy content of the universe, through the Einstein field equations, this will be the goal of the next section.
+\subsection{Christoffel symbol of the R-W metric}
+Since in the following sections we will need the metric connection and the Ricci tensor, we are going just to calculate them now.\\
+The Christoffel symbols of the Robertson Walker metric \eqref{RWMetric} are
+\begin{align}
+    &\Gamma^0_{11}=\frac{a\dot{a}}{1-kr^2}, \quad&\Gamma^1_{11}=\frac{kr}{1-kr^2},\nonumber\\&\Gamma^0_{22}=a\dot{a}r^2, \quad&\Gamma^0_{33}=a\dot{a}r^2\sin^2\theta,\nonumber\\&\Gamma^1_{01}=\Gamma^2_{02}=\Gamma^3_{03}=\frac{\dot{a}}{a}, \quad &\Gamma^1_{22}=-r(1-kr^2),\nonumber\\&\Gamma^1_{33}=-r(1-kr^2)\sin^2\theta, \quad &\Gamma^2_{12}=\Gamma^3_{13}=\frac{1}{r},\nonumber\\&\Gamma^2_{33}=-\sin\theta\cos\theta, \quad &\Gamma^2_{23}=\cot\theta,\label{RWChristoffel}
+\end{align}
+the ones that are not listed are zero or obtainable from the symmetry of the connection.\\
+From the above Christoffel symbols, the non-zero components of the Ricci tensor are
+\begin{align}
+    R_{00}&=-3\frac{\ddot a}{a},\nonumber\\
+    R_{11}&=\frac{a\ddot{a}-2\dot a+2k}{1-kr^2},\nonumber\\
+    R_{22}&=r^2(a\ddot{a}-2\dot a+2k),\nonumber\\
+    R_{33}&=r^2(a\ddot{a}-2\dot a+2k)\sin^2\theta.\label{RWRicci}
+\end{align}

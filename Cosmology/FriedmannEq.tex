@@ -1,0 +1,105 @@
+\section{The Friedmann equations}
+We now want to develop a model that can predict the values of the parameters of the Robertson Walker metric knowing the energy content of the universe. The connection between the metric and the energy is given by the Einstein field equations
+\begin{equation}\label{EFE}
+    R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu}=8\pi GT_{\mu\nu},
+\end{equation}
+where it appears the energy-momentum tensor $T^{\mu\nu}$. Therefore, we should define the form of this tensor, and so we have to find a way to model the content of the universe.
+\subsection{Cosmic fluids}
+The simplest model of the content of the universe is that of a perfect fluid of energy and matter. A perfect fluid, in general, is described by an energy-momentum tensor given by
+\begin{equation}
+    T^{\mu\nu}=(\rho+p)U^\mu U^\nu+pg^{\mu\nu},
+\end{equation}
+where $\rho$ is the energy density of the fluid, $p$ the pressure and $U^\mu$ the $4$-velocity of a particle of the fluid.\\When we described the coordinate, used in the Robertson Walker metric, we introduced that those where comoving coordinate, with respect to the content of the universe, so that in that reference frame the metric would be manifestly isotropic and homogeneous. Now that we added some information about what is the content of the universe, we understand that, in the reference frame associated to those coordinates, the fluid will be at rest, otherwise we wouldn't have manifest isotropy and homogeneity.\\Being at rest, the energy-momentum tensor of the fluid takes the form
+\begin{equation}
+    U^\mu=(1,0,0,0),\quad\Rightarrow\quad
+    T_{\mu\nu}=\begin{pmatrix}
+        \rho&0&0&0\\
+        0&&&\\
+        0&&g_{ij}p&\\
+        0&&&
+    \end{pmatrix},
+    \quad T^\mu\phantom{} _\nu=\text{diag}(-\rho,p,p,p)\label{EMTensorCosmicFluid}
+\end{equation}
+Even before than plugging everything in the Einstein equations, we can study the energy conservation of this fluid, which reads
+\begin{align}
+    0&=\nabla_\mu T^\mu\phantom{} _0\nonumber\\&=\partial_\mu T^\mu\phantom{} _0+\Gamma^\mu_{\mu\lambda}T^\lambda\phantom{} _0-\Gamma^\lambda_{\mu0}T^\mu\phantom{} _\lambda\nonumber\\
+    &=\partial_0 T^0\phantom{} _0+\Gamma^\mu_{\mu0}T^0\phantom{} _0-\Gamma^\lambda_{\mu0}T^\mu\phantom{} _\lambda\nonumber\\
+    &=-\dot\rho-3\frac{\dot a}{a}\rho-3\frac{\dot a}{a}p\nonumber\\
+    &=-\dot\rho-3\frac{\dot a}{a}(\rho+p),
+\end{align}
+in which we used that $T^\mu\phantom{}_\nu$ is diagonal, and the Christoffel symbols \eqref{RWChristoffel} of the Robertson Walker metric.\\
+From here we should assume that the fluid follows some simple kind of equation of state, like
+\begin{equation}
+    p=\omega\rho,\qquad\omega=\text{constant}.
+\end{equation}
+Inserting this into the conservation of energy equation, we have just obtained, we get
+\begin{equation}
+    \frac{\dot\rho}{\rho}=-3(1+\omega)\frac{\dot a }{a},
+\end{equation}
+that can be solved to obtain how the energy density of the fluid scales with respec to $a(t)$
+\begin{align}
+    \int \frac{d\rho}{\rho}=-3(1+\omega)\int \frac{da}{a} \quad\Rightarrow\quad \boxed{\rho=\rho_0a^{-3(1+\omega)}}.
+\end{align}
+It can be useful to study some simple cases of fluids.
+\begin{itemize}
+    \item \textbf{Dust}: this kind of fluid is defined as a set of collisionless, non-relativistic particles, that therefore will have zero pressure:$$p_d=\omega_d\rho_d=0,\quad\Rightarrow\quad \omega_d=0\quad\Rightarrow\quad\rho_d=\frac{E}{V}=\rho_{0}a^{-3}.$$ We can appreciate how, for dust, the energy density scales with the volume ($V \propto  a^3$), keeping constant the total energy. This sort of fluid can be used to model stars and galaxies, for the pressure is negligible, compared to the energy density.
+    \item \textbf{Radiation}: in this case we want to describe massless particles or ultra-relativistic ones, which can be approximated to be massless. We can obtain an equation of state for this fluid by first observing that the $T^{\mu\nu}$ is traceless for E-M fields $$T^\mu\phantom{}_\mu=F^{\mu\lambda}F_{\mu\lambda}-\frac{1}{4}g^\mu\phantom{}_\mu F^{\lambda\sigma}F_{\lambda\sigma}=0,$$ at the same time the \eqref{EMTensorCosmicFluid} shows that $$T^\mu\phantom{}_\mu=-\rho+3P,\quad\Rightarrow\quad P_r=\frac{1}{3}\rho_r,$$ which implies $\omega_r=\frac{1}{3}$. Therefore, the energy density of radiation scales as$$\rho_r=\rho_0a^{-4},$$ that means that for radiation the total energy is not conserved, we interpret this as the fact that, while the universe expands, radiation gets redshifted.
+    \item \textbf{Vacuum or dark energy}: this last type of cosmic fluid is quite a strange one, the equation of state for this fluid is $$p_v=-\rho_v,\quad \Rightarrow\quad \omega_v=-1.$$ This implies that the energy density, as well as the pressure, is a constant, that we can set to be proportional to the \emph{cosmological constant} $\Lambda$: $$\rho_v=\frac{\Lambda}{8\pi G}.$$
+\end{itemize}
+Initially, it was thought that the universe could be described just but dust and radiation, a radiation dominated universe that then transitioned into a matter dominated universe. This was supported by the fact that $\rho_r$ decrease faster than $\rho_d$, when the universe expands.\\ Nowadays, we know that the expansion of the universe is accelerating, and led to the introduction of the dark energy.
+\subsection{Derivation of the equations}
+Now that we characterized the main types of fluids that we can use to model the content of the universe, we can proceed to derive, from Einstein field equations, the equation governing the evolution of the universe.\\
+First we want to simplify a bit Einstein equations \eqref{EFE}: from the trace of both sides of the equation we get
+\begin{equation}
+    R-\frac{4}{2}R=8\pi GT\quad\Rightarrow\quad R=-8\pi GT,
+\end{equation}
+where $T=T^\mu\phantom{}_\mu$, plugging this result in the field equations, we can remove the Ricci scalar:\begin{equation}
+    R_{\mu\nu}=8\pi G\bigg(T_{\mu\nu}-\frac{1}{2}Tg_{\mu\nu}\bigg).
+\end{equation}
+From the Ricci tensor components of the Robertson Walker metric \eqref{RWRicci} and the energy momentum tensor \eqref{EMTensorCosmicFluid} we can obtain two equations:
+\begin{itemize}
+    \item the $\mu\nu=00$ component leads to
+    \begin{align*}
+        -3\frac{\ddot a}{a}&=8\pi G\bigg[-\rho-\frac{1}{2}(-\rho+3p)\bigg]\\&=4\pi G(\rho+3p);
+    \end{align*}
+    \item the $\mu\nu=ij$ components lead to
+    \begin{align*}
+        \frac{a\ddot a+2\dot a^2+2k}{a^2}g_{ij}&=8\pi G\bigg[pg_{ij}-\frac{1}{2}g_{ij(-\rho+3p)}\bigg]\\&=4\pi G(\rho-p)g_{ij}.
+    \end{align*}
+\end{itemize}
+Substituting the first into the second we obtain
+\begin{align}
+   -\frac{4}{3}\pi G(\rho+3p) +\frac{2\dot a^2+2k}{a^2}&=4\pi G(\rho-p)\nonumber\\\frac{2\dot a^2+2k}{a^2}&=4\pi G\frac{4}{3}\rho\nonumber
+\end{align}
+\begin{equation}
+    \boxed{\bigg(\frac{\dot a }{a}\bigg)^2=\frac{8\pi G}{3}\rho-\frac{k}{a^2}}\label{Friedmann1},
+\end{equation}
+which is the \textbf{first Friedmann equation}, while from the $00$ component alone we get the \textbf{second Friedmann equation}
+\begin{equation}
+    \label{Friedmann2}\boxed{\frac{\ddot a}{a}=-\frac{4\pi G}{3}(\rho+3p)}.
+\end{equation}
+The first, which is the one that is usually referred as the Friedmann equation, will determine the time evolution of the scale factor $a(t)$. To solve it, it is enough to know the dependence $\rho(a)$, that we previously discussed.
+\subsection{Universe geometry and its density}
+Usually, the first Friedmann equation \eqref{Friedmann1} is expressed in terms of some cosmological parameters:
+\begin{itemize}
+    \item the \textbf{Hubble parameter}, $H=\frac{\dot a}{a}$, which measure the rate of expansion,
+    \item the \textbf{critical density}, $\rho_{\text{crit}}=\frac{3H^2}{8\pi G}$
+    \item the \textbf{density parameter}, $\Omega=\frac{8\pi G}{3H^2}\rho=\frac{\rho}{\rho_{\text{crit}}}$.
+\end{itemize}
+In this way \eqref{Friedmann1} explicitly tells us whether the universe is flat or not, indeed it reads
+\begin{equation}
+    \boxed{\Omega-1=\frac{k}{H^2a^2}},
+\end{equation}
+from which we can distinguish 3 distinct cases:
+\begin{itemize}
+    \item $\rho<\rho_{\text{crit}}\quad\Leftrightarrow\quad \Omega<1 \quad\Leftrightarrow\quad k<0 \quad\Leftrightarrow\quad $\emph{open universe},
+    \item  $\rho=\rho_{\text{crit}}\quad\Leftrightarrow\quad \Omega=1 \quad\Leftrightarrow\quad k=0 \quad\Leftrightarrow\quad $\emph{flat universe},
+    \item  $\rho>\rho_{\text{crit}}\quad\Leftrightarrow\quad \Omega>1 \quad\Leftrightarrow\quad k>0 \quad\Leftrightarrow\quad $\emph{closed universe}.
+\end{itemize} 
+Observations suggest that now, for our universe, $k\approx0$. Therefore, we will solve the Friedmann equation  for flat geometry$$\bigg(\frac{\dot a }{a}\bigg)^2=\frac{8\pi G}{3}\rho. $$
+\begin{itemize}
+    \item \textbf{Matter dominated universe}: in this case  is approximated to containing only dust, therefore $\rho=\rho_0a^{-3}$, plugging this into the above differential equation we get$$\dot a=H_0a^{-\frac{1}{2}}\quad \Rightarrow\quad a(t)=\bigg(\frac{3}{2}H_0t\bigg)^{2/3},$$ where we introduced $H_0=H(t_0)=\sqrt{\frac{8\pi G}{3}\rho_0}$ and imposed $a(0)=0$.\\ This kind of universe is expanding but at a slower and slower rate ($\ddot a\leq0$).
+    \item  \textbf{Radiation dominated universe}: now the universe is approximately filled only by radiation, therefore $\rho=\rho_0a^{-4}$, and the above differential equation now reads$$\dot a=H_0a^{-1}\quad \Rightarrow\quad a(t)=\sqrt{2H_0t},$$ where again $H_0=H(t_0)=\sqrt{\frac{8\pi G}{3}}$ and we imposed $a(0)=0$.\\ Again, this universe is expanding at a slower and slower rate ($\ddot a\leq0$).
+    \item \textbf{Empty universe}: lastly we consider an empty universe, in which only vacuum energy plays the role, therefore $\rho=\frac{\Lambda}{8\pi G}$, from which we get$$\dot a=a\sqrt{\frac{\Lambda}{3}}\quad \Rightarrow\quad a(t)=a_0e^{\sqrt{\frac{\Lambda}{3}}(t-t_0)},$$
+     in which we imposed $a(t_0)=a_0$.\\Note that, among the 3 cases, this universe is the only one that has an accelerating expansion ($\ddot a\geq0$). 
+\end{itemize} 
