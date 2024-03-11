@@ -1,0 +1,148 @@
+\section{The curvature of a manifold}
+In general relativity, curvature describe gravity, therefore we should now define the concept of curvature of a manifold. Intuitively we can understand that a sphere is curved differently with respect to a flat sheet of paper, but it is harder to describe this difference between various manifolds.\\
+
+To have a better grasp behind the intuition that will guide us in this section let's further analyzed the comparison between a sphere and a flat sheet of paper. If we consider a vector in a tangent space of a point of the equator, we can move this vector (mapping it into other tangent spaces) on the surface of the sphere. We want to rigidly move it (as we were translating all the tangent space) to the north pole, then we slide down to the left, until we reach the equator. Lastly we go back to the initial point, passing along the equator. Doing so, we would obtain a new vector which hasn't the same orientation of the initial one, clearly this does not happen on the sheet of paper. We will use this strange behavior to describe curvature, since when it does not occur the manifold is flat as a sheet of paper.
+\subsection{Parallel transport and covariant derivatives}
+We first need to define a way to drag around the manifold a vector. Actually this drag can be whatever we want, thus the definition will be very general, later on we will restrict this concept to be adapted to the metric tensor (which, we remember, can be used to define angles).
+\begin{defin}[Parallel transport]
+    Let's consider a curve $\gamma:I\rightarrow\mathcal{M}$ and a vector $\vec W\in T_{P_0}$, with $P_0=\gamma(\lambda_0)$. We define a map, called parallel transport, defined from $T_{P_0}\rightarrow T_{P}$, with $P=\gamma(\lambda_0+\Delta \lambda)$.\\The image of the parallel transport is denoted by $\vec W_{\Delta \lambda}\in T_P$.
+\end{defin}
+Given a proper way to move vector around a manifold, we can define derivatives, indeed to define some "incremental ratio" we need to subtract two vectors that are defined into two different tangent spaces, but now we can map one in the tangent space of the other.
+\begin{defin}[Covariant derivatives]
+    Given a curve $\gamma$, its tangent vector field $\vec V=\frac{d}{d\lambda}$ and a vector field $\vec W$, we can define the covariant derivative of $\vec W$ in a point $P=\gamma(\lambda_0)$ $$\nabla_{\vec{V}}\vec{W}=\lim_{\Delta\lambda\rightarrow0}\frac{\vec{W}_{-\Delta\lambda}-\vec{W}}{\Delta\lambda}\bigg|_{\lambda_0}.$$
+\end{defin}
+This definition applies only to vectors and without defining the precise rules to parallel transport objects, its is really not so useful. We will thus define parallel transport from the covariant derivative, after that we have defined describing its operatorial proprieties.\\
+We will require that for scalar function it reduces to derivatives along the curve, the Leibniz rule (possessed by all derivatives) and additional proprieties that define them as covariant derivatives.
+\begin{defin}[Covariant derivatives]
+    The covariant derivative of a tensor, along a curve which tangent vector field is $\vec V=\frac{d}{d\lambda}$, must satisfy:
+    \begin{itemize}
+        \item given a function $f$ and a vector field $\vec W$: $\nabla_{\vec V}(f\vec W)=\frac{df}{d\lambda}\vec W+f\nabla_{\vec V}(\vec W)$
+        \item $\nabla_{\vec V}(\vec W\otimes\vec U)=\nabla_{\vec V}(\vec W)\otimes\vec U+\vec W\otimes\nabla_{\vec V}(\vec U)$
+        \item $\nabla_{\vec V}\big(\tilde\omega\big(\vec W\big)\big)=\nabla_{\vec V}(\tilde\omega)\big(\vec W\big)+\tilde\omega\nabla_{\vec V}\big(\vec W\big)$
+        \item given two curves and two functions $f,g$: $\nabla_{g\vec V+h\vec W}(\vec U)=g\nabla_{\vec V}(\vec U)+h\nabla_{\vec W}(\vec U)$
+    \end{itemize}
+\end{defin}
+With this definition in our hands we can evaluate the covariant derivative of a vector, in components:
+\begin{align*}
+    \nabla_{\vec V}(\vec W)&=V^\mu\nabla_{\partial_\mu}(W^\nu\partial_\nu)\\
+    &=V^\mu\nabla_{\partial_\mu}(W^\nu)\partial_\nu+V^\mu W^\nu\nabla_{\partial_\mu}(\partial_\nu)\\
+    &=V^\mu\partial_\mu(W^\nu)\partial_\nu+V^\mu W^\nu\nabla_{\partial_\mu}(\partial_\nu),
+\end{align*}
+in this expression we have obtained a strange object $\nabla_{\partial_\mu}(\partial_\nu)$ which is responsible for the difference between covariant derivatives and the regular ones.
+\begin{defin}
+    We define the Christoffel symbols, or affine connections $$\nabla_{\partial_\mu}(\partial_\nu)=\Gamma_{\mu\nu}^\lambda\partial_\lambda.$$
+\end{defin}
+Note that these \textbf{are not tensors}, as partial derivatives are not.\\
+We can now obtain the components of the covariant derivative of a vector
+\begin{align*}
+    \nabla_{\vec V}(\vec W)&=V^\mu\partial_\mu(W^\nu)\partial_\nu+V^\mu W^\nu\nabla_{\partial_\mu}(\partial_\nu)\\&=V^\mu\partial_\mu(W^\nu)\partial_\nu+V^\mu W^\nu \Gamma_{\mu\nu}^\lambda\partial_\lambda\\
+    &=V^\mu[\partial_\mu(W^\lambda)+W^\nu \Gamma_{\mu\nu}^\lambda]\partial_\lambda,
+\end{align*}
+in general we write 
+\begin{equation*}
+    \boxed{W^\lambda_{;\mu}=\nabla_\mu W^\lambda=\partial_\mu(W^\lambda)+W^\nu \Gamma_{\mu\nu}^\lambda}.
+\end{equation*}
+
+Now, using the proprieties of covariant derivatives, we can evaluate the covariant derivative of 1-forms, and this, of tensors
+\begin{align*}
+    \nabla_\mu(W_\nu V^\nu)&=\partial_\mu(W_\nu V^\nu)=W_\nu \partial_\mu V^\nu+V^\nu \partial_\mu W_\nu
+    \\&=\nabla_\mu(W_\nu )V^\nu+W_\nu\nabla_\mu( V^\nu)\\
+    &=\nabla_\mu(W_\nu )V^\nu+ W_\nu\partial_\mu V^\nu+W_\lambda V^\nu \Gamma_{\mu\nu}^\lambda\\
+    \Rightarrow\ &\ \boxed{\nabla_\mu(W_\nu )=\partial_\mu W_\nu-W_\lambda  \Gamma_{\mu\nu}^\lambda},\\
+    \Rightarrow\ &\ \boxed{\nabla_\mu(T^\nu\phantom{}_\rho )=\partial_\mu T^\mu\phantom{}_\nu+T^\lambda\phantom{}_\rho  \Gamma_{\mu\lambda}^\nu-T^\nu\phantom{}_\lambda  \Gamma_{\mu\rho}^\lambda}.
+\end{align*}
+\subsection{Geodesics and geodesic maps}
+With covariant derivatives, and parallel transport, in our hands, we can define \textbf{geodesics}. On a flat sheet of paper geodesics are straight lines, onto a sphere are maximum circles: in both cases tangent vectors to geodesics, when moved along them, are always tangent to the geodesic. This means that their "rate of change" lies (or better, is tangent) on the geodesic. With this in mind we can proceed to define geodesics.
+\begin{defin}[Geodesics]
+    A curve $\gamma:I\rightarrow\mathcal{M}$ is a geodesic if its tangent vector field $\vec V$ satisfies$$\nabla_{\vec V}\vec V=\alpha\vec V,$$ with $\alpha$ real function along the curve.
+\end{defin}
+Note that we can change parametrization in order to set $\alpha=0$: indeed
+\begin{align*}
+    \lambda &\rightarrow\mu=k(\lambda)\lambda\quad \Rightarrow \vec V=\frac{d}{d\lambda}=\frac{d\mu}{d\lambda}\frac{d}{d\mu}=k\vec W\\ \Rightarrow
+    \nabla_{\vec W}\vec W=\frac{1}{k^2}&\nabla_{\vec V}\vec V+\vec V\frac{1}{k}\frac{d}{d\lambda}\frac{1}{k}=\bigg(\frac{1}{k^2}\alpha-\frac{1}{k^3}\frac{dk}{d\lambda}\bigg)\vec V=\bigg(\frac{1}{k}\alpha-\frac{1}{k^2}\frac{dk}{d\lambda}\bigg)\vec W,
+\end{align*}
+thus, imposing $\frac{dk}{d\lambda}=k\alpha$, we may obtain some parametrization for which $\alpha'=0$.\\
+Once the geodesic definition has this form, we can obtain, through composition with a chart, the \emph{geodesic equation}
+\begin{align*}
+    (\nabla_{\vec V}\vec V)^\mu&=V^\nu(\partial_\nu V^\mu+\Gamma^\mu_{\rho\nu}V^\rho)\\
+    &=\frac{dV^\mu}{d\lambda}+\Gamma^\mu_{\rho\nu}V^\rho V^\nu\\
+    &=\frac{d^2x^\mu}{d\lambda^2}+\Gamma^\mu_{\rho\nu}\frac{dx^\rho}{d\lambda}\frac{dx^\nu}{d\lambda}=0.
+\end{align*}
+Note that, given a basis of a tangent space, we can solve the geodesic equation for each vector, obtaining $n$ geodesics ($n$ dimension of the manifold) and we can use (since the basis vectors are linearly independent) their parameters as coordinates. In this way, in the original point, geodesic equations implies that the Christoffel symbols vanish, thus in that point covariant derivatives are equivalent to the partial ones. This charts constitute what we call a \textbf{normal frame}, and physically is the reference frame in which, locally, we recover special relativity.\\
+
+Lastly, let's define the \emph{geodesic map}, which is the application that parallel transport vectors, $$\vec W_{\Delta \lambda}=e^{\Delta\lambda\nabla_{\vec V}}\vec W\bigg|_{P},$$which is a generic solution of the equation, $\nabla_{\vec V}\vec W=\vec W$, that implies that $\vec W(P_0)$ is parallel transported along $\vec V$. 
+
+\subsection{Measuring curvature}
+Recalling the introduction we developed in the beginning, we can develop formally that procedure for a generic manifold.\\Consider two commuting vector fields $\vec V=\frac{d}{d\lambda},\ \vec W=\frac{d}{d\mu}$, since they commute they generate curves on which we can move along and come back to the initial point (closed loops).\\
+Consider a third vector $\vec A$, and let's parallel transport along one of these loops using the geodesic map:
+\begin{align*}
+    \vec A^*&=e^{\delta\lambda\nabla_{\vec V}}e^{\delta\mu\nabla_{\vec W}}e^{-\delta\lambda\nabla_{\vec V}}e^{-\delta\mu\nabla_{\vec W}}\vec A\\
+    &=\vec A +[\nabla_{\vec V},\nabla_{\vec W}]\delta\lambda\delta\mu+o(3),
+\end{align*}
+in this way we can see that, in order to have the vector transported to be equal to the original, the commutator of its covariant derivative must vanish.
+\begin{defin}[Riemann tensor]
+    The (1,1) tensor $R$, such that$$R(\vec V,\vec W)\vec A=[\nabla_{\vec V},\nabla_{\vec W}] \vec A-\nabla_{[\vec V,\vec W]}\vec A,$$
+    is called the Riemann tensor. Componentwise it reads $$ R^\mu_{\nu\rho\sigma}=R(\partial_\rho,\partial_\sigma)_\nu^\mu,\qquad R=R^\mu_{\nu\rho\sigma} \tilde{dx^\nu}\otimes\partial_\mu.$$
+\end{defin}
+In this way we can interpret the Riemann tensor as measuring the difference between a parallel transported vector, along a closed loop, and the original one, or as some sort of second derivative $$\delta\vec A\approx R(\vec V,\vec W)\vec A,\quad \Leftrightarrow\quad \frac{\delta^2A^\mu}{\delta\lambda\delta\mu}\approx R^\mu_{\nu\rho\sigma}V^\rho W^\sigma A^\nu.$$
+\subsection{Metric connection}
+Notice that, until now, we really haven't defined what really means \emph{to be curved}: the Riemann tensor is defined using covariant derivatives that can be defined using parallel transport, or can be used to define parallel transport. Either way we need to define what parallel means, or to define parallel transport or to define what means that the covariant derivative of a vector field is zero.\\
+The notion of parallel is can be defined in lots of ways, but we will focus only on the notion that is induced by the metric tensor (through the scalar product), this approach leads to the \textbf{metric connection.}\\
+
+Consider two vector fields $\vec U,\ \vec W$, such that $\nabla_{\vec V}\vec U=\nabla_{\vec V}\vec W=$, so that they are parallel transported along integral curves of $\vec V$. If we want to impose that "parallel" is defined by the metric, we must impose that the scalar product (so the angles between vectors) is preserved when we parallel transport vectors along $\vec V$. Thus, we impose 
+$$0=\nabla_{\vec{V}}(g(\vec U,\vec W))= \nabla_{\vec{V}}(g)(\vec U,\vec W)+g(\nabla_{\vec{V}}(\vec U),\vec W)+g(\vec U,\nabla_{\vec{V}}(\vec W)),\ \Rightarrow \boxed{\nabla_{\vec{V}}(g)(\vec U,\vec W)=0}.$$
+\begin{defin}[Metric connection]
+    Given the metric tensor $g$, the metric connection condition is that $$ \boxed{\nabla_{\vec{V}}g=0}\quad\forall\vec V.$$
+\end{defin}
+Imposing this condition, we can evaluate the Christoffel symbols, and thus we can see that the covariant derivatives are well-defined, as well parallel transport. To do that we should also impose \textbf{symmetric connection}, or that $\Gamma^\mu_{\nu\rho}=\Gamma^\mu_{\rho\nu}$.
+
+Consider the metric connection condition in components
+$$\nabla_\mu g_{\rho\sigma}=\partial_\mu g_{\rho\sigma}-\Gamma^{\lambda}_{\mu\rho}g_{\lambda\sigma}-\Gamma^{\lambda}_{\mu\sigma}g_{\rho\lambda}=0,$$cycling indices$$\nabla_\sigma g_{\mu\rho}=\partial_\sigma g_{\mu\rho}-\Gamma^{\lambda}_{\sigma\mu}g_{\lambda\rho}-\Gamma^{\lambda}_{\sigma\rho}g_{\mu\lambda}=0,$$$$\nabla_\rho g_{\sigma\mu}=\partial_\rho g_{\sigma\mu}-\Gamma^{\lambda}_{\rho\sigma}g_{\lambda\mu}-\Gamma^{\lambda}_{\rho\mu}g_{\sigma\lambda}=0,$$ subtracting the last two rows from the first we get $$2\Gamma_{\rho\sigma}^\lambda g_{\lambda\mu}=\partial_\mu g_{\rho\sigma}-\partial_\sigma g_{\mu\rho}-\partial_\rho g_{\sigma\mu}.$$ Multiplying by the inverse metric $g^{\mu\nu}$ and $1/2$ we get the explicit form of the metric connection $$\boxed{\Gamma_{\rho\sigma}^\nu=\frac{g^{\mu\nu}}{2}(\partial_\mu g_{\rho\sigma}-\partial_\sigma g_{\mu\rho}-\partial_\rho g_{\sigma\mu})}.$$
+\subsection{The length of a geodesic}
+Knowing the precise meaning of what is a geodesic, we can try to find a different interpretation.\\
+To do so, we will try to understand what is the shortest path between two points, this can be accomplished using Euler-Lagrange equation on the length functional $$S=\int_A^B ds=\int_{\lambda_A}^{\lambda_B}\sqrt{g_{\mu\nu}\dot x^\mu\dot x^\nu}d\lambda.$$
+If we define the Lagrangian $L=\frac{g_{\mu\nu}}{2}\dot x^\mu\dot x^\nu$, and we parametrize  the curve with its own length ($\lambda=s$), from the above equation we read the normalization $L=\frac{1}{2}$.\\
+If we now evaluate the first variation of this functional we get $$\delta S=\int_{s_A}^{s_B}\frac{\delta L}{\sqrt{2L}}ds=\delta\int_{s_A}^{s_B}L\ ds,$$ this show that minimizing the length is equal to minimizing our Lagrangian (it will be easier). Using Euler-Lagrange
+\begin{align*}
+   0= \frac{d}{ds}\frac{\partial L}{\partial\dot{x}^\lambda}-\frac{\partial L}{\partial x^\lambda}&=\frac{d}{ds}(g_{\mu\lambda}\dot x^\mu)-\frac{\partial_\lambda g_{\mu\nu}}{2}\dot x^\mu\dot x^\nu\\&=g_{\mu\lambda}\ddot x^\mu+\partial_\nu g_{\mu\lambda}\dot x^\nu\dot x^\mu-\frac{\partial_\lambda g_{\mu\nu}}{2}\dot x^\mu\dot x^\nu,
+\end{align*}
+since $\dot x^\nu\dot x^\mu$ is symmetric, we can symmetrize $\partial_\nu g^{\mu\lambda}$ and multiplying by $g^{\lambda\rho}$ we get the geodesic equation$$ \ddot x^\rho+\frac{g^{\lambda\rho}}{2}(\partial_\mu g_{\nu\lambda}+\partial_\nu g_{\mu\lambda}-\partial_\lambda g_{\mu\nu})\dot x^\mu\dot x^\nu=\ddot x^\rho+\Gamma^\rho_{\mu\nu}\dot x^\mu\dot x^\nu=0.$$ This shows that geodesics are also the shortest path between two points.\\ These calculations are fundamentals for the study of motion in curved spacetime, since this is the way we obtain geodesics and conserved quantities, since we can use Lagrange formalism, as we showed.
+\subsection{Proprieties of Riemann tensor}
+To study the proprieties of the Riemann tensor, consider its components, defined by\footnote{The full expression $R(\vec V,\vec W)=[\nabla_{\vec V},\nabla_{\vec W}]-\nabla_{[\vec V,\vec W]}$ reduces to $R(\partial_\mu,\partial_nu)=[\nabla_\mu,\nabla_\nu]$, since coordinates vector commute.}
+\begin{align*}
+    R^\rho_{\sigma\mu\nu}V^\sigma&=[\nabla_\mu,\nabla_\nu]V^\rho=\nabla_\mu\nabla_\nu V^\rho-\nabla_\nu\nabla_\mu V^\rho\\
+    &=\partial_\mu \nabla_\nu V^\rho-\cancel{\Gamma_{\mu\nu}^\lambda\nabla_\lambda V^\rho}+\Gamma_{\lambda\nu}^\rho\nabla_\mu V^\lambda-(\partial_\nu \nabla_\mu V^\rho-\cancel{\Gamma_{\mu\nu}^\lambda\nabla_\lambda V^\rho}+\Gamma_{\lambda\mu}^\rho\nabla_\nu V^\lambda)\\
+    &=\partial_\mu (\cancel{\partial_\nu V^\rho}+\Gamma^\rho_{\nu\sigma}V^\sigma)+\Gamma_{\lambda\nu}^\rho(\partial_\mu V^\lambda+\Gamma^\lambda_{\mu\sigma}V^\sigma)+\\&\qquad\qquad\qquad-(\partial_\nu (\cancel{\partial_\mu V^\rho}+\Gamma^\rho_{\mu\sigma}V^\sigma)+\Gamma_{\lambda\mu}^\rho(\partial_\nu V^\lambda+\Gamma^\lambda_{\nu\sigma}V^\sigma))\\
+    &=\partial_\mu \Gamma^\rho_{\nu\sigma}V^\sigma+ \cancel{\Gamma^\rho_{\nu\sigma}\partial_\mu V^\sigma}+\Gamma_{\lambda\nu}^\rho(\cancel{\partial_\mu V^\lambda}+\Gamma^\lambda_{\mu\sigma}V^\sigma)+\\&\qquad\qquad\qquad-(\partial_\nu \Gamma^\rho_{\mu\sigma}V^\sigma+ \cancel{\Gamma^\rho_{\mu\sigma}\partial_\nu V^\sigma}+\Gamma_{\lambda\mu}^\rho(\cancel{\partial_\nu V^\lambda}+\Gamma^\lambda_{\nu\sigma}V^\sigma))\\&=\partial_\mu \Gamma^\rho_{\nu\sigma}V^\sigma +\Gamma_{\lambda\nu}^\rho\Gamma^\lambda_{\mu\sigma}V^\sigma-\partial_\nu \Gamma^\rho_{\mu\sigma}V^\sigma-\Gamma_{\lambda\mu}^\rho\Gamma^\lambda_{\nu\sigma}V^\sigma.\\
+    &\Rightarrow\boxed{R^\rho_{\sigma\mu\nu}=\partial_\mu \Gamma^\rho_{\nu\sigma} -\partial_\nu \Gamma^\rho_{\mu\sigma}+\Gamma_{\lambda\nu}^\rho\Gamma^\lambda_{\mu\sigma}-\Gamma_{\lambda\mu}^\rho\Gamma^\lambda_{\nu\sigma}}
+\end{align*} 
+\newpage
+From this expression we can note that:
+\begin{itemize}
+    \item having defined the metric connection to be symmetric is crucial, otherwise we wouldn't have had all the cancellations;
+    \item the Riemann tensor is constructed from non-tensorial objects, arranged in such a way that it is a tensor;
+    \item the last two indices are antisymmetric, as the commutator is;
+    \item the Riemann tensor depends entirely on the connection, and not directly from the metric, during the derivation we never used it, therefore this expression is valid for all symmetric connections, not only metric ones.
+\end{itemize}
+Given a normal reference all Cristoffel symbols vanish in a point, although not its derivatives, thus in P it reads (using $\Gamma_{\rho\sigma}^\nu=\frac{g^{\mu\nu}}{2}(\partial_\mu g_{\rho\sigma}-\partial_\sigma g_{\mu\rho}-\partial_\rho g_{\sigma\mu})$) \begin{align*}
+    R_{\rho\sigma\mu\nu}&=g_{\rho\lambda}R^\lambda_{\sigma\mu\nu}=g_{\rho\lambda}(\partial_\mu \Gamma^\rho_{\nu\sigma} -\partial_\nu \Gamma^\rho_{\mu\sigma})\\&=\frac{1}{2}g_{\rho\lambda}g^{\lambda\delta}(\cancel{\partial_\mu \partial_\nu g_{\sigma_\delta}}+\partial_\mu\partial_\sigma g_{\delta\nu}-\partial_\mu\partial_\delta g_{\nu\sigma}-\cancel{\partial_\mu \partial_\nu g_{\sigma_\delta}}-\partial_\nu\partial_\sigma g_{\delta\mu}+\partial_\nu\partial_\delta g_{\mu\sigma})\\&=\frac{1}{2}(\partial_{\mu}\partial_{\sigma}g_{\rho\nu}-\partial_{\mu}\partial_{\rho}g_{\nu\sigma}-\partial_{\nu}\partial_{\sigma}g_{\rho\mu}+\partial_{\nu}\partial_{\rho}g_{\mu\sigma}),
+\end{align*}
+in which we used that we can always choose a reference frame in which the first derivatives of the metric vanish in a precise point.\\
+From this expression we can deduce important proprieties of this tensor:
+\begin{itemize}
+    \item it is antisymmetric with respect the exchange of the first two indices or the second $$\boxed{R_{\rho\sigma\mu\nu}=-R_{\sigma\rho\mu\nu}=-R_{\rho\sigma\nu\mu}};$$
+    \item it is symmetric for the exchange of the first pair of indices with the second one $$\boxed{R_{\rho\sigma\mu\nu} =R_{\mu\nu\rho\sigma}}; $$
+    \item it satisfies the algebraic \textbf{Bianchi identity} $$\boxed{R_{\rho[\sigma\mu\nu]}=0};$$
+\end{itemize}
+These 3 symmetries lower down the number of independent components of the tensors: from $n^4$ we go down to $n^2\frac{n^2-1}{12}$, which is 20 in 4 dimensions.\\
+Lastly, from a direct calculation from the equation derived above, one can prove that the Riemann tensor satisfies the \textbf{Bianchi identity} $$\boxed{\nabla_{[\lambda}R_{\rho\sigma]\mu\nu}=0}.$$
+We now define other tensors that are pressnt in the Einstein field equations:
+\begin{itemize}
+    \item \textbf{Ricci tensor}, $R_{\mu\nu}=R^{\rho}_{\mu\rho\nu}$;
+    \item \textbf{Curvature scalar}, $R=R^\mu\phantom{}_\mu$;
+    \item \textbf{Einstein tensor}, $G_{\mu\nu}=R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu}$.
+\end{itemize}  
+From the above proprieties we can obtain the \textbf{Bianchi identity} for the Einstein tensor
+\begin{align*}
+    \boxed{\nabla_\mu G^{\mu\nu}=0}.
+\end{align*}
