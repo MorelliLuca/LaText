@@ -1,6 +1,57 @@
 \appendix
 \section{Maximally symmetric spaces}
-Consider $\mathbb{R}^n$, this space is highly symmetric: clearly it is isotropic and homogeneous, or, in a simpler way, every point and every direction are the same in $\mathbb{R}^n$.\\
-This means that $\mathbb{R}^n$ is symmetric under every type of rotation and translations: in $n$-dimensions there are $n$ possible translations (along the $n$ axes) and $n\frac{n-1}{2}$ possible rotations (for each axis we can rotate it towards $n-1$ other axes and to avoid double counting $x\rightarrow y$ and $y\rightarrow x$ we divide by $2$), for a total of $$n+n\frac{n-1}{2}=n\frac{n+1}{2}$$ symmetries.\\
+Consider $\mathbb{R}^n$, this space is highly symmetric: clearly it is isotropic and homogeneous, or, in a simpler way, every point and every direction "look" the same.\\
+This means that $\mathbb{R}^n$ is symmetric under every type of rotation and translations: in $n$-dimensions there are $n$ possible translations (along the $n$ axes) and $n\frac{n-1}{2}$ possible rotations (for each axis we can rotate it towards $n-1$ other axes and to avoid double counting $x\rightarrow y$ and $y\rightarrow x$ we divide by $2$), for a total number of symmetries equals to $$n+n\frac{n-1}{2}=n\frac{n+1}{2}.$$ 
+An $n$-dimensional manifold is said to be \textbf{maximally symmetric} if it possesses the same number of symmetries of $\mathbb{R}^n$. In the differential geometry language, a symmetry is defined through isometries, that are diffeomorphisms under which the metric tensor is invariant.\\
+For each symmetry of the metric we can define a \textbf{Killing vector}, which satisfies the Killing equation 
+\begin{equation}
+    0=(\pounds_{\vec K}g)_{\mu\nu}=\nabla_\mu K_\nu+\nabla_\nu K_\mu, \label{KillingEq}
+\end{equation}
+where $\pounds_{\vec{K}}$ is the Lie derivative along $\vec K$, which is the Killing vector.\\
 
-An $n$-dimensional manifold is said to be \textbf{maximally symmetric} if it possesses the same number of symmetries of $\mathbb{R}^n$. In the differential geometry language, a symmetry is defined through isometries, that are just diffeomorphism under which the metric tensor is invariant. 
+We now want to show that a maximally symmetric space really possesses the maximum number of symmetry, namely the maximum number of independent Killing vectors.
+Consider the defining equation of the Riemann tensor applied to a 1-form
+\begin{equation}
+    R^{\mu}_{\nu\rho\sigma}K_\mu=-[\nabla_\rho,\nabla_\sigma]k_\nu,\label{RiemannDef}
+\end{equation}
+this equation combined with the algebraic Bianchi identity ($R^\mu_{\nu\rho\sigma}+R^\mu_{\rho\sigma\nu}+R^\mu_{\sigma\nu\rho}=0 $) implies that each Killing vector must satisfy
+$$\nabla_\rho\nabla_\sigma K_\nu-\nabla_\sigma\nabla_\rho K_\nu +\nabla_\sigma\nabla_\nu K_\rho-\nabla_\nu\nabla_\sigma K_\rho+\nabla_\nu\nabla_\rho K_\sigma-\nabla_\rho\nabla_\nu K_\sigma=0.$$
+This equation can be simplified by the Killing equation \eqref{KillingEq}, using this relation we can sum pairs of terms obtaining $$ 2(\nabla_\rho\nabla_\sigma K_\nu-\nabla_\sigma\nabla_\rho K_\nu -\nabla_\nu\nabla_\sigma K_\rho)=0,$$ that using \eqref{RiemannDef} turns out to be the following
+\begin{equation}
+    R^\mu_{\nu\rho\sigma}K_\mu=\nabla_\nu\nabla_\sigma K_\rho. \label{RNabla}
+\end{equation}
+This equation show that the second covariant derivatives acts on Killing vectors just as a linear application. In this way we can determine every derivative of a killing vector in a specific point, just by knowing its value and the one of its first covariant derivative at the same point.\\
+If we now Taylor expand the Killing vector around a point $P$, we will obtain some kind of expansion that depends on all orders covariant derivatives in $P$, however we showed that we can evaluate those just knowing $K_\mu(P)$ and $\nabla_\nu K_\mu(P)$. This means that we can express the Killing vector field as a combination of two functions that do not depend on the killing vector itself or its derivatives:
+\begin{equation*}
+    K_\mu(x)=A_\mu\phantom{}^\lambda(x,P)K_\lambda(P)+B_\mu\phantom{}^{\lambda\nu}(x,P)\nabla_\nu K_\lambda(P),
+\end{equation*}
+note that these functions depend only on $x$, the point $P$, and the metric, through the Riemann tensor. For this reason these must be the same functions for all Killing vectors:
+\begin{equation}\label{KillingExp}
+    K_\mu^{(n)}(x)=A_\mu\phantom{}^\lambda(x,P)K_\lambda^{(n)}(P)+B_\mu\phantom{}^{\lambda\nu}(x,P)K_\lambda^{(n)}(P).
+\end{equation}
+The above equation tells us that a given killing vector is determined by $K_\lambda^{(n)}(P)$, which has $N$ possible independent values, and by $K_\lambda^{(n)}(P)$, which has $N\frac{N-1}{2}$ independent values, due to its antisymmetry (which is a consequence of the Killing equation \eqref{KillingEq}).\\
+In this way we have shown that the maximum number of independent Killing vectors in an $N$-dimensional manifold is exactly the same number that possesses $\mathbb{R}^N$ $$N+N\frac{N-1}{2}=N\frac{N+1}{2}.$$
+
+We want to conclude deriving the form that has the Riemann tensor in a maximally symmetric space.\\
+In general, equation \eqref{RNabla} must hold for every Killing vector, this means that it also must be consistent with the commutator of covariant derivatives \eqref{RiemannDef}. This requirement and the fact that we have the maximum number of linearly independent Killing vectors will determine the form of $R^\mu_{\nu\rho\sigma}$. Consider \eqref{RiemannDef} applied to the two indices tensor $$ [\nabla_\sigma,\nabla_\nu]\nabla_\mu K_\rho=-R^\lambda_{\mu\sigma\nu}\nabla_\lambda K_\rho-R^\lambda _{\rho\sigma\nu}\nabla_\mu K_\lambda,$$ the equation \eqref{RNabla} can be used to obtain 
+\begin{align*}
+    \nabla&_\sigma(R^\lambda_{\nu\rho\mu}K_\lambda)-\nabla_\nu(R^\lambda_{\sigma\rho\mu}K_\lambda)=\\&=\nabla_\sigma R^\lambda_{\nu\rho\mu}K_\lambda-\nabla_\nu R^\lambda_{\sigma\rho\mu}K_\lambda+\ R^\lambda_{\nu\rho\mu}\nabla_\sigma K_\lambda- R^\lambda_{\sigma\rho\mu}\nabla_\nu K_\lambda=-R^\lambda_{\mu\sigma\nu}\nabla_\lambda K_\rho-R^\lambda _{\rho\sigma\nu}\nabla_\mu K_\lambda.
+\end{align*}
+Now, killing equation \eqref{KillingEq} allows us to move the index $\lambda$ to the covariant derivative in each term, then, using a bunch of Kronecker deltas we get $$ (\nabla_\sigma R^\lambda_{\nu\rho\mu}-\nabla_\nu R^\lambda_{\sigma\rho\mu})K_\lambda=(R^\lambda_{\nu\rho\mu}\delta_{\sigma}\phantom{}^\alpha-R^\lambda_{\sigma\rho\mu}\delta_{\nu}\phantom{}^\alpha+R^\lambda_{\mu\sigma\nu}\delta_{\rho}\phantom{}^\alpha-R^\lambda_{\rho\sigma\nu}\delta_{\mu}\phantom{}^\alpha)\nabla_\alpha K_\lambda.$$
+This relation must hold for every Killing vector, but we have the maximum number of independent Killing vector, thus we can generate every killing vector from these. The general expansion of a Killing vector field \eqref{KillingExp} shows that a Killing vector field that vanishes in $P$ while its derivatives does not can exists, and we surely can obtain it from a linear combination of the others. The above equation holds also for this one in $P$ only if the right-hand side vanishes too, this can happen only if the term in parentheses is symmetric in $\lambda\ \alpha$ (so that it vanishes when contracted with $\nabla_\alpha K_\lambda$ that is antisymmetric)$$R^\lambda_{\nu\rho\mu}\delta_{\sigma}\phantom{}^\alpha-R^\lambda_{\sigma\rho\mu}\delta_{\nu}\phantom{}^\alpha+R^\lambda_{\mu\sigma\nu}\delta_{\rho}\phantom{}^\alpha-R^\lambda_{\rho\sigma\nu}\delta_{\mu}\phantom{}^\alpha=R^\alpha_{\nu\rho\mu}\delta_{\sigma}\phantom{}^\lambda-R^\alpha_{\sigma\rho\mu}\delta_{\nu}\phantom{}^\lambda+R^\alpha_{\mu\sigma\nu}\delta_{\rho}\phantom{}^\lambda-R^\alpha_{\rho\sigma\nu}\delta_{\mu}\phantom{}^\lambda.$$
+Contracting $\mu$ and $\alpha$, recalling that $R^\mu_{\nu\mu\rho }=R_{\nu\rho}$ and $R^\mu_{\mu\nu\rho}=0$, we find
+$$R^\lambda_{\nu\rho\sigma}-R^\lambda_{\sigma\rho\nu}+R^\lambda_{\rho\sigma\nu}-NR^\lambda_{\rho\sigma\nu}=-R_{\nu\rho}\delta_\sigma\phantom{}^\lambda+R_{\sigma\rho}\delta_\nu\phantom{}^\lambda-R^\lambda_{\rho\sigma\nu},$$
+here we recognize that, from the algebraic Bianchi identity, $$R^\lambda_{\sigma\rho\nu}=-R^\lambda_{\sigma\nu\rho}=R^\lambda_{\nu\rho\sigma}+R^\lambda_{\rho\sigma\nu},$$ which cancels two terms in the previous equation, that now reads, after having lowered one index, 
+\begin{equation}\label{RN1}
+    (N-1)R_{\lambda\rho\sigma\nu}=R_{\nu\rho}g_{\sigma\lambda}-R_{\sigma\rho}g_{\nu\lambda}.
+\end{equation}
+Notice that the above equation must be antisymmetric in $\lambda\ \rho$ (due to the proprieties of the Riemann tensor),$$
+R_{\nu\rho}g_{\sigma\lambda}-R_{\sigma\rho}g_{\nu\lambda}=-R_{\nu\lambda}g_{\sigma\rho}+R_{\sigma\lambda}g_{\nu\rho},
+$$ contracting $\lambda\ \nu$, this relation becomes 
+\begin{equation}
+    R_{\sigma\rho}-NR_{\sigma\rho}=-Rg_{\sigma\rho}+R_{\sigma\rho},\quad \Rightarrow\quad \boxed{R_{\sigma\rho}=\frac{R}{N}g_{\sigma\rho}},
+\end{equation}
+inserting this one into the \eqref{RN1} we get our final result
+\begin{equation}
+        \boxed{R_{\lambda\rho\sigma\nu}=\frac{R}{N(N-1)}(g_{\nu\rho}g_{\lambda\sigma}-g_{\sigma\rho}g_{\lambda\nu})}.
+\end{equation}

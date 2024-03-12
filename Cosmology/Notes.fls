@@ -1008,6 +1008,8 @@ INPUT ./AppendixA.tex
 INPUT AppendixA.tex
 INPUT ./AppendixA.tex
 INPUT AppendixA.tex
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT Notes.aux
 INPUT ./title.aux
 INPUT title.aux
