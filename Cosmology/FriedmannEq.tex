@@ -5,7 +5,7 @@ We now want to develop a model that can predict the values of the parameters of 
 \end{equation}
 where it appears the energy-momentum tensor $T^{\mu\nu}$. Therefore, we should define the form of this tensor, and so we have to find a way to model the content of the universe.
 \subsection{Cosmic fluids}
-The simplest model of the content of the universe is that of a perfect fluid of energy and matter. A perfect fluid, in general, is described by an energy-momentum tensor given by
+The simplest model of the content of the universe is the one of a perfect fluid of energy and matter. A perfect fluid, in general, is described by an energy-momentum tensor given by
 \begin{equation}
     T^{\mu\nu}=(\rho+p)U^\mu U^\nu+pg^{\mu\nu},
 \end{equation}
@@ -42,13 +42,13 @@ that can be solved to obtain how the energy density of the fluid scales with res
 \end{align}
 It can be useful to study some simple cases of fluids.
 \begin{itemize}
-    \item \textbf{Dust}: this kind of fluid is defined as a set of collisionless, non-relativistic particles, that therefore will have zero pressure:$$p_d=\omega_d\rho_d=0,\quad\Rightarrow\quad \omega_d=0\quad\Rightarrow\quad\rho_d=\frac{E}{V}=\rho_{0}a^{-3}.$$ We can appreciate how, for dust, the energy density scales with the volume ($V \propto  a^3$), keeping constant the total energy. This sort of fluid can be used to model stars and galaxies, for the pressure is negligible, compared to the energy density.
+    \item \textbf{Dust}: this kind of fluid is defined as a set of collisionless, non-relativistic particles, that therefore will have zero pressure:$$p_d=\omega_d\rho_d=0,\quad\Rightarrow\quad \omega_d=0\quad\Rightarrow\quad\rho_d=\frac{E}{V}=\rho_{0}a^{-3}.$$ We can appreciate how, for dust, the energy density scales with the volume ($V \propto  a^3$), keeping constant the total energy. This sort of fluid can be used to model stars and galaxies, for which the pressure is negligible, compared to the energy density.
     \item \textbf{Radiation}: in this case we want to describe massless particles or ultra-relativistic ones, which can be approximated to be massless. We can obtain an equation of state for this fluid by first observing that the $T^{\mu\nu}$ is traceless for E-M fields $$T^\mu\phantom{}_\mu=F^{\mu\lambda}F_{\mu\lambda}-\frac{1}{4}g^\mu\phantom{}_\mu F^{\lambda\sigma}F_{\lambda\sigma}=0,$$ at the same time the \eqref{EMTensorCosmicFluid} shows that $$T^\mu\phantom{}_\mu=-\rho+3P,\quad\Rightarrow\quad P_r=\frac{1}{3}\rho_r,$$ which implies $\omega_r=\frac{1}{3}$. Therefore, the energy density of radiation scales as$$\rho_r=\rho_0a^{-4},$$ that means that for radiation the total energy is not conserved, we interpret this as the fact that, while the universe expands, radiation gets redshifted.
     \item \textbf{Vacuum or dark energy}: this last type of cosmic fluid is quite a strange one, the equation of state for this fluid is $$p_v=-\rho_v,\quad \Rightarrow\quad \omega_v=-1.$$ This implies that the energy density, as well as the pressure, is a constant, that we can set to be proportional to the \emph{cosmological constant} $\Lambda$: $$\rho_v=\frac{\Lambda}{8\pi G}.$$
 \end{itemize}
-Initially, it was thought that the universe could be described just but dust and radiation, a radiation dominated universe that then transitioned into a matter dominated universe. This was supported by the fact that $\rho_r$ decrease faster than $\rho_d$, when the universe expands.\\ Nowadays, we know that the expansion of the universe is accelerating, and led to the introduction of the dark energy.
+Initially, it was thought that the universe could be described just but dust and radiation, a radiation dominated universe that then transitioned into a matter dominated universe. This was supported by the fact that $\rho_r$ decrease faster than $\rho_d$, when the universe expands.\\ Nowadays, we know that the expansion of the universe is accelerating, and this led to the introduction of the dark energy, to account for this behavior.
 \subsection{Derivation of the equations}
-Now that we characterized the main types of fluids that we can use to model the content of the universe, we can proceed to derive, from Einstein field equations, the equation governing the evolution of the universe.\\
+Now that we characterized the main types of fluids that we can use to model the content of the universe, we can proceed to derive, from Einstein field equations, the equation governing the time evolution of the universe.\\
 First we want to simplify a bit Einstein equations \eqref{EFE}: from the trace of both sides of the equation we get
 \begin{equation}
     R-\frac{4}{2}R=8\pi GT\quad\Rightarrow\quad R=-8\pi GT,
@@ -64,7 +64,7 @@ From the Ricci tensor components of the Robertson Walker metric \eqref{RWRicci} 
     \end{align*}
     \item the $\mu\nu=ij$ components lead to
     \begin{align*}
-        \frac{a\ddot a+2\dot a^2+2k}{a^2}g_{ij}&=8\pi G\bigg[pg_{ij}-\frac{1}{2}g_{ij(-\rho+3p)}\bigg]\\&=4\pi G(\rho-p)g_{ij}.
+        \frac{a\ddot a+2\dot a^2+2k}{a^2}g_{ij}&=8\pi G\bigg[pg_{ij}-\frac{1}{2}g_{ij}(-\rho+3p)\bigg]\\&=4\pi G(\rho-p)g_{ij}.
     \end{align*}
 \end{itemize}
 Substituting the first into the second we obtain
@@ -98,8 +98,8 @@ from which we can distinguish 3 distinct cases:
 \end{itemize} 
 Observations suggest that now, for our universe, $k\approx0$. Therefore, we will solve the Friedmann equation  for flat geometry$$\bigg(\frac{\dot a }{a}\bigg)^2=\frac{8\pi G}{3}\rho. $$
 \begin{itemize}
-    \item \textbf{Matter dominated universe}: in this case  is approximated to containing only dust, therefore $\rho=\rho_0a^{-3}$, plugging this into the above differential equation we get$$\dot a=H_0a^{-\frac{1}{2}}\quad \Rightarrow\quad a(t)=\bigg(\frac{3}{2}H_0t\bigg)^{2/3},$$ where we introduced $H_0=H(t_0)=\sqrt{\frac{8\pi G}{3}\rho_0}$ and imposed $a(0)=0$.\\ This kind of universe is expanding but at a slower and slower rate ($\ddot a\leq0$).
+    \item \textbf{Matter dominated universe}: in this case, the universe is approximated to contain only dust, therefore $\rho=\rho_0a^{-3}$, plugging this energy density into the above differential equation we get$$\dot a=H_0a^{-\frac{1}{2}}\quad \Rightarrow\quad a(t)=\bigg(\frac{3}{2}H_0t\bigg)^{2/3},$$ where we introduced $H_0=H(t_0)=\sqrt{\frac{8\pi G}{3}\rho_0}$ and imposed $a(0)=0$.\\ This kind of universe is expanding but at a slower and slower rate ($\ddot a\leq0$).
     \item  \textbf{Radiation dominated universe}: now the universe is approximately filled only by radiation, therefore $\rho=\rho_0a^{-4}$, and the above differential equation now reads$$\dot a=H_0a^{-1}\quad \Rightarrow\quad a(t)=\sqrt{2H_0t},$$ where again $H_0=H(t_0)=\sqrt{\frac{8\pi G}{3}}$ and we imposed $a(0)=0$.\\ Again, this universe is expanding at a slower and slower rate ($\ddot a\leq0$).
     \item \textbf{Empty universe}: lastly we consider an empty universe, in which only vacuum energy plays the role, therefore $\rho=\frac{\Lambda}{8\pi G}$, from which we get$$\dot a=a\sqrt{\frac{\Lambda}{3}}\quad \Rightarrow\quad a(t)=a_0e^{\sqrt{\frac{\Lambda}{3}}(t-t_0)},$$
-     in which we imposed $a(t_0)=a_0$.\\Note that, among the 3 cases, this universe is the only one that has an accelerating expansion ($\ddot a\geq0$). 
+     in which we imposed $a(t_0)=a_0$.\\Note that, among the 3 cases, this universe is the only one that has an accelerating expansion ($\ddot a\geq0$). It is worth noting also that the first two cases admit a finite time (in our calculations $t=0$) for which the universe has no spacial extension ($a(0)=0$ generates a singularity), we can interpret this as the Big Bang.\\ The empty universe does not admit it. 
 \end{itemize} 
