@@ -10,20 +10,20 @@ We now have to translate the proprieties of isotropy and homogeneity to the lang
 Space is \textbf{maximally symmetric}, which means that it possesses the maximum number of independent Killing vectors. In fact, homogeneity guarantees 3 Killing vectors, associated to the 3 possible space translations, while isotropy guarantees other 3 Killing vectors, associated to the 3 rotations around a point, and the maximum number of independent Killing vectors for a $3D$ manifold is indeed 6 (this is proven in Appendix A).
 \subsection{The Robertson-Walker metric}
 We will now construct a set of charts that are the more convenient to describe the assumed geometry.\\
-First, consider a space-like hypersurface $\Sigma$ (a volume in this case), which is a slice of the spacetime manifold, corresponding to space (the universe) at a fixed time. On this hypersurface we chose one chart with coordinates $x^\mu=(0,x^1,x^2,x^3)$. At each point $P\in\Sigma$ we pick a vector $\vec n$ that is orthogonal to $\Sigma$ (it should be orthogonal to each vector of the tangent space, in $P$, of the submanifold defined by $\Sigma$ and our chart) such that those are normalized to $-1$ (since they must be time-like). In each point $P$ we can now build a unique geodesic, for which $\vec n$ is the tangent vector in $P$, from the following Chaucy problem
+First, consider a space-like hypersurface $\Sigma$ (a volume in this case), which is a slice of the spacetime manifold, corresponding to space (the universe) at a fixed time. On this hypersurface we choose one chart with coordinates $x^\mu=(0,x^1,x^2,x^3)$. At each point $P\in\Sigma$ we pick a vector $\vec n$ that is orthogonal to $\Sigma$ (it should be orthogonal to each vector of the tangent space, in $P$, of the submanifold defined by $\Sigma$) such that those are normalized to $-1$ (since they must be time-like). In each point $P$ we can now build a unique geodesic, for which $\vec n$ is the tangent vector in $P$, from the following Chaucy problem
 \begin{equation}\label{Chaucy problem}
     \begin{cases}
         \big(\nabla_{\vec n}\vec n\big)^\mu=\frac{d^2x^\mu}{dt^2}+\Gamma_{\nu\lambda}^{\mu}\frac{dx^\nu}{dt}\frac{dx^\lambda}{dt}=0,\\\frac{dx^\mu}{dt}\big|_{P}=n^\mu\big|_P,\\x^\mu(0)=x^\mu\big|_P.
     \end{cases}
 \end{equation}
-We can extend our initial chart, in a neighborhood of $\Sigma$, assigning to each point $Q$ the coordinates $x^\mu=(t,x^1,x^2x^3)$, where $t$ is the value (in $Q$) of the parameter of one geodesic passing through $Q$, and $(x^1,x^2x^3)$ are the coordinates of the point $P$, from which the geodesic starts. These coordinates will eventually fail once some geodesics, from our construction, will meet and intersect.\\
+We can extend our initial chart, in a neighborhood of $\Sigma$, assigning to each point $Q$ the coordinates $x^\mu=(t,x^1,x^2,x^3)$, where $t$ is the value (in $Q$) of the parameter of the geodesic passing through $Q$, and $(0,x^1,x^2,x^3)$ are the coordinates of the point $P$, from which the geodesic starts. These coordinates will eventually fail once some geodesics, from our construction, will meet and intersect.\\
 
 We now want to describe the metric of our spacetime manifold using one of these charts. To do so we will take the chart induced basis of each tangent space $(\partial_t,\partial_1,\partial_2,\partial_3)$ and then label them:
 \begin{equation}
     \partial_t=\vec n,\qquad \partial_i= \vec Y_{(i)},
 \end{equation}
-where $\partial_t$ is really the normal vector field we have defined since, $\partial_t$ is tangent to each geodesic, while $\vec n$ is defined by \eqref{Chaucy problem} and then is parallel transported along the geodesics.\\
-Using this basis, the first component of the metric reads, by our initial construction,
+where $\partial_t$ is really the normal vector field we have defined, since $\vec n$ is tangent to each geodesic by \eqref{Chaucy problem} and then is parallel transported along them.\\
+Using this basis, the first component of the metric reads, by our initial construction and because scalar products of parallel transported vectors is preserved by metric connection,
 \begin{equation}
     g_{tt}=g(\partial_t,\partial_t)=n^\mu n_\mu=-1.\label{gen gtt}
 \end{equation} 
@@ -42,12 +42,13 @@ We can prove that this holds also outside $\Sigma$ by evaluating its covariant d
     &=\frac{1}{2}\big(Y^\nu_{(i)}n_\mu\nabla_\nu(n^\mu)+Y^\nu_{(i)}n^\lambda\nabla_\nu(n_{\lambda})\big)\\
     &=\frac{1}{2}Y^\nu_{(i)}\nabla_\nu(n^\lambda n_\lambda)=0,
 \end{align*}
-in which we used (in order): the geodesic equation $n^\nu  \nabla_\nu(n_\mu )=0$, that coordinates vectors commute, so that $[\vec n,\vec Y_{(i)}]^\mu=n^\nu \nabla_\nu( Y_{(i)}^\mu)-Y^\nu_{(i)}\nabla_\nu(n^\mu)=0$, the metric connection condition $\nabla g=0$, and last that, being $n^\mu n_\mu=-1$, its derivative vanishes.\\
+in which we used (in order): the geodesic equation $n^\nu  \nabla_\nu(n_\mu )=0$, that coordinates vectors commute, so that $[\vec n,\vec Y_{(i)}]^\mu=n^\nu \nabla_\nu( Y_{(i)}^\mu)-Y^\nu_{(i)}\nabla_\nu(n^\mu)=0$ \footnote{The Christoffel symbols, due to symmetric connection, leaving only partial derivatives.}, the metric connection condition $\nabla g=0$, and last that, being $n^\mu n_\mu=-1$, its derivative vanishes.\\
+
 Summing up all the above results, we can write the metric, from \eqref{gen gtt} and \eqref{gen gti}, as
 \begin{equation*}
     ds^2=-dt^2+g_{ij}dx^i dx^j.
 \end{equation*}
-In this expression the absence of the mixed terms $dt\ dx^i$ reflects that there exist a family of hypersurfaces, defined by $t=$const, that are all orthogonal to the vector field $\vec n$. These represent the evolved universe at different times.\\
+In this expression the absence of the mixed terms $dt\ dx^i$ reflects that there exist a family of hypersurfaces, defined by $t=$ const, that are all orthogonal to the vector field $\vec n$. These represent the evolved universe at different times.\\
 The spacial components of the metric now depend on all the coordinates of the chart we have introduced. If we consider how time evolution could affect the spacial terms we can deduce that all the components $g_{ij}$ should scale in the same way, otherwise we could have different scaling in different directions, which is against the idea that space is isotropic. We will write explicitly the time dependence as
 \begin{equation*}
     ds^2=-dt^2+a^2(t)g_{ij}dx^i dx^j.
@@ -57,7 +58,7 @@ As showed in Appendix A, maximally symmetric manifolds have the peculiar proprie
 \begin{equation}
     ^{(3)}R_{ijkl}=\frac{^{(3)}R}{6}(g_{ik}g_{jl}-g_{il}g_{jk}),
 \end{equation}
-in which the $^{(3)}$ is used to signal that these are tensor referred to the submanifold $\Sigma$ and $^{(3)}R$ is the Ricci scalar. The Ricci tensor reads:
+in which the $^{(3)}$ is used to signal that these are tensors referred to the submanifold $\Sigma$ and $^{(3)}R$ is the Ricci scalar. The Ricci tensor reads:
 \begin{equation}\label{maxsymRicci}
     ^{(3)}R_{ij}=\frac{^{(3)}R}{6}(3g_{ij}-g^{lk}g_{il}g_{jk})=\frac{^{(3)}R}{3}g_{ij},
 \end{equation}
@@ -116,7 +117,7 @@ In this way we have obtained the \textbf{Robertson Walker metric}
     ds^2=-dt^2+a^2(t)\bigg[\frac{dr^2}{1-kr^2}+r^2(d\theta^2+\sin^2\theta\ d\phi^2)\bigg],
 \end{equation}
 notice that, to obtain this metric, we never used the Einstein field equation, but only geometrical proprieties of spacetime, deduced from the cosmological principle, therefore this metric is totally generic once we assume the cosmological principle.\\
-The coordinates $(t,r,\theta.\phi)$ are called \emph{comoving coordinates}, since these precise choice makes manifest the isotropy and homogeneity of the universe, that wouldn't be manifest in a moving reference frame with respect to the universe content (the cosmic fluid that we will use to model it).\\
+The coordinates $(t,r,\theta,\phi)$ are called \emph{comoving coordinates}, since these precise choice makes manifest the isotropy and homogeneity of the universe, that wouldn't be manifest in a moving reference frame with respect to the universe content (the cosmic fluid that we will use to model it).\\
 In the metric appear two parameters
 \begin{itemize}
     \item $a(t)$, the \textbf{cosmic scale factor}, which measure how the "size" of the universe change with time;
